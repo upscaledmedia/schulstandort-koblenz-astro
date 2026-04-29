@@ -58,6 +58,73 @@
       {"name": "Die PARTEI", "sitze": 2, "position": "Bisher keine öffentliche Festlegung."}
     ],
     "mehrheit_erforderlich": 29,
+    "stadtratsmitglieder_quelle": "Bürgerinformationssystem der Stadt Koblenz (buergerinfo.koblenz.de), Stand April 2026. Profil-Links führen direkt in das öffentliche Ratsinformationssystem.",
+    "stadtratsmitglieder": [
+      {"name": "Balmes, Peter", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=12"},
+      {"name": "Dott, Herbert", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=199"},
+      {"name": "Flöck, Bert", "fraktion": "CDU", "funktion": "Stellv. Fraktionsvorsitzender", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=267"},
+      {"name": "Freisberg, Dr. Fabian", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2295"},
+      {"name": "Gratzfeld, Sebastian", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2249"},
+      {"name": "Hollmann, August", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2322"},
+      {"name": "Jakob, Marius", "fraktion": "CDU", "funktion": "Fraktionsgeschäftsführer", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1735"},
+      {"name": "Kalenberg, Rudolf", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1718"},
+      {"name": "Michels, Tim Josef", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1749"},
+      {"name": "Nowak, Daniela", "fraktion": "CDU", "funktion": "Stellv. Fraktionsvorsitzende", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2346"},
+      {"name": "Oster, Josef", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2191"},
+      {"name": "Otto, Stephan", "fraktion": "CDU", "funktion": "Fraktionsvorsitzender", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=283"},
+      {"name": "Reinhardt, Marlon Josef", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2793"},
+      {"name": "Rünz, Philip", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2709"},
+      {"name": "Sauer, Monika", "fraktion": "CDU", "funktion": "Beisitzerin", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=32"},
+      {"name": "von Berg, Martina", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=957"},
+
+      {"name": "Ackermann, Hans-Peter", "fraktion": "Bündnis 90/Die Grünen", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=60"},
+      {"name": "Kaatz, Alexandra", "fraktion": "Bündnis 90/Die Grünen", "funktion": "Stellv. Fraktionsvorsitzende", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2656"},
+      {"name": "Kleemann, Dr. Ulrich", "fraktion": "Bündnis 90/Die Grünen", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2196"},
+      {"name": "Kock, Michael", "fraktion": "Bündnis 90/Die Grünen", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2725"},
+      {"name": "Luipers, Janina", "fraktion": "Bündnis 90/Die Grünen", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2752"},
+      {"name": "Meinold, Dorothea", "fraktion": "Bündnis 90/Die Grünen", "funktion": "Stellv. Fraktionsvorsitzende", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2745"},
+      {"name": "Reeka, Christine", "fraktion": "Bündnis 90/Die Grünen", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2360"},
+      {"name": "Schmidt, Dominik", "fraktion": "Bündnis 90/Die Grünen", "funktion": "Bildungspolitischer Sprecher", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2463"},
+      {"name": "Theisen, Kim", "fraktion": "Bündnis 90/Die Grünen", "funktion": "Fraktionsvorsitzende", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2586"},
+      {"name": "von Heusinger, Carl-Bernhard", "fraktion": "Bündnis 90/Die Grünen", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1672"},
+      {"name": "Zwiernik, Patrick", "fraktion": "Bündnis 90/Die Grünen", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1719"},
+
+      {"name": "Bündgen, Toni", "fraktion": "SPD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1931"},
+      {"name": "Holl, Anke", "fraktion": "SPD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2785"},
+      {"name": "Köbberling, Dr. Anna", "fraktion": "SPD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=683"},
+      {"name": "Kretschmer, Christoph", "fraktion": "SPD", "funktion": "Umweltpolitischer Sprecher", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1821"},
+      {"name": "Lipinski-Naumann, Marion", "fraktion": "SPD", "funktion": "Fraktionsvorsitzende", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=51"},
+      {"name": "Naumann, Fritz", "fraktion": "SPD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=52"},
+      {"name": "Pilger, Detlev", "fraktion": "SPD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1248"},
+      {"name": "Rudolph, Dr. Thorsten", "fraktion": "SPD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1669"},
+      {"name": "Schneider, Thorsten", "fraktion": "SPD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1344"},
+      {"name": "Wierschem, Ute", "fraktion": "SPD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=90"},
+
+      {"name": "Becker, Fabian", "fraktion": "AfD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2205"},
+      {"name": "Fachinger, Andreas", "fraktion": "AfD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2829"},
+      {"name": "Geissler, Fabian", "fraktion": "AfD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2198"},
+      {"name": "Lust, Alexander", "fraktion": "AfD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2259"},
+      {"name": "Michel, Isabel", "fraktion": "AfD", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2421"},
+      {"name": "Paul, Joachim", "fraktion": "AfD", "funktion": "Fraktionsvorsitzender", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1730"},
+
+      {"name": "Altmaier, Christian", "fraktion": "Freie Wähler", "funktion": "Stellv. Fraktionsvorsitzender", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=40"},
+      {"name": "Kübler, Julia Maria", "fraktion": "Freie Wähler", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=963"},
+      {"name": "Kühlenthal, Edgar", "fraktion": "Freie Wähler", "funktion": "Stellv. Fraktionsvorsitzender", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1253"},
+      {"name": "Wefelscheid, Stephan", "fraktion": "Freie Wähler", "funktion": "Fraktionsvorsitzender", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1254"},
+
+      {"name": "Diehl, Manfred", "fraktion": "WGS", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=17"},
+      {"name": "Kissel, Dirk", "fraktion": "WGS", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2847"},
+      {"name": "Plato, Anna-Maria", "fraktion": "WGS", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1262"},
+
+      {"name": "Antpöhler-Zwiernik, Oliver", "fraktion": "Die Linke", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2199"},
+      {"name": "Metzger, Loriana", "fraktion": "Die Linke", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2794"},
+
+      {"name": "Hennchen, David Josef", "fraktion": "FDP", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1732"},
+      {"name": "Schöll, Christoph", "fraktion": "FDP", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=1285"},
+
+      {"name": "Niedt, Florian", "fraktion": "Die PARTEI", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2496"},
+      {"name": "Wilhelm, Kevin", "fraktion": "Die PARTEI", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=2202"}
+    ],
     "rechtshinweis": "Die Darstellung erfolgt nach § 23 Abs. 1 Nr. 1 KUG (Person der Zeitgeschichte). Es werden ausschließlich offizielle Pressefotos der Stadt oder der jeweiligen Partei verwendet. Aussagen zum Abstimmungsverhalten basieren auf öffentlich dokumentierten Quellen."
   }
 }

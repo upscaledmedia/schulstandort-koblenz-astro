@@ -1,6 +1,16 @@
 ---
 import data from '../data/verantwortliche.json';
 const v = data.verantwortliche;
+
+// Stadtratsmitglieder nach Fraktion gruppieren — Reihenfolge wie in fraktionen_im_stadtrat
+const fraktionsReihenfolge = v.fraktionen_im_stadtrat.map((f) => f.name);
+const mitgliederNachFraktion = fraktionsReihenfolge.map((fraktionName) => ({
+  name: fraktionName,
+  mitglieder: (v.stadtratsmitglieder || [])
+    .filter((m) => m.fraktion === fraktionName)
+    .sort((a, b) => a.name.localeCompare(b.name, 'de')),
+}));
+const stadtratGesamt = (v.stadtratsmitglieder || []).length;
 ---
 
 <section id="verantwortliche" class="bg-[var(--color-bg)] py-16 md:py-24">
@@ -131,5 +141,66 @@ const v = data.verantwortliche;
         {v.rechtshinweis}
       </p>
     </div>
+
+    {v.stadtratsmitglieder && v.stadtratsmitglieder.length > 0 && (
+      <div class="mt-12 md:mt-16">
+        <div class="max-w-3xl mb-8">
+          <h3 class="text-xl md:text-2xl font-serif font-bold mb-3 text-[var(--color-text-primary)]">
+            {stadtratGesamt === 56 ? 'Alle 56 Stadtratsmitglieder' : `Bekannte Stadtratsmitglieder (${stadtratGesamt})`}
+          </h3>
+          <p class="text-[var(--color-text-muted)] text-base md:text-lg">
+            Diese Personen entscheiden am 28. Mai 2026 über die Beschlussvorlage BV/0197/2026.
+            Bürgerinnen und Bürger sind eingeladen, sich direkt an ihre Vertreterinnen
+            und Vertreter zu wenden — sachlich, höflich und mit Bezug zum Standort Goldgrube.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          {mitgliederNachFraktion.map((fraktion) => (
+            fraktion.mitglieder.length > 0 && (
+              <div>
+                <div class="flex items-baseline justify-between mb-3 pb-2 border-b border-[var(--color-border)]">
+                  <h4 class="text-base font-semibold text-[var(--color-text-primary)] uppercase tracking-wider">
+                    {fraktion.name}
+                  </h4>
+                  <span class="text-xs text-[var(--color-text-muted)] font-mono">
+                    {fraktion.mitglieder.length} {fraktion.mitglieder.length === 1 ? 'Mitglied' : 'Mitglieder'}
+                  </span>
+                </div>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-2">
+                  {fraktion.mitglieder.map((person) => (
+                    <li class="text-[14px] text-[var(--color-text-body)] leading-snug py-1">
+                      {person.profil_url ? (
+                        <a
+                          href={person.profil_url}
+                          target="_blank"
+                          rel="noopener"
+                          class="font-medium text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors no-underline"
+                        >
+                          {person.name}
+                        </a>
+                      ) : (
+                        <span class="font-medium text-[var(--color-text-primary)]">{person.name}</span>
+                      )}
+                      {person.funktion && (
+                        <span class="block text-xs text-[var(--color-text-muted)] mt-0.5">
+                          {person.funktion}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          ))}
+        </div>
+
+        {v.stadtratsmitglieder_quelle && (
+          <p class="text-xs text-[var(--color-text-muted)] mt-6 italic">
+            Quelle: {v.stadtratsmitglieder_quelle}
+          </p>
+        )}
+      </div>
+    )}
   </div>
 </section>
