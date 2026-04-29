@@ -51,38 +51,39 @@ const f = data.forderungen;
           </div>
         );
       })}
-    </div>
 
-    <div class="mt-12 md:mt-16 max-w-4xl p-8 md:p-10 rounded-md" style="background-color: #c1272d;">
-      <h3 class="text-white font-serif font-semibold text-2xl md:text-3xl leading-tight mb-3">
-        Diese Forderungen brauchen Druck — von dir.
-      </h3>
-      <p class="text-white/90 text-[15px] md:text-base leading-relaxed mb-6 md:mb-7 max-w-2xl">
-        Wenn du diese Forderungen unterstützt, hilf öffentlich Druck aufzubauen: Petition unterzeichnen und einen persönlichen Kommentar hinterlassen — beides zählt für den Stadtrat.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-        <a
-          href="https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
-          target="_blank"
-          rel="noopener"
-          class="cta-on-red cta-primary"
-        >
-          Petition unterzeichnen
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path d="M5 12h14M13 6l6 6-6 6"/>
-          </svg>
-        </a>
-        <a
-          href="https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
-          target="_blank"
-          rel="noopener"
-          class="cta-on-red cta-secondary"
-        >
-          Meinung als Kommentar teilen
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path d="M5 12h14M13 6l6 6-6 6"/>
-          </svg>
-        </a>
+      <!-- CTA-Box als Grid-Cell neben Forderung 7 -->
+      <div class="p-6 md:p-8 rounded-md flex flex-col" style="background-color: #c1272d;">
+        <h3 class="text-white font-serif font-semibold text-xl md:text-2xl leading-tight mb-3">
+          Diese Forderungen brauchen Druck — von dir.
+        </h3>
+        <p class="text-white/90 text-[15px] leading-relaxed mb-6">
+          Wenn du diese Forderungen unterstützt, hilf öffentlich Druck aufzubauen: Petition unterzeichnen und einen persönlichen Kommentar hinterlassen — beides zählt für den Stadtrat.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+          <a
+            href="https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
+            target="_blank"
+            rel="noopener"
+            class="cta-on-red cta-primary"
+          >
+            Petition unterzeichnen
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+          <a
+            href="https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
+            target="_blank"
+            rel="noopener"
+            class="cta-on-red cta-secondary"
+          >
+            Kommentar teilen
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
