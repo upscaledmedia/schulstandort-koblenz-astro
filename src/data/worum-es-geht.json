@@ -1,7 +1,7 @@
 {
   "worum_es_geht": {
     "ueberschrift": "Worum es geht",
-    "untertitel": "Drei Punkte, die jeder verstehen sollte, bevor der Stadtrat entscheidet.",
+    "untertitel": "Vier Punkte, die jeder verstehen sollte, bevor der Stadtrat entscheidet.",
     "kacheln": [
       {
         "icon": "location",
@@ -29,11 +29,22 @@
         "icon": "route",
         "titel": "Der Verkehr",
         "headline": "Die Verkehrsplanung wurde nie bedacht",
-        "text": "1.180 Kinder werden täglich gebracht und abgeholt. Über 100 Lehrkräfte brauchen Parkplätze — geplant ist offenbar, dafür den neuen Park-and-Ride am Bahnhof Stadtmitte zu opfern. Doch wo parken dann Pendler, Anwohner, Besucher? Die Vorlage enthält kein Verkehrskonzept, keine Hol- und Bringzonen, keinen Schulwegplan. Die engen Straßen rund um die Goldgrube sind heute schon belastet. Die Stadt entscheidet über 50 Jahre Schulnutzung, ohne den Verkehr eine einzige Stunde gedacht zu haben.",
+        "text": "1.180 Kinder werden täglich gebracht und abgeholt. Über 100 Lehrkräfte brauchen Parkplätze — geplant ist offenbar, dafür den neuen Park-and-Ride am Bahnhof Stadtmitte zu opfern. Schon heute stauen sich Friedrich-Ebert-Ring und die Zufahrt vom Rauental morgens und nachmittags an den Autohäusern. Mit der neuen Bahnsteg-Brücke werden Eltern und Pendler zusätzlich auf die Parkflächen am Rauentaler ALDI/REWE/DM ausweichen — und damit auch dort den ohnehin knappen Parkraum für Anwohner verknappen. Die Vorlage enthält dazu kein einziges Konzept: keine Hol- und Bringzonen, keinen Schulwegplan, keine Verkehrsführung von Moselweiß oder Rauental.",
         "stimme": {
           "quote": "Unser Viertel ist nicht für ein so hohes Verkehrs- und Personenaufkommen ausgelegt. Mit Container-Gymnasium, neuer Kita und Grundschule auf engstem Raum steigt das Risiko für Verkehrsunfälle und gefährliche Schulwege deutlich.",
           "autor": "Anonyme Eltern aus der Goldgrube",
           "url": "https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder/77001461#petition-main"
+        }
+      },
+      {
+        "icon": "users",
+        "titel": "Die Anwohner",
+        "headline": "Anwohner wurden nie gefragt",
+        "text": "Der Stadtteil Goldgrube ist gewachsen, dicht besiedelt und vielfältig: junge Familien, Generationen-Wohnen der Wohnungsgenossenschaft, ein Altenheim in unmittelbarer Nähe, viele Seniorinnen und Senioren. Was die geplante Schulanlage für Parkplatzsituation, Lärmpegel und Lebensqualität bedeutet, wurde zu keinem Zeitpunkt mit den direkt Betroffenen diskutiert. Auch die anliegenden Stadtteile Rauental und Moselweiß — über deren Straßen ein Großteil des Verkehrs laufen wird — wurden nicht einbezogen. Eine Bürgerbeteiligung im rechtlich vorgeschriebenen Sinn hat zum geänderten Vorhaben nicht stattgefunden.",
+        "stimme": {
+          "quote": "Ich wohne hier seit der Zeit, als noch die Hauptschule auf dem Gelände war. Schon damals war es oft sehr laut. Wenn jetzt gleichzeitig so viele Kinder betreut werden sollen, befürchte ich, dass es kaum noch Ruhezeiten geben wird. Ein Umzug ist für mich in meinem Alter nicht mehr möglich.",
+          "autor": "Anonyme Anwohnerin aus der Goldgrube",
+          "url": "https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder/77256449#petition-main"
         }
       }
     ]
