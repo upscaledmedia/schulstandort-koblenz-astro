@@ -13,13 +13,7 @@ export default defineConfig({
     prefetchAll: false,
     defaultStrategy: 'hover',
   },
-  integrations: [
-    sitemap({
-      changefreq: 'weekly',
-      priority: 0.8,
-      lastmod: new Date(),
-    }),
-  ],
+  integrations: [],
   vite: {
     plugins: [tailwindcss()],
   },

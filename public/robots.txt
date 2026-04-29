@@ -1,5 +1,2 @@
 User-agent: *
-Allow: /
-Disallow: /admin/
-
-Sitemap: https://schulstandort-koblenz.de/sitemap-index.xml
+Disallow: /
