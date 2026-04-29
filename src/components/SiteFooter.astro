@@ -1,0 +1,62 @@
+---
+import meta from '../data/meta.json';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[var(--color-bg-deep)] text-white/80 pt-12 pb-8">
+  <div class="container-page">
+    <div class="grid md:grid-cols-3 gap-10 md:gap-12 mb-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-10 h-10 rounded-sm bg-[var(--color-accent)] text-white grid place-items-center font-serif font-bold text-xl">
+            BG
+          </span>
+          <span class="font-serif font-bold text-white text-lg">{meta.site.name}</span>
+        </div>
+        <p class="text-sm leading-relaxed text-white/70 max-w-sm">
+          Bürgerinitiative gegen die Verlagerung des Max-von-Laue-Gymnasiums in das Quartier Goldgrube — und für eine fundierte Stadtratsentscheidung.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-white text-sm uppercase tracking-wider font-semibold mb-4">Inhalt</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#kernbefunde" class="text-white/80 hover:text-white no-underline">Kernbefunde</a></li>
+          <li><a href="#argumente" class="text-white/80 hover:text-white no-underline">14 Argumente</a></li>
+          <li><a href="#forderungen" class="text-white/80 hover:text-white no-underline">7 Forderungen</a></li>
+          <li><a href="#news" class="text-white/80 hover:text-white no-underline">News</a></li>
+          <li><a href="#termine" class="text-white/80 hover:text-white no-underline">Termine</a></li>
+          <li><a href="#materialien" class="text-white/80 hover:text-white no-underline">Materialien</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white text-sm uppercase tracking-wider font-semibold mb-4">Mitmachen</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href={meta.kontakt.petition} target="_blank" rel="noopener" class="text-white/80 hover:text-white no-underline">
+              Petition unterzeichnen
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${meta.kontakt.email}`} class="text-white/80 hover:text-white no-underline">
+              {meta.kontakt.email}
+            </a>
+          </li>
+          <li>
+            <a href="#kontakt" class="text-white/80 hover:text-white no-underline">Kontaktformular</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-white/60">
+      <p>© {year} {meta.site.name} · {meta.site.domain_primary}</p>
+      <ul class="flex flex-wrap gap-x-6 gap-y-2">
+        <li><a href="/impressum" class="text-white/80 hover:text-white no-underline">Impressum</a></li>
+        <li><a href="/datenschutz" class="text-white/80 hover:text-white no-underline">Datenschutz</a></li>
+        <li><a href="/admin" class="text-white/80 hover:text-white no-underline">Redaktion</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

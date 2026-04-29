@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+import meta from '../data/meta.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  pathname?: string;
+}
+
+const {
+  title,
+  description = meta.site.description,
+  ogImage = '/images/og-default.png',
+  noindex = false,
+  pathname = Astro.url.pathname,
+} = Astro.props;
+
+const fullTitle = title
+  ? `${title} | ${meta.site.name}`
+  : `${meta.site.name} — ${meta.site.tagline}`;
+
+const canonicalUrl = new URL(pathname, Astro.site ?? 'https://schulstandort-koblenz.de').toString();
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content={meta.site.name} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
+
+    <meta name="theme-color" content="#1a2332" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: meta.site.name,
+      url: `https://${meta.site.domain_primary}`,
+      description: meta.site.description,
+      email: meta.kontakt.email,
+      areaServed: {
+        '@type': 'City',
+        name: 'Koblenz',
+        address: { '@type': 'PostalAddress', addressLocality: 'Koblenz', addressCountry: 'DE' },
+      },
+    })} />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <a
+      href="#hauptinhalt"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-[var(--color-text-primary)] focus:text-white focus:px-4 focus:py-2 focus:rounded"
+    >
+      Zum Inhalt springen
+    </a>
+    <slot />
+  </body>
+</html>

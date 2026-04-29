@@ -1,0 +1,97 @@
+---
+import data from '../data/bevor-stadtrat-entscheidet.json';
+const b = data.bevor_stadtrat_entscheidet;
+---
+
+<section id="kernbefunde" class="bg-[var(--color-text-primary)] text-white py-16 md:py-24">
+  <div class="container-page">
+    <div class="max-w-3xl mb-10 md:mb-12">
+      <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
+        Aktueller Stand
+      </p>
+      <h2 class="text-white mb-5">{b.ueberschrift}</h2>
+      <p class="text-lg text-white/80 mb-6">{b.untertitel}</p>
+      <p class="text-base text-white/85 leading-relaxed border-l-2 border-[var(--color-accent)] pl-5">
+        {b.intro}
+      </p>
+    </div>
+
+    <div class="mt-12 md:mt-16">
+      <h3 class="text-white text-2xl md:text-[1.625rem] mb-6 font-serif font-bold">
+        {b.kernbefunde.ueberschrift}
+      </h3>
+      <ol class="space-y-4 md:space-y-5">
+        {b.kernbefunde.punkte.map((punkt, i) => (
+          <li
+            class={`flex gap-5 md:gap-6 p-5 md:p-7 rounded-md ${
+              i === 0
+                ? 'bg-[rgba(193,39,45,0.12)] border border-[rgba(193,39,45,0.45)]'
+                : 'bg-white/5 border border-white/10'
+            }`}
+          >
+            <span class={`flex-none w-9 h-9 md:w-10 md:h-10 rounded-full grid place-items-center font-serif font-bold ${
+              i === 0
+                ? 'bg-[var(--color-accent)] text-white'
+                : 'bg-white/15 text-white'
+            }`}>
+              {i + 1}
+            </span>
+            <div class="flex-1 min-w-0">
+              <h4 class="text-white text-lg md:text-xl mb-2 font-serif font-semibold">
+                {punkt.titel}
+              </h4>
+              <p class="text-white/80 leading-relaxed text-[15px] md:text-base">{punkt.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid md:grid-cols-2 gap-8 md:gap-12">
+      <div>
+        <h3 class="text-white text-xl mb-4 font-serif font-bold">
+          {b.vorbereitete_schritte.ueberschrift}
+        </h3>
+        <ul class="space-y-3">
+          {b.vorbereitete_schritte.punkte.map((p) => (
+            <li class="flex gap-3 text-white/80 text-[15px] leading-relaxed">
+              <span class="flex-none mt-2 w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]" aria-hidden="true"></span>
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-xl mb-4 font-serif font-bold">
+          {b.was_das_bedeutet.ueberschrift}
+        </h3>
+        <div class="space-y-4">
+          {b.was_das_bedeutet.absaetze.map((p) => (
+            <p class="text-white/80 text-[15px] leading-relaxed">{p}</p>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 md:mt-16 p-7 md:p-10 rounded-md border border-white/15 bg-white/5">
+      <h3 class="text-white text-2xl mb-4 font-serif font-bold">
+        {b.anliegen.ueberschrift}
+      </h3>
+      <p class="text-white/85 leading-relaxed mb-6 max-w-3xl">
+        {b.anliegen.text}
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href={b.anliegen.cta_primary.href} class="btn btn-primary">
+          {b.anliegen.cta_primary.label}
+        </a>
+        <a
+          href={b.anliegen.cta_secondary.href}
+          class="btn"
+          style="background: transparent; color: white; border-color: rgba(255,255,255,0.4);"
+        >
+          {b.anliegen.cta_secondary.label}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

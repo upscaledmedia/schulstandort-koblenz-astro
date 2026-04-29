@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+
+const dokumente = await getCollection('dokumente');
+const sorted = dokumente.sort((a, b) => a.data.displayOrder - b.data.displayOrder);
+
+const typeOrder = [
+  'Originaldokument Stadt',
+  'Auswertung',
+  'Pressemitteilung',
+  'Musterbrief',
+  'Sonstiges',
+];
+
+const grouped = typeOrder
+  .map((type) => ({
+    type,
+    items: sorted.filter((d) => d.data.documentType === type),
+  }))
+  .filter((g) => g.items.length > 0);
+
+const formatDate = (d?: Date) =>
+  d
+    ? d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })
+    : null;
+---
+
+<section id="materialien" class="bg-[var(--color-bg)] py-16 md:py-24">
+  <div class="container-page">
+    <div class="max-w-3xl mb-10 md:mb-12">
+      <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
+        Zum Download
+      </p>
+      <h2 class="mb-4">Materialien</h2>
+      <p class="text-lg text-[var(--color-text-muted)]">
+        Originaldokumente der Stadt, unsere Auswertungen, Musterbriefe für die Korrespondenz mit dem Stadtrat.
+      </p>
+    </div>
+
+    {sorted.length === 0 ? (
+      <div class="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-md p-8 max-w-2xl">
+        <p class="text-[var(--color-text-body)] mb-3">
+          Die Original-Dokumente der Stadt Koblenz (Beschlussvorlage BV/0197/2026, Bebauungsplan Nr. 336, Unterrichtungsvorlage UV/0310/2025) und unsere Auswertungen werden hier in Kürze zum Download bereitgestellt.
+        </p>
+        <p class="text-sm text-[var(--color-text-muted)]">
+          Bei dringendem Bedarf wenden Sie sich bitte an
+          <a href="mailto:kontakt@schulstandort-koblenz.de" class="font-semibold">kontakt@schulstandort-koblenz.de</a>
+        </p>
+      </div>
+    ) : (
+      <div class="space-y-10 md:space-y-12 max-w-4xl">
+        {grouped.map((group) => (
+          <div>
+            <h3 class="text-lg font-serif font-bold text-[var(--color-text-primary)] mb-4 pb-2 border-b border-[var(--color-border)]">
+              {group.type}
+            </h3>
+            <ul class="grid gap-3">
+              {group.items.map((d) => (
+                <li>
+                  <a
+                    href={d.data.file}
+                    download
+                    class="flex items-start gap-4 p-5 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-md no-underline hover:border-[var(--color-accent)] transition-colors group"
+                  >
+                    <span class="flex-none w-10 h-10 rounded-sm bg-[var(--color-accent-soft)] text-[var(--color-accent)] grid place-items-center">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                      </svg>
+                    </span>
+                    <div class="flex-1 min-w-0">
+                      <p class="font-serif font-semibold text-[var(--color-text-primary)] text-base mb-1 group-hover:text-[var(--color-accent)] transition-colors">
+                        {d.data.title}
+                      </p>
+                      {d.data.description && (
+                        <p class="text-sm text-[var(--color-text-body)] leading-snug mb-2">
+                          {d.data.description}
+                        </p>
+                      )}
+                      <p class="text-xs text-[var(--color-text-muted)]">
+                        {d.data.originalSource && <span>{d.data.originalSource}</span>}
+                        {d.data.originalSource && d.data.originalDate && <span> · </span>}
+                        {d.data.originalDate && <span>{formatDate(d.data.originalDate)}</span>}
+                      </p>
+                    </div>
+                    <span class="flex-none text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)]">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                      </svg>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

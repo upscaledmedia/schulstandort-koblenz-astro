@@ -1,0 +1,78 @@
+---
+import data from '../data/argumente.json';
+const a = data.argumente;
+---
+
+<section id="argumente" class="bg-[var(--color-bg)] py-16 md:py-24">
+  <div class="container-page">
+    <div class="max-w-3xl mb-10 md:mb-12">
+      <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
+        Die juristische Auswertung
+      </p>
+      <h2 class="mb-5">{a.ueberschrift}</h2>
+      <p class="text-base text-[var(--color-text-muted)] leading-relaxed">{a.untertitel}</p>
+    </div>
+
+    <div class="space-y-3 md:space-y-4 max-w-4xl">
+      {a.liste.map((arg) => (
+        <details
+          class={`group rounded-md overflow-hidden border ${
+            arg.nummer === 1
+              ? 'border-[var(--color-accent)] bg-[var(--color-accent-soft)]'
+              : 'border-[var(--color-border)] bg-[var(--color-bg-card)]'
+          }`}
+          data-argument={arg.nummer}
+        >
+          <summary class="flex items-start gap-4 p-5 md:p-6 hover:bg-black/[0.02] transition-colors">
+            <span class={`flex-none w-9 h-9 md:w-10 md:h-10 rounded-full grid place-items-center font-serif font-bold text-base ${
+              arg.nummer === 1
+                ? 'bg-[var(--color-accent)] text-white'
+                : 'bg-[var(--color-text-primary)] text-white'
+            }`}>
+              {arg.nummer}
+            </span>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-serif font-bold text-[var(--color-text-primary)] text-lg md:text-xl mb-2 leading-tight">
+                {arg.titel}
+              </h3>
+              <p class="text-[15px] text-[var(--color-text-body)] leading-snug">
+                {arg.kurz}
+              </p>
+            </div>
+            <span class="flex-none mt-1 w-7 h-7 grid place-items-center rounded-full bg-white border border-[var(--color-border)] transition-transform group-open:rotate-45">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </span>
+          </summary>
+          <div class="px-5 md:px-6 pb-6 md:pb-7 ml-0 md:ml-14">
+            <div class="prose-content text-[15px] md:text-base text-[var(--color-text-body)] mb-5 max-w-3xl">
+              <p>{arg.lang}</p>
+            </div>
+            <dl class="grid sm:grid-cols-2 gap-3 text-sm bg-white/60 border-l-2 border-[var(--color-border-strong)] p-4 rounded-r">
+              <div>
+                <dt class="font-semibold text-[var(--color-text-primary)] text-xs uppercase tracking-wider mb-1">
+                  Rechtsgrundlage
+                </dt>
+                <dd class="text-[var(--color-text-body)]">{arg.rechtsgrundlage}</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-[var(--color-text-primary)] text-xs uppercase tracking-wider mb-1">
+                  Quelle
+                </dt>
+                <dd class="text-[var(--color-text-body)]">{arg.quelle}</dd>
+              </div>
+            </dl>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="mt-10 max-w-4xl text-center">
+      <p class="text-[var(--color-text-muted)] text-sm">
+        Möchten Sie eines dieser Argumente verbreiten? <a href="#materialien" class="font-semibold">Materialien zum Download</a>
+      </p>
+    </div>
+  </div>
+</section>

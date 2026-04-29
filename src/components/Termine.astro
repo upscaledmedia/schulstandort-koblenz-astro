@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+import termineMeta from '../data/termine.json';
+
+const all = await getCollection('termine');
+const now = new Date();
+const future = all
+  .filter((t) => t.data.dateStart >= now)
+  .sort((a, b) => a.data.dateStart.valueOf() - b.data.dateStart.valueOf());
+const past = all
+  .filter((t) => t.data.dateStart < now)
+  .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf())
+  .slice(0, 3);
+const display = [...future, ...past];
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+const formatWeekday = (d: Date) =>
+  d.toLocaleDateString('de-DE', { weekday: 'long' });
+
+const meta = termineMeta.termine;
+---
+
+<section id="termine" class="bg-[var(--color-bg-card)] py-16 md:py-24 border-y border-[var(--color-border)]">
+  <div class="container-page">
+    <div class="max-w-3xl mb-10 md:mb-12">
+      <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
+        Im Verfahren
+      </p>
+      <h2 class="mb-4">{meta.ueberschrift}</h2>
+      <p class="text-lg text-[var(--color-text-muted)]">{meta.untertitel}</p>
+    </div>
+
+    <ol class="space-y-4 max-w-4xl">
+      {display.map((t) => {
+        const isPast = t.data.status === 'erfolgt';
+        const isHigh = t.data.importance === 'high';
+        return (
+          <li
+            class={`flex flex-col md:flex-row md:items-center gap-4 md:gap-6 p-5 md:p-6 rounded-md border ${
+              isHigh
+                ? 'border-[var(--color-accent)] bg-[var(--color-accent-soft)]'
+                : 'border-[var(--color-border)] bg-[var(--color-bg)]'
+            } ${isPast ? 'opacity-65' : ''}`}
+          >
+            <div class={`flex-none flex md:flex-col items-center md:items-start gap-2 md:gap-0 md:w-32 ${
+              isHigh ? 'text-[var(--color-accent-dark)]' : 'text-[var(--color-text-primary)]'
+            }`}>
+              <span class="font-serif font-bold text-2xl md:text-3xl leading-none">
+                {formatDate(t.data.dateStart)}
+              </span>
+              <span class="text-sm text-[var(--color-text-muted)] capitalize">
+                {formatWeekday(t.data.dateStart)}
+              </span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <span class="text-xs uppercase tracking-wider font-semibold text-[var(--color-text-muted)]">
+                  {t.data.eventType}
+                </span>
+                {isPast && (
+                  <span class="text-xs uppercase tracking-wider font-semibold px-2 py-0.5 rounded-sm bg-[var(--color-text-primary)]/10 text-[var(--color-text-primary)]">
+                    Erfolgt
+                  </span>
+                )}
+                {!isPast && isHigh && (
+                  <span class="text-xs uppercase tracking-wider font-semibold px-2 py-0.5 rounded-sm bg-[var(--color-accent)] text-white">
+                    Wichtig
+                  </span>
+                )}
+              </div>
+              <h3 class="font-serif font-bold text-[var(--color-text-primary)] text-lg leading-tight mb-1">
+                {t.data.title}
+              </h3>
+              {t.data.location && (
+                <p class="text-sm text-[var(--color-text-muted)] mb-2">{t.data.location}</p>
+              )}
+              {t.body && t.body.trim().length > 0 && (
+                <p class="text-[15px] text-[var(--color-text-body)] leading-snug">
+                  {t.body.trim()}
+                </p>
+              )}
+              {t.data.linkUrl && (
+                <a
+                  href={t.data.linkUrl}
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-block mt-2 text-sm font-semibold"
+                >
+                  {t.data.linkLabel ?? 'Mehr Informationen'} →
+                </a>
+              )}
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+</section>

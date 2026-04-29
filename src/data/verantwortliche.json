@@ -1,0 +1,42 @@
+{
+  "verantwortliche": {
+    "ueberschrift": "Diese Personen entscheiden mit",
+    "untertitel": "Am 28. Mai 2026 stimmen 56 Stadträtinnen und Stadträte über die Vorlage BV/0197/2026 ab. Wir aktualisieren die Übersicht laufend.",
+    "hinweis": "Die Niederschrift der Vorberatung vom 21.04.2026 wird voraussichtlich in den kommenden Wochen im Bürgerinformationssystem der Stadt Koblenz veröffentlicht. Sobald das Abstimmungsverhalten der Fraktionen öffentlich dokumentiert ist, ergänzen wir diese Übersicht.",
+    "verfahrensverantwortliche": [
+      {
+        "rolle": "Oberbürgermeister",
+        "name": "David Langner",
+        "partei": "SPD",
+        "position_oeffentlich": "Keine öffentliche Festlegung zum Vorhaben bekannt.",
+        "quelle": "Eigene Recherche; Berichterstattung Rhein-Zeitung"
+      },
+      {
+        "rolle": "Baudezernent",
+        "name": "Prof. Dr. Andreas Lukas",
+        "position_oeffentlich": "Verantwortlich für die Steuerung der Sanierungsplanung Max-von-Laue (UV/0310/2025) und Verfasser der Beschlussvorlage BV/0197/2026.",
+        "quelle": "UV/0310/2025 vom 03.11.2025; BV/0197/2026 vom 10.04.2026"
+      },
+      {
+        "rolle": "Bildungsdezernent",
+        "name": "Ingo Schneider",
+        "partei": "SPD",
+        "position_oeffentlich": "Befürwortet den Standort Goldgrube laut Berichterstattung der Rhein-Zeitung.",
+        "quelle": "Rhein-Zeitung, Berichterstattung Frühjahr 2026"
+      }
+    ],
+    "fraktionen_im_stadtrat": [
+      {"name": "CDU", "sitze": 15, "position": "Bisher keine öffentliche Festlegung."},
+      {"name": "Bündnis 90/Die Grünen", "sitze": 11, "position": "Bildungspolitischer Sprecher Dominik Schmidt und Fraktionsvorsitzende Kim Theisen befürworten laut RZ den Standort Goldgrube."},
+      {"name": "SPD", "sitze": 10, "position": "Trägt die Verwaltungsvorlage."},
+      {"name": "AfD", "sitze": 6, "position": "Bisher keine öffentliche Festlegung."},
+      {"name": "Freie Wähler", "sitze": 5, "position": "Bisher keine öffentliche Festlegung."},
+      {"name": "WGS", "sitze": 3, "position": "Bisher keine öffentliche Festlegung."},
+      {"name": "Die Linke", "sitze": 2, "position": "Bisher keine öffentliche Festlegung."},
+      {"name": "FDP", "sitze": 2, "position": "Bisher keine öffentliche Festlegung."},
+      {"name": "Die PARTEI", "sitze": 2, "position": "Bisher keine öffentliche Festlegung."}
+    ],
+    "mehrheit_erforderlich": 29,
+    "rechtshinweis": "Die Darstellung erfolgt nach § 23 Abs. 1 Nr. 1 KUG (Person der Zeitgeschichte). Es werden ausschließlich offizielle Pressefotos der Stadt oder der jeweiligen Partei verwendet. Aussagen zum Abstimmungsverhalten basieren auf öffentlich dokumentierten Quellen."
+  }
+}

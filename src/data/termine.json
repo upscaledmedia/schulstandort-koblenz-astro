@@ -1,0 +1,29 @@
+{
+  "termine": {
+    "ueberschrift": "Termine",
+    "untertitel": "Bis zur Stadtratsentscheidung am 28. Mai 2026",
+    "events": [
+      {
+        "datum": "21.04.2026",
+        "label": "Vorberatung Schulträgerausschuss + Ausschuss für Stadtentwicklung und Mobilität",
+        "ort": "Sitzungssaal 101, Rathausgebäude I",
+        "status": "erfolgt",
+        "beschreibung": "Erste öffentliche Beratung der Vorlage BV/0197/2026. Die Vorlage wurde am 12.04.2026 als Nachtrag in die Tagesordnung aufgenommen."
+      },
+      {
+        "datum": "18.05.2026",
+        "label": "Vorberatung Haupt- und Finanzausschuss",
+        "ort": "Sitzungssaal 101, Rathausgebäude I",
+        "status": "geplant",
+        "beschreibung": "Letzte Vorberatung vor dem Stadtrat. Hier werden die finanziellen Auswirkungen formal geprüft — die Wirtschaftlichkeitsbetrachtung sollte bis dahin nachgereicht sein."
+      },
+      {
+        "datum": "28.05.2026",
+        "label": "Beschlussfassung Stadtrat",
+        "ort": "Rathaus Koblenz",
+        "status": "entscheidung",
+        "beschreibung": "Der Koblenzer Stadtrat entscheidet über den Grundsatzbeschluss zur Errichtung der Interimsschule auf der Schulerweiterungsfläche Goldgrube."
+      }
+    ]
+  }
+}

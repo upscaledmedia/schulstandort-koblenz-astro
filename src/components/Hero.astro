@@ -1,0 +1,69 @@
+---
+import hero from '../data/hero.json';
+const h = hero.hero;
+---
+
+<section class="relative overflow-hidden bg-[var(--color-bg-deep)] text-white">
+  <div class="absolute inset-0 opacity-25">
+    <img
+      src="/images/quartier-goldgrube.jpg"
+      alt=""
+      aria-hidden="true"
+      class="w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+  </div>
+  <div
+    class="absolute inset-0"
+    style="background: linear-gradient(180deg, rgba(17,25,42,0.85) 0%, rgba(17,25,42,0.92) 70%, rgba(17,25,42,0.98) 100%);"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative container-page py-16 md:py-24 lg:py-32" id="hauptinhalt">
+    <div class="max-w-4xl">
+      <p class="inline-flex items-center gap-2 text-sm md:text-base text-white/80 uppercase tracking-wider font-medium mb-4">
+        <span class="w-8 h-px bg-[var(--color-accent)]" aria-hidden="true"></span>
+        {h.kicker}
+      </p>
+      <h1 class="text-white !text-balance mb-6">
+        {h.headline}
+      </h1>
+      <p class="text-lg md:text-xl text-white/85 leading-relaxed mb-8 max-w-3xl">
+        {h.subheadline}
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href={h.cta_primary.href} class="btn btn-primary" target="_blank" rel="noopener">
+          {h.cta_primary.label}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </a>
+        <a
+          href={h.cta_secondary.href}
+          class="btn"
+          style="background: rgba(255,255,255,0.08); color: white; border-color: rgba(255,255,255,0.3);"
+        >
+          {h.cta_secondary.label}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative bg-white/5 backdrop-blur-sm border-t border-white/10">
+    <div class="container-page py-6 md:py-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        {h.facts_strip.map((fact, i) => (
+          <div class={`${i > 0 ? 'lg:border-l border-white/15 lg:pl-8' : ''}`}>
+            <div class="font-serif text-2xl md:text-3xl font-bold text-white mb-1">
+              {fact.value}
+            </div>
+            <div class="text-xs md:text-sm text-white/70 leading-snug">
+              {fact.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

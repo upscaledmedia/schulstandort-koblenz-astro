@@ -1,0 +1,32 @@
+{
+  "mitmachen": {
+    "ueberschrift": "Mitmachen",
+    "untertitel": "Was Sie tun können, bevor der Stadtrat am 28. Mai entscheidet.",
+    "optionen": [
+      {
+        "titel": "Petition unterzeichnen",
+        "text": "Die Petition auf openpetition.de richtet sich an den Koblenzer Stadtrat. Jede Unterschrift zählt — auch wenn Sie nicht in Koblenz wohnen.",
+        "cta_label": "Zur Petition",
+        "cta_href": "https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube"
+      },
+      {
+        "titel": "Stadtrat anschreiben",
+        "text": "Wir stellen Musterbriefe und die Originaldokumente der Stadt zum Download bereit — sachlich, faktenbasiert, mit klaren Forderungen. Sie können die Texte übernehmen oder anpassen.",
+        "cta_label": "Materialien ansehen",
+        "cta_href": "#materialien"
+      },
+      {
+        "titel": "Argumente teilen",
+        "text": "Helfen Sie, die vierzehn Argumente vor dem 28. Mai zu verbreiten — in Familie, Nachbarschaft und im persönlichen Umfeld. Die Inhalte sind frei zur Weitergabe.",
+        "cta_label": "Argumente lesen",
+        "cta_href": "#argumente"
+      },
+      {
+        "titel": "Initiative kontaktieren",
+        "text": "Sie wollen die Initiative aktiv unterstützen, sind selbst betroffen, haben Hinweise oder Fachwissen? Schreiben Sie uns — wir freuen uns über jede Form der Unterstützung.",
+        "cta_label": "Kontakt aufnehmen",
+        "cta_href": "#kontakt"
+      }
+    ]
+  }
+}

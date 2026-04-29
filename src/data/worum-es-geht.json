@@ -1,0 +1,26 @@
+{
+  "worum_es_geht": {
+    "ueberschrift": "Worum es geht",
+    "untertitel": "Drei Punkte, die jeder verstehen sollte, bevor der Stadtrat entscheidet.",
+    "kacheln": [
+      {
+        "icon": "location",
+        "titel": "Der Standort",
+        "headline": "1.180 Kinder auf 24.620 m²",
+        "text": "Auf einem Areal, das ursprünglich für Wohnbebauung und eine Grundschule mit Kita vorgesehen war, sollen jetzt zusätzlich 800 Gymnasiasten untergebracht werden — auf einem Hof, den sich Kita-Kinder, Grundschüler und Jugendliche teilen müssen. Im Norden eine Bahnstrecke mit Lärmpegelbereich V."
+      },
+      {
+        "icon": "clock",
+        "titel": "Die Dauer",
+        "headline": "Bis zu 50 Jahre 'Interim'",
+        "text": "Die Beschlussvorlage selbst nennt eine 'Nutzungsdauer bis zu 50 Jahre' für den Modulbau. Nach Max-von-Laue sollen BBS Beatusstraße, Eichendorff, Clemens-Brentano und Hilda folgen. Das ist kein Provisorium. Das ist ein dauerhafter zweiter Schulstandort, getarnt als Einzelmaßnahme."
+      },
+      {
+        "icon": "shield",
+        "titel": "Recht und Verantwortung",
+        "headline": "Eine Entscheidung ohne Grundlage",
+        "text": "25,75 Millionen Euro Grobkosten ohne Wirtschaftlichkeitsbetrachtung. Eine Standortbewertung ohne Gewichtung. Keine Verkehrsprüfung. Keine erneute UVP-Vorprüfung. Keine Bürgerbeteiligung zum geänderten Vorhaben. Wer am 28. Mai zustimmt, übernimmt die volle Verantwortung — auch für eine spätere gerichtliche Korrektur."
+      }
+    ]
+  }
+}

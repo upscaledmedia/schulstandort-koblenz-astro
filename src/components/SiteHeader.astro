@@ -1,0 +1,98 @@
+---
+import meta from '../data/meta.json';
+
+const navItems = [
+  { label: 'Kernbefunde', href: '#kernbefunde' },
+  { label: '14 Argumente', href: '#argumente' },
+  { label: 'Forderungen', href: '#forderungen' },
+  { label: 'News', href: '#news' },
+  { label: 'Termine', href: '#termine' },
+  { label: 'Materialien', href: '#materialien' },
+  { label: 'Kontakt', href: '#kontakt' },
+];
+---
+
+<header class="bg-white border-b border-[var(--color-border)] sticky top-0 z-40 backdrop-blur-md bg-white/95">
+  <div class="container-page flex items-center justify-between gap-4 py-3 md:py-4">
+    <a href="/" class="flex items-center gap-3 no-underline group" aria-label="Zur Startseite">
+      <span class="w-9 h-9 md:w-10 md:h-10 rounded-sm bg-[var(--color-text-primary)] text-white grid place-items-center font-serif font-bold text-xl">
+        BG
+      </span>
+      <span class="hidden sm:flex flex-col leading-tight">
+        <span class="font-serif font-bold text-[var(--color-text-primary)] text-base md:text-lg">{meta.site.name}</span>
+        <span class="text-xs text-[var(--color-text-muted)]">Bürgerinitiative Koblenz</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-6" aria-label="Hauptnavigation">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="text-sm font-medium text-[var(--color-text-primary)] no-underline hover:text-[var(--color-accent)] transition-colors"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+    <a
+      href={meta.kontakt.petition}
+      class="btn btn-primary text-sm py-2 px-4 hidden md:inline-flex"
+      target="_blank"
+      rel="noopener"
+    >
+      Petition unterzeichnen
+    </a>
+    <button
+      type="button"
+      id="mobile-menu-toggle"
+      aria-label="Menü öffnen"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      class="lg:hidden p-2 -mr-2 text-[var(--color-text-primary)]"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-[var(--color-border)] bg-white">
+    <nav class="container-page py-3 flex flex-col" aria-label="Mobile Navigation">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="py-3 text-base font-medium text-[var(--color-text-primary)] no-underline border-b border-[var(--color-border)] last:border-0"
+          data-nav-link
+        >
+          {item.label}
+        </a>
+      ))}
+      <a
+        href={meta.kontakt.petition}
+        class="btn btn-primary mt-4 mb-2"
+        target="_blank"
+        rel="noopener"
+      >
+        Petition unterzeichnen
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    });
+    menu.querySelectorAll('[data-nav-link]').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>

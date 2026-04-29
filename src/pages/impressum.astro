@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { marked } from 'marked';
+import md from '../data/impressum.md?raw';
+
+const html = marked.parse(md);
+---
+
+<BaseLayout title="Impressum" pathname="/impressum">
+  <SiteHeader />
+  <main class="bg-[var(--color-bg)] py-12 md:py-16">
+    <article class="container-prose prose-content text-[var(--color-text-body)]" set:html={html} />
+  </main>
+  <SiteFooter />
+</BaseLayout>

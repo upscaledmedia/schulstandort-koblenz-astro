@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "kicker": "Stadtratsentscheidung am 28. Mai 2026",
+    "headline": "Schule für Koblenz neu denken — bevor wir 50 Jahre damit leben.",
+    "subheadline": "Die Stadt Koblenz plant einen Modulschulbau mit einer Nutzungsdauer von bis zu 50 Jahren auf dem Quartier Goldgrube. Dafür soll eine im Bebauungsplan festgesetzte Wohnbaufläche überplant werden — ohne das vorgeschriebene Bauleitplanverfahren, ohne Wirtschaftlichkeitsbetrachtung, ohne Verkehrskonzept und ohne Bürgerbeteiligung.",
+    "cta_primary": {
+      "label": "Petition unterzeichnen",
+      "href": "https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube"
+    },
+    "cta_secondary": {
+      "label": "Die 14 Argumente lesen",
+      "href": "#argumente"
+    },
+    "facts_strip": [
+      {
+        "value": "5.100 m²",
+        "label": "rechtsverbindlich festgesetzte Wohnbaufläche, die einfach überplant werden soll"
+      },
+      {
+        "value": "1.180",
+        "label": "Kinder gleichzeitig auf dem Gelände"
+      },
+      {
+        "value": "50 Jahre",
+        "label": "geplante Nutzungsdauer des 'Interim'-Baus"
+      },
+      {
+        "value": "25,75 Mio €",
+        "label": "Grobkosten ohne Wirtschaftlichkeitsvergleich"
+      }
+    ]
+  }
+}

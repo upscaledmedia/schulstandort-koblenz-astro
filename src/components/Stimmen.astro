@@ -1,0 +1,58 @@
+---
+import { getCollection, render } from 'astro:content';
+import stimmenStatic from '../data/stimmen.json';
+
+const stimmenCol = await getCollection('stimmen', ({ data }) => !data.draft);
+const sorted = stimmenCol.sort((a, b) => a.data.displayOrder - b.data.displayOrder);
+
+const meta = stimmenStatic.stimmen;
+
+const renderedStimmen = await Promise.all(
+  sorted.map(async (s) => {
+    const { Content } = await render(s);
+    return { ...s, Content };
+  })
+);
+---
+
+<section id="stimmen" class="bg-[var(--color-bg-card)] py-16 md:py-24 border-y border-[var(--color-border)]">
+  <div class="container-page">
+    <div class="max-w-3xl mb-10 md:mb-12">
+      <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
+        Originalzitate
+      </p>
+      <h2 class="mb-4">{meta.ueberschrift}</h2>
+      <p class="text-lg text-[var(--color-text-muted)]">{meta.untertitel}</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-6xl">
+      {renderedStimmen.map((s) => (
+        <figure class="bg-[var(--color-bg)] p-7 md:p-8 rounded-md border border-[var(--color-border)] flex flex-col">
+          <svg
+            class="w-8 h-8 text-[var(--color-accent)] mb-4 flex-none"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M9 7H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2H4v2h1a4 4 0 0 0 4-4V7zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4V7z" />
+          </svg>
+          <blockquote class="font-serif text-lg md:text-xl text-[var(--color-text-primary)] leading-snug mb-5 flex-1">
+            „{s.data.quote}"
+          </blockquote>
+          <figcaption class="text-sm text-[var(--color-text-muted)] mb-3">
+            {s.data.sourceUrl ? (
+              <a href={s.data.sourceUrl} target="_blank" rel="noopener" class="hover:text-[var(--color-accent)]">
+                {s.data.source}
+              </a>
+            ) : (
+              s.data.source
+            )}
+          </figcaption>
+          <div class="text-[15px] text-[var(--color-text-body)] leading-relaxed border-t border-[var(--color-border)] pt-4">
+            <s.Content />
+          </div>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

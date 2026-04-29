@@ -1,0 +1,35 @@
+---
+import meta from '../data/meta.json';
+---
+
+<div
+  id="sticky-cta"
+  class="md:hidden fixed bottom-0 inset-x-0 z-30 px-3 pb-3 pt-2 bg-gradient-to-t from-[var(--color-bg-deep)] to-transparent translate-y-full transition-transform duration-300"
+  aria-hidden="true"
+>
+  <a
+    href={meta.kontakt.petition}
+    target="_blank"
+    rel="noopener"
+    class="btn btn-primary w-full shadow-lg"
+  >
+    Petition jetzt unterzeichnen
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</div>
+
+<script>
+  const sticky = document.getElementById('sticky-cta');
+  if (sticky) {
+    let shown = false;
+    const reveal = () => {
+      if (window.scrollY > 600 && !shown) {
+        sticky.style.transform = 'translateY(0)';
+        sticky.setAttribute('aria-hidden', 'false');
+        shown = true;
+      }
+    };
+    window.addEventListener('scroll', reveal, { passive: true });
+    reveal();
+  }
+</script>

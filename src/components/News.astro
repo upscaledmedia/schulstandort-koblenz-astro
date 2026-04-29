@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news', ({ data }) => !data.draft);
+const sorted = allNews.sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+);
+const featured = sorted.find((n) => n.data.featured);
+const rest = (featured ? sorted.filter((n) => n.id !== featured.id) : sorted).slice(0, 5);
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' });
+---
+
+<section id="news" class="bg-[var(--color-bg)] py-16 md:py-24">
+  <div class="container-page">
+    <div class="flex items-end justify-between flex-wrap gap-4 mb-10 md:mb-12">
+      <div class="max-w-3xl">
+        <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
+          Aktuelles
+        </p>
+        <h2>News &amp; Entwicklungen</h2>
+      </div>
+      <p class="text-sm text-[var(--color-text-muted)]">
+        {sorted.length} {sorted.length === 1 ? 'Beitrag' : 'Beiträge'} insgesamt
+      </p>
+    </div>
+
+    {sorted.length === 0 ? (
+      <p class="text-[var(--color-text-muted)]">Noch keine Beiträge veröffentlicht.</p>
+    ) : (
+      <div class="grid lg:grid-cols-3 gap-6 md:gap-8">
+        {featured && (
+          <a
+            href={`/news/${featured.id}`}
+            class="lg:col-span-2 lg:row-span-2 group block bg-[var(--color-bg-card)] rounded-md border border-[var(--color-border)] overflow-hidden no-underline hover:shadow-[var(--shadow-card-lg)] transition-shadow"
+          >
+            <div class="aspect-[16/9] bg-[var(--color-text-primary)] relative overflow-hidden">
+              {featured.data.heroImage ? (
+                <img src={featured.data.heroImage} alt="" class="w-full h-full object-cover" loading="lazy" />
+              ) : (
+                <div class="w-full h-full grid place-items-center text-white/30 font-serif text-6xl">
+                  BG
+                </div>
+              )}
+              <span class="absolute top-4 left-4 bg-[var(--color-accent)] text-white text-xs font-semibold px-3 py-1.5 rounded-sm uppercase tracking-wider">
+                Hervorgehoben · {featured.data.category}
+              </span>
+            </div>
+            <div class="p-6 md:p-8">
+              <p class="text-xs uppercase tracking-wider text-[var(--color-text-muted)] mb-2">
+                {formatDate(featured.data.publishedAt)}
+              </p>
+              <h3 class="font-serif font-bold text-[var(--color-text-primary)] text-2xl md:text-3xl mb-3 group-hover:text-[var(--color-accent)] transition-colors">
+                {featured.data.title}
+              </h3>
+              {featured.data.excerpt && (
+                <p class="text-[var(--color-text-body)] leading-relaxed">{featured.data.excerpt}</p>
+              )}
+              <span class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-[var(--color-accent)]">
+                Weiterlesen
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </div>
+          </a>
+        )}
+
+        {rest.map((news) => (
+          <a
+            href={`/news/${news.id}`}
+            class="group block bg-[var(--color-bg-card)] rounded-md border border-[var(--color-border)] p-6 no-underline hover:shadow-[var(--shadow-card-lg)] transition-shadow"
+          >
+            <p class="text-xs uppercase tracking-wider font-semibold text-[var(--color-accent)] mb-2">
+              {news.data.category}
+            </p>
+            <h3 class="font-serif font-bold text-[var(--color-text-primary)] text-lg mb-2 leading-tight group-hover:text-[var(--color-accent)] transition-colors">
+              {news.data.title}
+            </h3>
+            <p class="text-xs text-[var(--color-text-muted)] mb-3">
+              {formatDate(news.data.publishedAt)}
+            </p>
+            {news.data.excerpt && (
+              <p class="text-sm text-[var(--color-text-body)] leading-relaxed line-clamp-3">
+                {news.data.excerpt}
+              </p>
+            )}
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

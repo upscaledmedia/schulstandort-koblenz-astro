@@ -1,0 +1,78 @@
+---
+import data from '../data/verantwortliche.json';
+const v = data.verantwortliche;
+---
+
+<section id="verantwortliche" class="bg-[var(--color-bg)] py-16 md:py-24">
+  <div class="container-page">
+    <div class="max-w-3xl mb-10 md:mb-12">
+      <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
+        Wer entscheidet
+      </p>
+      <h2 class="mb-4">{v.ueberschrift}</h2>
+      <p class="text-lg text-[var(--color-text-muted)] mb-4">{v.untertitel}</p>
+      <p class="text-sm text-[var(--color-text-muted)] italic">{v.hinweis}</p>
+    </div>
+
+    <div class="mb-12">
+      <h3 class="text-xl font-serif font-bold mb-5 text-[var(--color-text-primary)]">
+        Verfahrensverantwortliche
+      </h3>
+      <div class="grid md:grid-cols-3 gap-5">
+        {v.verfahrensverantwortliche.map((person) => (
+          <div class="bg-[var(--color-bg-card)] border border-[var(--color-border)] p-6 rounded-md">
+            <p class="text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-1">
+              {person.rolle}
+            </p>
+            <p class="font-serif font-bold text-[var(--color-text-primary)] text-lg mb-1">
+              {person.name}
+            </p>
+            {person.partei && (
+              <p class="text-sm text-[var(--color-text-muted)] mb-3">{person.partei}</p>
+            )}
+            <p class="text-[14px] text-[var(--color-text-body)] leading-relaxed mb-3">
+              {person.position_oeffentlich}
+            </p>
+            <p class="text-xs text-[var(--color-text-muted)] italic">
+              Quelle: {person.quelle}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <div class="flex items-end justify-between flex-wrap gap-3 mb-5">
+        <h3 class="text-xl font-serif font-bold text-[var(--color-text-primary)]">
+          Fraktionen im Stadtrat
+        </h3>
+        <p class="text-sm text-[var(--color-text-muted)]">
+          {v.fraktionen_im_stadtrat.reduce((sum, f) => sum + f.sitze, 0)} Sitze · Mehrheit: {v.mehrheit_erforderlich}
+        </p>
+      </div>
+      <div class="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-md overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-[var(--color-bg)]">
+            <tr class="border-b border-[var(--color-border)]">
+              <th class="text-left p-4 font-semibold text-[var(--color-text-primary)] uppercase text-xs tracking-wider">Fraktion</th>
+              <th class="text-right p-4 font-semibold text-[var(--color-text-primary)] uppercase text-xs tracking-wider w-24">Sitze</th>
+              <th class="text-left p-4 font-semibold text-[var(--color-text-primary)] uppercase text-xs tracking-wider hidden md:table-cell">Position</th>
+            </tr>
+          </thead>
+          <tbody>
+            {v.fraktionen_im_stadtrat.map((f) => (
+              <tr class="border-b border-[var(--color-border)] last:border-0">
+                <td class="p-4 font-medium text-[var(--color-text-primary)]">{f.name}</td>
+                <td class="p-4 text-right font-mono">{f.sitze}</td>
+                <td class="p-4 text-[var(--color-text-body)] hidden md:table-cell">{f.position}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-[var(--color-text-muted)] mt-4 italic">
+        {v.rechtshinweis}
+      </p>
+    </div>
+  </div>
+</section>

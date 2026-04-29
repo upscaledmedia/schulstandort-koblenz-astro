@@ -1,0 +1,37 @@
+---
+import data from '../data/worum-es-geht.json';
+const w = data.worum_es_geht;
+
+const iconMap: Record<string, string> = {
+  location: `<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>`,
+  clock: `<path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>`,
+  shield: `<path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/>`,
+};
+---
+
+<section class="bg-[var(--color-bg)] py-16 md:py-24">
+  <div class="container-page">
+    <div class="max-w-3xl mb-12 md:mb-16">
+      <h2 class="mb-4">{w.ueberschrift}</h2>
+      <p class="text-lg text-[var(--color-text-muted)]">{w.untertitel}</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+      {w.kacheln.map((k) => (
+        <article class="bg-[var(--color-bg-card)] p-7 md:p-8 rounded-md border border-[var(--color-border)] flex flex-col h-full">
+          <div class="w-12 h-12 rounded-sm bg-[var(--color-accent-soft)] grid place-items-center mb-5 text-[var(--color-accent)]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" set:html={iconMap[k.icon] ?? ''} />
+          </div>
+          <p class="text-sm uppercase tracking-wider text-[var(--color-text-muted)] font-medium mb-2">
+            {k.titel}
+          </p>
+          <h3 class="font-serif font-bold text-[var(--color-text-primary)] mb-3 text-xl">
+            {k.headline}
+          </h3>
+          <p class="text-[var(--color-text-body)] leading-relaxed text-[15px]">
+            {k.text}
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

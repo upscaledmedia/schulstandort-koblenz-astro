@@ -1,0 +1,50 @@
+{
+  "site": {
+    "name": "Bündnis Goldgrube",
+    "domain_primary": "schulstandort-koblenz.de",
+    "domain_campaign": "goldgrube-stoppen.de",
+    "tagline": "Schule für Koblenz neu denken — bevor wir 50 Jahre damit leben.",
+    "description": "Bürgerinitiative gegen die geplante Verlagerung des Max-von-Laue-Gymnasiums in das Quartier Goldgrube in Koblenz. Sachlich. Faktenbasiert. Mit dem Ziel einer fundierten Stadtratsentscheidung am 28. Mai 2026."
+  },
+  "vorhaben": {
+    "vorlage": "BV/0197/2026",
+    "aktenzeichen": "65/Vo",
+    "datum_vorlage": "10.04.2026",
+    "verfasser": "Zentrales Gebäudemanagement Koblenz",
+    "stadtratsbeschluss_geplant": "28.05.2026",
+    "haupt_finanzausschuss": "18.05.2026",
+    "vorberatung_erfolgt": "21.04.2026",
+    "kosten_grobschaetzung": "25.750.000 €",
+    "kosten_aufschluesselung": {
+      "modulbau_interimsschule": "21.500.000 €",
+      "container_pestalozzi": "3.500.000 €",
+      "rueckbau_bestand": "750.000 €"
+    },
+    "nutzungsdauer": "bis zu 50 Jahre",
+    "bauweise": "Modulbauweise, Kaufvariante",
+    "betroffene_kinder_gleichzeitig": "ca. 1.180 (200 Pestalozzi + 800 Max-von-Laue + 180 Kita)",
+    "bebauungsplan": "Nr. 336 'Entwicklung Quartier Goldgrube'",
+    "geltungsbereich_qm": "24.620"
+  },
+  "termine": [
+    {
+      "datum": "21.04.2026",
+      "ereignis": "Vorberatung im Schulträgerausschuss und Ausschuss für Stadtentwicklung und Mobilität",
+      "status": "erfolgt"
+    },
+    {
+      "datum": "18.05.2026",
+      "ereignis": "Vorberatung im Haupt- und Finanzausschuss",
+      "status": "geplant"
+    },
+    {
+      "datum": "28.05.2026",
+      "ereignis": "Beschlussfassung im Koblenzer Stadtrat",
+      "status": "geplant"
+    }
+  ],
+  "kontakt": {
+    "email": "kontakt@schulstandort-koblenz.de",
+    "petition": "https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube"
+  }
+}

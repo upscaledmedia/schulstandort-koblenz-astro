@@ -1,0 +1,99 @@
+---
+import meta from '../data/meta.json';
+---
+
+<section id="kontakt" class="bg-[var(--color-bg-card)] py-16 md:py-24 border-t border-[var(--color-border)]">
+  <div class="container-page">
+    <div class="grid lg:grid-cols-2 gap-10 md:gap-16 max-w-5xl">
+      <div>
+        <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
+          Schreiben Sie uns
+        </p>
+        <h2 class="mb-5">Kontakt</h2>
+        <p class="text-[var(--color-text-body)] leading-relaxed mb-6">
+          Sie haben Hinweise, möchten die Initiative unterstützen, sind selbst betroffen oder haben eine Presseanfrage? Schreiben Sie uns. Wir antworten in der Regel innerhalb von 48 Stunden.
+        </p>
+        <div class="space-y-4 text-[15px]">
+          <div>
+            <p class="text-xs uppercase tracking-wider text-[var(--color-text-muted)] font-semibold mb-1">
+              E-Mail
+            </p>
+            <a href={`mailto:${meta.kontakt.email}`} class="font-medium text-[var(--color-text-primary)]">
+              {meta.kontakt.email}
+            </a>
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-wider text-[var(--color-text-muted)] font-semibold mb-1">
+              Petition
+            </p>
+            <a href={meta.kontakt.petition} target="_blank" rel="noopener" class="font-medium break-all">
+              openpetition.de — Bündnis Goldgrube
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <form
+        method="POST"
+        action="https://formspree.io/f/REPLACE_ME"
+        class="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-md p-6 md:p-8"
+        novalidate
+      >
+        <div class="grid gap-5">
+          <div>
+            <label for="name" class="block text-sm font-semibold text-[var(--color-text-primary)] mb-2">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+              class="w-full px-4 py-3 bg-white border border-[var(--color-border)] rounded-sm text-base focus:outline-none focus:border-[var(--color-accent)]"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold text-[var(--color-text-primary)] mb-2">
+              E-Mail
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              class="w-full px-4 py-3 bg-white border border-[var(--color-border)] rounded-sm text-base focus:outline-none focus:border-[var(--color-accent)]"
+            />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-semibold text-[var(--color-text-primary)] mb-2">
+              Nachricht
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full px-4 py-3 bg-white border border-[var(--color-border)] rounded-sm text-base focus:outline-none focus:border-[var(--color-accent)] resize-y"
+            ></textarea>
+          </div>
+          <input
+            type="text"
+            name="_gotcha"
+            tabindex="-1"
+            autocomplete="off"
+            style="position:absolute;left:-9999px;opacity:0"
+            aria-hidden="true"
+          />
+          <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+            Mit dem Absenden willigen Sie ein, dass wir Ihre Angaben zur Bearbeitung Ihrer Anfrage verwenden. Details in der <a href="/datenschutz">Datenschutzerklärung</a>.
+          </p>
+          <button type="submit" class="btn btn-primary justify-self-start">
+            Nachricht senden
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
