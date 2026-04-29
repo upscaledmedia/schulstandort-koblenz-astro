@@ -21,6 +21,8 @@ const termine = defineCollection({
     title: z.string(),
     dateStart: z.coerce.date(),
     dateEnd: z.coerce.date().optional(),
+    timeStart: z.string().regex(/^\d{2}:\d{2}$/).optional(),
+    durationHours: z.number().default(2),
     location: z.string().optional(),
     eventType: z.enum([
       'Stadtratssitzung',
@@ -33,6 +35,7 @@ const termine = defineCollection({
     importance: z.enum(['low', 'medium', 'high']).default('medium'),
     linkLabel: z.string().optional(),
     linkUrl: z.string().url().optional(),
+    icsFile: z.string().optional(),
   }),
 });
 

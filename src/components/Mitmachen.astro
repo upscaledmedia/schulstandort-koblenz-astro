@@ -1,30 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
 import data from '../data/mitmachen.json';
 
 const m = data.mitmachen;
-
-// Termine aus Content Collection laden (siehe Termine.astro für die ursprüngliche Logik)
-const all = await getCollection('termine');
-const now = new Date();
-const future = all
-  .filter((t) => t.data.dateStart >= now)
-  .sort((a, b) => a.data.dateStart.valueOf() - b.data.dateStart.valueOf());
-const past = all
-  .filter((t) => t.data.dateStart < now)
-  .sort((a, b) => b.data.dateStart.valueOf() - a.data.dateStart.valueOf())
-  .slice(0, 3);
-const display = [...future, ...past];
-
-const formatDate = (d: Date) =>
-  d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
-const formatWeekday = (d: Date) =>
-  d.toLocaleDateString('de-DE', { weekday: 'long' });
 ---
 
 <section id="mitmachen" class="bg-[var(--color-text-primary)] text-white py-16 md:py-24">
   <div class="container-page">
-    <div class="max-w-3xl mb-10 md:mb-12">
+    <div class="max-w-3xl mb-10 md:mb-14">
       <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
         Aktiv werden
       </p>
@@ -32,113 +14,43 @@ const formatWeekday = (d: Date) =>
       <p class="text-lg text-white/80">{m.untertitel}</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+    <ol class="max-w-4xl divide-y divide-white/10 border-y border-white/15">
       {m.optionen.map((opt, i) => (
-        <a
-          href={opt.cta_href}
-          target={opt.cta_href.startsWith('http') ? '_blank' : undefined}
-          rel={opt.cta_href.startsWith('http') ? 'noopener' : undefined}
-          class={`group relative p-7 rounded-md no-underline transition-colors flex flex-col h-full ${
-            i === 0
-              ? 'bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] text-white'
-              : 'bg-white/5 border border-white/10 hover:bg-white/10 text-white'
-          }`}
-        >
-          <span class={`flex-none w-10 h-10 rounded-full grid place-items-center mb-5 font-serif font-bold ${
-            i === 0 ? 'bg-white/20 text-white' : 'bg-white/10 text-white'
-          }`}>
-            {i + 1}
-          </span>
-          <h3 class="text-white font-serif font-semibold text-lg mb-2 leading-tight">
-            {opt.titel}
-          </h3>
-          <p class={`text-[15px] leading-relaxed mb-5 flex-1 ${i === 0 ? 'text-white/90' : 'text-white/75'}`}>
-            {opt.text}
-          </p>
-          <span class="inline-flex items-center gap-2 text-sm font-semibold text-white">
-            {opt.cta_label}
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="transition-transform group-hover:translate-x-1">
-              <path d="M5 12h14M13 6l6 6-6 6"/>
-            </svg>
-          </span>
-        </a>
-      ))}
-    </div>
-
-    <!-- Termin-Block innerhalb der Mitmachen-Sektion -->
-    <div id="termine" class="mt-16 md:mt-24 pt-12 md:pt-16 border-t border-white/15">
-      <div class="max-w-3xl mb-10 md:mb-12">
-        <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
-          Termine
-        </p>
-        <h2 class="text-white mb-4">{m.termine_block.ueberschrift}</h2>
-        <p class="text-lg text-white/80">{m.termine_block.text}</p>
-      </div>
-
-      <ol class="space-y-4 max-w-4xl">
-        {display.map((t) => {
-          const isPast = t.data.status === 'erfolgt';
-          const isHigh = t.data.importance === 'high';
-          return (
-            <li
-              class={`flex flex-col md:flex-row md:items-center gap-4 md:gap-6 p-5 md:p-6 rounded-md border ${
-                isHigh
-                  ? 'border-[var(--color-accent)] bg-[var(--color-accent)]/15'
-                  : 'border-white/15 bg-white/5'
-              } ${isPast ? 'opacity-65' : ''}`}
+        <li class="grid grid-cols-[auto_1fr] md:grid-cols-[140px_1fr_auto] gap-6 md:gap-10 items-start py-8 md:py-10">
+          <div class="flex flex-col items-start">
+            <span class="font-serif font-bold text-5xl md:text-7xl leading-none" style="color: #c1272d;">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <span class="hidden md:inline-block mt-2 text-[11px] uppercase tracking-wider font-semibold text-white/50">
+              Schritt {i + 1}
+            </span>
+          </div>
+          <div class="min-w-0 col-span-2 md:col-span-1">
+            <h3 class="text-white font-serif font-bold text-xl md:text-2xl mb-2 leading-tight">
+              {opt.titel}
+            </h3>
+            <p class="text-[15px] md:text-base text-white/80 leading-relaxed max-w-2xl">
+              {opt.text}
+            </p>
+          </div>
+          <div class="col-span-2 md:col-span-1 md:pt-2">
+            <a
+              href={opt.cta_href}
+              target={opt.cta_href.startsWith('http') ? '_blank' : undefined}
+              rel={opt.cta_href.startsWith('http') ? 'noopener' : undefined}
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-md font-semibold text-sm md:text-[15px] no-underline transition-colors whitespace-nowrap"
+              style="background-color: #c1272d; color: #ffffff; text-decoration: none;"
+              onmouseover="this.style.backgroundColor='#9a1f24'"
+              onmouseout="this.style.backgroundColor='#c1272d'"
             >
-              <div class={`flex-none flex md:flex-col items-center md:items-start gap-2 md:gap-0 md:w-32 ${
-                isHigh ? 'text-white' : 'text-white'
-              }`}>
-                <span class="font-serif font-bold text-2xl md:text-3xl leading-none">
-                  {formatDate(t.data.dateStart)}
-                </span>
-                <span class="text-sm text-white/70 capitalize">
-                  {formatWeekday(t.data.dateStart)}
-                </span>
-              </div>
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center gap-2 flex-wrap mb-1">
-                  <span class="text-xs uppercase tracking-wider font-semibold text-white/70">
-                    {t.data.eventType}
-                  </span>
-                  {isPast && (
-                    <span class="text-xs uppercase tracking-wider font-semibold px-2 py-0.5 rounded-sm bg-white/15 text-white">
-                      Erfolgt
-                    </span>
-                  )}
-                  {!isPast && isHigh && (
-                    <span class="text-xs uppercase tracking-wider font-semibold px-2 py-0.5 rounded-sm bg-[var(--color-accent)] text-white">
-                      Wichtig
-                    </span>
-                  )}
-                </div>
-                <h3 class="font-serif font-bold text-white text-lg leading-tight mb-1">
-                  {t.data.title}
-                </h3>
-                {t.data.location && (
-                  <p class="text-sm text-white/70 mb-2">{t.data.location}</p>
-                )}
-                {t.body && t.body.trim().length > 0 && (
-                  <p class="text-[15px] text-white/85 leading-snug">
-                    {t.body.trim()}
-                  </p>
-                )}
-                {t.data.linkUrl && (
-                  <a
-                    href={t.data.linkUrl}
-                    target="_blank"
-                    rel="noopener"
-                    class="inline-block mt-2 text-sm font-semibold text-[var(--color-accent)] hover:text-white"
-                  >
-                    {t.data.linkLabel ?? 'Mehr Informationen'} →
-                  </a>
-                )}
-              </div>
-            </li>
-          );
-        })}
-      </ol>
-    </div>
+              {opt.cta_label}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </li>
+      ))}
+    </ol>
   </div>
 </section>

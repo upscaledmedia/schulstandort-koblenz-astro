@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Buendnis Goldgrube//Schulstandort Koblenz//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:vorberatung-schultraegerausschuss-2026-04-21@schulstandort-koblenz.de
+DTSTAMP:20260429T084500Z
+DTSTART;TZID=Europe/Berlin:20260421T150000
+DTEND;TZID=Europe/Berlin:20260421T180000
+SUMMARY:Vorberatung Schulträgerausschuss + Stadtentwicklung (Goldgrube)
+LOCATION:Sitzungssaal 101\, Rathausgebäude I\, Willi-Hörter-Platz 1\, 56068 Koblenz
+DESCRIPTION:Erste öffentliche Beratung der Vorlage BV/0197/2026 zur Interimsschule auf der Schulerweiterungsfläche Goldgrube.\n\nMehr Informationen: https://schulstandort-koblenz.de\nPetition: https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder
+URL:https://schulstandort-koblenz.de
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Buendnis Goldgrube//Schulstandort Koblenz//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:beschlussfassung-stadtrat-2026-05-28@schulstandort-koblenz.de
+DTSTAMP:20260429T084500Z
+DTSTART;TZID=Europe/Berlin:20260528T150000
+DTEND;TZID=Europe/Berlin:20260528T220000
+SUMMARY:Stadtrat Koblenz – Beschlussfassung Goldgrube (BV/0197/2026)
+LOCATION:Historischer Rathaussaal 101\, Rathausgebäude I\, Willi-Hörter-Platz 1\, 56068 Koblenz
+DESCRIPTION:Der Koblenzer Stadtrat entscheidet über den Grundsatzbeschluss zur Errichtung der Interimsschule auf der Schulerweiterungsfläche Goldgrube.\n\nÖffentliche Sitzung – sichtbare Präsenz im Sitzungssaal entfaltet politische Wirkung.\n\nMehr Informationen und Petition: https://schulstandort-koblenz.de\nPetition: https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder
+URL:https://schulstandort-koblenz.de
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

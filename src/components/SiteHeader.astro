@@ -3,20 +3,25 @@ const navItems = [
   { label: 'Kernbefunde', href: '#kernbefunde' },
   { label: '15 Argumente', href: '#argumente' },
   { label: 'Forderungen', href: '#forderungen' },
+  { label: 'Meinungen', href: '#stimmen' },
   { label: 'Mitmachen', href: '#mitmachen' },
   { label: 'Termine', href: '#termine' },
   { label: 'Materialien', href: '#materialien' },
-  { label: 'Kontakt', href: '#kontakt' },
 ];
+
+const petitionHref = 'https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder';
 ---
 
 <header class="bg-white border-b border-[var(--color-border)] sticky top-0 z-40 backdrop-blur-md bg-white/95">
   <div class="container-page flex items-center justify-between gap-4 py-3 md:py-4">
     <a href="/" class="flex items-center gap-3 no-underline group min-w-0" aria-label="Zur Startseite">
       <span class="flex-none w-1.5 self-stretch bg-[var(--color-accent)] rounded-sm" aria-hidden="true"></span>
-      <span class="flex flex-col leading-snug min-w-0">
-        <span class="font-serif font-semibold text-[var(--color-text-primary)] text-[13px] md:text-[15px] leading-snug">
-          Koblenzer Bürgerinitiative für nachhaltige Schulplanung
+      <span class="flex flex-col leading-tight min-w-0">
+        <span class="font-serif font-bold text-[var(--color-text-primary)] text-[15px] md:text-[17px] leading-tight">
+          Koblenzer Bürgerinitiative
+        </span>
+        <span class="font-serif font-normal text-[var(--color-text-muted)] text-[12px] md:text-[13px] leading-tight mt-0.5">
+          für nachhaltige Schulplanung
         </span>
       </span>
     </a>
@@ -29,6 +34,17 @@ const navItems = [
           {item.label}
         </a>
       ))}
+      <a
+        href={petitionHref}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 bg-[#c1272d] hover:bg-[#9a1f24] text-white px-4 py-2 rounded-md font-semibold text-sm no-underline transition-colors"
+      >
+        Petition unterzeichnen
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </a>
     </nav>
     <button
       type="button"
@@ -56,6 +72,18 @@ const navItems = [
           {item.label}
         </a>
       ))}
+      <a
+        href={petitionHref}
+        target="_blank"
+        rel="noopener"
+        class="mt-3 inline-flex items-center justify-center gap-2 bg-[#c1272d] hover:bg-[#9a1f24] text-white px-4 py-3 rounded-md font-semibold text-base no-underline"
+        data-nav-link
+      >
+        Petition unterzeichnen
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </a>
     </nav>
   </div>
 </header>

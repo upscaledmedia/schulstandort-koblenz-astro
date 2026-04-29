@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Buendnis Goldgrube//Schulstandort Koblenz//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:vorberatung-haupt-finanzausschuss-2026-05-18@schulstandort-koblenz.de
+DTSTAMP:20260429T084500Z
+DTSTART;VALUE=DATE:20260518
+DTEND;VALUE=DATE:20260519
+SUMMARY:Vorberatung Haupt- und Finanzausschuss (Goldgrube)
+LOCATION:Sitzungssaal 101\, Rathausgebäude I\, Willi-Hörter-Platz 1\, 56068 Koblenz
+DESCRIPTION:Letzte Vorberatung vor dem Stadtrat. Hier werden die finanziellen Auswirkungen der Vorlage BV/0197/2026 formal geprüft. Uhrzeit zum Zeitpunkt der Veröffentlichung noch nicht offiziell bekannt – bitte vor dem Termin im Bürgerinformationssystem der Stadt Koblenz prüfen.\n\nMehr Informationen: https://schulstandort-koblenz.de\nPetition: https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder
+URL:https://buergerinfo.koblenz.de/
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

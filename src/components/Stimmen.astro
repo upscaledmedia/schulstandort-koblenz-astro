@@ -27,10 +27,10 @@ const sonstige = renderedStimmen.filter(
   <div class="container-page">
     <div class="max-w-3xl mb-10 md:mb-12">
       <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
-        Originalzitate
+        Meinungen
       </p>
-      <h2 class="mb-4">{meta.ueberschrift}</h2>
-      <p class="text-lg text-[var(--color-text-muted)]">{meta.untertitel}</p>
+      <h2 class="mb-4">Stimmen aus dem Stadtteil und der Verwaltung</h2>
+      <p class="text-lg text-[var(--color-text-muted)]">Was Anwohner, Eltern und Lehrer sagen — und was in den Verwaltungsdokumenten der Stadt selbst steht.</p>
     </div>
 
     {buergerstimmen.length > 0 && (
@@ -72,17 +72,30 @@ const sonstige = renderedStimmen.filter(
             </figure>
           ))}
         </div>
+
+        <div class="mt-6 md:mt-8 max-w-6xl">
+          <a
+            href="https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-2 text-[15px] font-semibold no-underline hover:underline underline-offset-2"
+            style="color: #c1272d;"
+          >
+            Alle Meinungen ansehen auf openPetition
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
       </div>
     )}
 
     {stadtZitate.length > 0 && (
       <div class={`${buergerstimmen.length > 0 ? 'mt-16 md:mt-20 pt-12 md:pt-16 border-t border-[var(--color-border)]' : ''}`}>
         <div class="max-w-3xl mb-8 md:mb-10">
-          <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
-            Was die Stadt selbst sagt
+          <p class="text-xs uppercase tracking-wider text-[var(--color-text-muted)] font-semibold">
+            Verwaltungsdokumente
           </p>
-          <h3 class="font-serif text-2xl md:text-3xl font-bold text-[var(--color-text-primary)] mb-3 leading-tight">Zitate aus den Verwaltungsdokumenten</h3>
-          <p class="text-base md:text-lg text-[var(--color-text-muted)]">Wir haben nichts erfunden — die Aussagen stammen aus den Beschlussvorlagen und Bebauungsplänen der Stadt selbst.</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-6xl">
@@ -141,7 +154,7 @@ const sonstige = renderedStimmen.filter(
       </div>
     )}
 
-    <div class="mt-16 md:mt-20 max-w-4xl bg-[var(--color-accent)] text-white p-8 md:p-10 rounded-md">
+    <div class="mt-16 md:mt-20 max-w-4xl p-8 md:p-10 rounded-md" style="background-color: #c1272d;">
       <h3 class="text-white font-serif font-semibold text-2xl md:text-3xl leading-tight mb-3">
         {meta.cta_ueberschrift}
       </h3>
@@ -153,7 +166,8 @@ const sonstige = renderedStimmen.filter(
           href={meta.cta_primary_href}
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center justify-center gap-2 bg-white text-[var(--color-accent)] hover:bg-white/95 px-6 py-3 rounded-md font-semibold text-[15px] no-underline transition-colors"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold text-[15px] no-underline transition-colors"
+          style="background-color: #ffffff; color: #c1272d; text-decoration: none;"
         >
           {meta.cta_primary_label}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
@@ -164,7 +178,8 @@ const sonstige = renderedStimmen.filter(
           href={meta.cta_secondary_href}
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center justify-center gap-2 bg-transparent border border-white/40 text-white hover:bg-white/10 px-6 py-3 rounded-md font-semibold text-[15px] no-underline transition-colors"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold text-[15px] no-underline transition-colors"
+          style="background-color: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.4); text-decoration: none;"
         >
           {meta.cta_secondary_label}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">

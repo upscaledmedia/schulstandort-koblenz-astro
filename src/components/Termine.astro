@@ -21,62 +21,73 @@ const formatWeekday = (d: Date) =>
 const meta = termineMeta.termine;
 ---
 
-<section id="termine" class="bg-[var(--color-bg-card)] py-16 md:py-24 border-y border-[var(--color-border)]">
+<section id="termine" class="bg-[#0d1422] text-white py-16 md:py-24">
   <div class="container-page">
-    <div class="max-w-3xl mb-10 md:mb-12">
-      <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
-        Im Verfahren
+    <div class="max-w-3xl mb-10 md:mb-14">
+      <p class="text-sm uppercase tracking-wider font-semibold mb-3" style="color: #c1272d;">
+        Termine
       </p>
-      <h2 class="mb-4">{meta.ueberschrift}</h2>
-      <p class="text-lg text-[var(--color-text-muted)]">{meta.untertitel}</p>
+      <h2 class="text-white mb-4">{meta.ueberschrift}</h2>
+      <p class="text-lg text-white/80">{meta.untertitel}</p>
     </div>
 
-    <ol class="space-y-4 max-w-4xl">
+    <ol class="space-y-5 max-w-5xl">
       {display.map((t) => {
         const isPast = t.data.status === 'erfolgt';
         const isHigh = t.data.importance === 'high';
+        const dateStr = formatDate(t.data.dateStart);
+        const weekday = formatWeekday(t.data.dateStart);
+        const time = t.data.timeStart;
         return (
           <li
-            class={`flex flex-col md:flex-row md:items-center gap-4 md:gap-6 p-5 md:p-6 rounded-md border ${
+            class={`relative grid md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-start p-6 md:p-8 rounded-md border ${
               isHigh
-                ? 'border-[var(--color-accent)] bg-[var(--color-accent-soft)]'
-                : 'border-[var(--color-border)] bg-[var(--color-bg)]'
-            } ${isPast ? 'opacity-65' : ''}`}
+                ? 'border-[#c1272d]'
+                : 'border-white/15'
+            } ${isPast ? 'opacity-60' : ''}`}
+            style={isHigh ? 'background-color: rgba(193,39,45,0.08);' : 'background-color: rgba(255,255,255,0.04);'}
           >
-            <div class={`flex-none flex md:flex-col items-center md:items-start gap-2 md:gap-0 md:w-32 ${
-              isHigh ? 'text-[var(--color-accent-dark)]' : 'text-[var(--color-text-primary)]'
-            }`}>
-              <span class="font-serif font-bold text-2xl md:text-3xl leading-none">
-                {formatDate(t.data.dateStart)}
-              </span>
-              <span class="text-sm text-[var(--color-text-muted)] capitalize">
-                {formatWeekday(t.data.dateStart)}
-              </span>
-            </div>
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-2 flex-wrap mb-1">
-                <span class="text-xs uppercase tracking-wider font-semibold text-[var(--color-text-muted)]">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap mb-2">
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-white/60">
                   {t.data.eventType}
                 </span>
                 {isPast && (
-                  <span class="text-xs uppercase tracking-wider font-semibold px-2 py-0.5 rounded-sm bg-[var(--color-text-primary)]/10 text-[var(--color-text-primary)]">
+                  <span class="text-[11px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-sm bg-white/15 text-white">
                     Erfolgt
                   </span>
                 )}
                 {!isPast && isHigh && (
-                  <span class="text-xs uppercase tracking-wider font-semibold px-2 py-0.5 rounded-sm bg-[var(--color-accent)] text-white">
+                  <span class="text-[11px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-sm text-white" style="background-color: #c1272d;">
                     Wichtig
                   </span>
                 )}
               </div>
-              <h3 class="font-serif font-bold text-[var(--color-text-primary)] text-lg leading-tight mb-1">
+              <h3 class="font-serif font-bold text-white text-2xl md:text-3xl leading-tight mb-3">
                 {t.data.title}
               </h3>
-              {t.data.location && (
-                <p class="text-sm text-[var(--color-text-muted)] mb-2">{t.data.location}</p>
-              )}
+              <div class="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-white/75 mb-3">
+                <span class="inline-flex items-center gap-1.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
+                  <span class="capitalize">{weekday}</span>, {dateStr}{time ? ` · ${time} Uhr` : ' · Uhrzeit folgt'}
+                </span>
+                {t.data.location && (
+                  <span class="inline-flex items-start gap-1.5">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" class="mt-0.5 flex-none">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <span>{t.data.location}</span>
+                  </span>
+                )}
+              </div>
               {t.body && t.body.trim().length > 0 && (
-                <p class="text-[15px] text-[var(--color-text-body)] leading-snug">
+                <p class="text-[15px] text-white/85 leading-relaxed max-w-2xl">
                   {t.body.trim()}
                 </p>
               )}
@@ -85,12 +96,34 @@ const meta = termineMeta.termine;
                   href={t.data.linkUrl}
                   target="_blank"
                   rel="noopener"
-                  class="inline-block mt-2 text-sm font-semibold"
+                  class="inline-block mt-3 text-sm font-semibold no-underline hover:underline underline-offset-2"
+                  style="color: #c1272d;"
                 >
                   {t.data.linkLabel ?? 'Mehr Informationen'} →
                 </a>
               )}
             </div>
+            {!isPast && t.data.icsFile && (
+              <div class="md:pt-1">
+                <a
+                  href={t.data.icsFile}
+                  download
+                  class="inline-flex items-center gap-2 px-5 py-3 rounded-md font-semibold text-sm md:text-[15px] no-underline transition-colors whitespace-nowrap"
+                  style="background-color: #ffffff; color: #0d1422; text-decoration: none;"
+                  onmouseover="this.style.backgroundColor='#f1efe9'"
+                  onmouseout="this.style.backgroundColor='#ffffff'"
+                  aria-label={`Termin ${t.data.title} als ICS-Datei herunterladen`}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
+                  In Kalender eintragen
+                </a>
+              </div>
+            )}
           </li>
         );
       })}
