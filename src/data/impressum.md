@@ -53,6 +53,6 @@ Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unt
 
 ## Bildnachweis
 
-Foto Peter-Altmeier-Ufer Koblenz: Alexej Zepik / Rhein-Zeitung-Archiv. Quelle: [Rhein-Zeitung — Das Koblenzer Peter-Altmeier-Ufer spaltet die Meinungen](https://www.rhein-zeitung.de/lokales/koblenz-region/das-koblenzer-peter-altmeier-ufer-spaltet-die-meinungen_arid-4076083.html).
+Foto Peter-Altmeier-Ufer Koblenz: Alexej Zepik / Rhein-Zeitung-Archiv. Quellen: [Rhein-Zeitung — Das Koblenzer Peter-Altmeier-Ufer spaltet die Meinungen](https://www.rhein-zeitung.de/lokales/koblenz-region/das-koblenzer-peter-altmeier-ufer-spaltet-die-meinungen_arid-4076083.html) und [Rhein-Zeitung — Was die Umbauarbeiten am Koblenzer Moselufer kosten](https://www.rhein-zeitung.de/lokales/koblenz-region/was-die-umbauarbeiten-am-koblenzer-moselufer-kosten_arid-4121503.html).
 
 Eigene Aufnahmen und Grafiken: Koblenzer Bürgerinitiative für nachhaltige Schulplanung.
