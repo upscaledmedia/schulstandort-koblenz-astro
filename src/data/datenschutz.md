@@ -60,7 +60,13 @@ Die Abmeldung vom Newsletter ist jederzeit über einen Link in jeder E-Mail oder
 
 Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
 
-## 5. Ihre Rechte
+## 5. Eingebundene Dienste — openPetition
+
+Auf dieser Webseite ist ein Widget der openPetition gGmbH (Gesellschaft mit beschränkter Haftung in Berlin) eingebunden, mit dem Sie die Petition direkt unterschreiben können. Beim Aufruf der Webseite wird automatisch eine Verbindung zu den Servern von openPetition.de hergestellt; dabei können technische Daten (z. B. IP-Adresse, Browser-Informationen) übertragen werden. openPetition setzt zudem die Cookies `op_session` und `opid`.
+
+Diese Datenverarbeitung erfolgt im überwiegenden Interesse, Bürgerinnen und Bürgern eine niederschwellige Möglichkeit zur Unterschrift bereitzustellen (Art. 6 Abs. 1 lit. f DSGVO). Anbieter und Verantwortlicher: openPetition gGmbH, Karl-Liebknecht-Straße 34, 10178 Berlin. Datenschutzerklärung: https://www.openpetition.de/data_protection
+
+## 6. Ihre Rechte
 
 Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.
 

@@ -20,11 +20,67 @@ const {
   standaloneTitle = false,
 } = Astro.props;
 
+// Site-Suffix nur anhängen, wenn er nicht schon im Title vorkommt
+const siteName = meta.site.name;
+const titleContainsSiteName = title
+  ? title.toLowerCase().includes(siteName.toLowerCase()) ||
+    title.toLowerCase().includes('bürgerinitiative')
+  : false;
+
 const fullTitle = title
-  ? (standaloneTitle ? title : `${title} | ${meta.site.name}`)
+  ? (standaloneTitle || titleContainsSiteName ? title : `${title} | ${siteName}`)
   : 'Interimsschule Goldgrube Koblenz — Stadtratsentscheidung 28. Mai';
 
-const canonicalUrl = new URL(pathname, Astro.site ?? 'https://schulstandort-koblenz.de').toString();
+// Meta-Description auf max. 158 Zeichen begrenzen (Wortgrenze, mit "…" abschließen)
+function clampDescription(input: string, max = 158): string {
+  if (!input) return input;
+  const trimmed = input.trim();
+  if (trimmed.length <= max) return trimmed;
+  const slice = trimmed.slice(0, max - 1);
+  const lastSpace = slice.lastIndexOf(' ');
+  const cut = lastSpace > 80 ? slice.slice(0, lastSpace) : slice;
+  return cut.replace(/[.,;:–—\-\s]+$/u, '') + '…';
+}
+
+const metaDescription = clampDescription(description);
+
+// Trailing-Slash erzwingen für Canonicals (Astro build.format = 'directory' rendert mit Slash)
+function ensureTrailingSlash(p: string): string {
+  if (!p) return '/';
+  // Datei-Pfade (z. B. /sitemap.xml) nicht anfassen
+  if (/\.[a-z0-9]+$/i.test(p)) return p;
+  return p.endsWith('/') ? p : `${p}/`;
+}
+
+const canonicalPath = ensureTrailingSlash(pathname);
+const siteOrigin = Astro.site ?? new URL('https://schulstandort-koblenz.de');
+const canonicalUrl = new URL(canonicalPath, siteOrigin).toString();
+const logoUrl = new URL('/favicon.svg', siteOrigin).toString();
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'NGO',
+  name: meta.site.name,
+  url: `https://${meta.site.domain_primary}/`,
+  description: meta.site.description,
+  logo: {
+    '@type': 'ImageObject',
+    url: logoUrl,
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Koblenz',
+    address: { '@type': 'PostalAddress', addressLocality: 'Koblenz', addressCountry: 'DE' },
+  },
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: meta.site.name,
+  url: `https://${meta.site.domain_primary}/`,
+  inLanguage: 'de-DE',
+};
 ---
 
 <!doctype html>
@@ -34,7 +90,7 @@ const canonicalUrl = new URL(pathname, Astro.site ?? 'https://schulstandort-kobl
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="generator" content={Astro.generator} />
     <title>{fullTitle}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     <link rel="canonical" href={canonicalUrl} />
     <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
 
@@ -43,31 +99,21 @@ const canonicalUrl = new URL(pathname, Astro.site ?? 'https://schulstandort-kobl
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+    <meta property="og:image" content={new URL(ogImage, siteOrigin).toString()} />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:site_name" content={meta.site.name} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={new URL(ogImage, siteOrigin).toString()} />
 
     <meta name="theme-color" content="#1a2332" />
 
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: meta.site.name,
-      url: `https://${meta.site.domain_primary}`,
-      description: meta.site.description,
-      areaServed: {
-        '@type': 'City',
-        name: 'Koblenz',
-        address: { '@type': 'PostalAddress', addressLocality: 'Koblenz', addressCountry: 'DE' },
-      },
-    })} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 
     <slot name="head" />
   </head>

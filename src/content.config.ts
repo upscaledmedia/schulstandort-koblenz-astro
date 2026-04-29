@@ -57,23 +57,4 @@ const stimmen = defineCollection({
   }),
 });
 
-const dokumente = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/dokumente' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    file: z.string(),
-    documentType: z.enum([
-      'Originaldokument Stadt',
-      'Pressemitteilung',
-      'Musterbrief',
-      'Auswertung',
-      'Sonstiges',
-    ]),
-    originalSource: z.string().optional(),
-    originalDate: z.coerce.date().optional(),
-    displayOrder: z.number().default(100),
-  }),
-});
-
-export const collections = { news, termine, stimmen, dokumente };
+export const collections = { news, termine, stimmen };

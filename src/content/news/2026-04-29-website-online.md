@@ -1,7 +1,7 @@
 ---
 title: Koblenzer Bürgerinitiative für nachhaltige Schulplanung startet Kampagnen-Website
 publishedAt: 2026-04-29
-excerpt: Die Koblenzer Bürgerinitiative für nachhaltige Schulplanung veröffentlicht eine umfassende Faktensammlung zur geplanten Interimsschule im Stadtteil Goldgrube — vier Wochen vor der Stadtratsentscheidung am 28. Mai 2026.
+excerpt: Bürgerinitiative veröffentlicht Faktensammlung zur Interimsschule Goldgrube — vier Wochen vor der Stadtratsentscheidung am 28. Mai 2026.
 category: Pressemitteilung
 featured: true
 author: Koblenzer Bürgerinitiative für nachhaltige Schulplanung

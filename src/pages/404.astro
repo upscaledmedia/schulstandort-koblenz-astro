@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<BaseLayout
+  title="404 — Seite nicht gefunden"
+  description="Die angeforderte Seite existiert nicht oder wurde verschoben."
+  pathname="/404"
+  noindex={true}
+>
+  <SiteHeader />
+  <main class="bg-[var(--color-bg)] py-16 md:py-24">
+    <div class="container-prose text-center">
+      <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-4">
+        Fehler 404
+      </p>
+      <h1 class="!text-balance mb-4">404 — Seite nicht gefunden</h1>
+      <p class="text-lg text-[var(--color-text-body)] mb-10 max-w-2xl mx-auto">
+        Die angeforderte Seite existiert nicht oder wurde verschoben.
+      </p>
+
+      <div class="mb-12">
+        <a href="/" class="btn btn-primary">Zurück zur Startseite</a>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-[var(--color-border)] max-w-2xl mx-auto text-left">
+        <p class="text-[15px] md:text-base text-[var(--color-text-muted)]">
+          Sie suchen Informationen zur Stadtratsentscheidung am 28. Mai 2026?
+          Aktuelle Argumente, Forderungen und Bürgerstimmen finden Sie auf unserer
+          <a href="/" class="text-[var(--color-accent)] font-semibold underline-offset-4 hover:underline">Startseite</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</BaseLayout>
