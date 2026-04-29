@@ -20,7 +20,7 @@ const {
 
 const fullTitle = title
   ? `${title} | ${meta.site.name}`
-  : `${meta.site.name} — ${meta.site.tagline}`;
+  : meta.site.name;
 
 const canonicalUrl = new URL(pathname, Astro.site ?? 'https://schulstandort-koblenz.de').toString();
 ---

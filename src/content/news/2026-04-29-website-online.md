@@ -1,13 +1,13 @@
 ---
-title: Bündnis Goldgrube startet Kampagnen-Website
+title: Koblenzer Bürgerinitiative für nachhaltige Schulplanung startet Kampagnen-Website
 publishedAt: 2026-04-29
-excerpt: Die Bürgerinitiative Bündnis Goldgrube veröffentlicht eine umfassende Faktensammlung zur geplanten Interimsschule im Stadtteil Goldgrube — vier Wochen vor der Stadtratsentscheidung am 28. Mai 2026.
+excerpt: Die Koblenzer Bürgerinitiative für nachhaltige Schulplanung veröffentlicht eine umfassende Faktensammlung zur geplanten Interimsschule im Stadtteil Goldgrube — vier Wochen vor der Stadtratsentscheidung am 28. Mai 2026.
 category: Pressemitteilung
 featured: true
-author: Bündnis Goldgrube
+author: Koblenzer Bürgerinitiative für nachhaltige Schulplanung
 ---
 
-Vier Wochen vor der entscheidenden Stadtratssitzung am 28. Mai 2026 geht die Bürgerinitiative Bündnis Goldgrube mit ihrer Kampagnen-Website online. Im Mittelpunkt steht eine detaillierte Auswertung der städtischen Beschlussvorlage BV/0197/2026.
+Vier Wochen vor der entscheidenden Stadtratssitzung am 28. Mai 2026 geht die Koblenzer Bürgerinitiative für nachhaltige Schulplanung mit ihrer Kampagnen-Website online. Im Mittelpunkt steht eine detaillierte Auswertung der städtischen Beschlussvorlage BV/0197/2026.
 
 ## Kernbefunde
 

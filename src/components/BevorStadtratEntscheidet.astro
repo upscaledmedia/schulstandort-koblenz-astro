@@ -11,6 +11,11 @@ const b = data.bevor_stadtrat_entscheidet;
       </p>
       <h2 class="text-white mb-5">{b.ueberschrift}</h2>
       <p class="text-lg text-white/80 mb-6">{b.untertitel}</p>
+      {b.lead && (
+        <p class="font-serif font-bold text-xl md:text-2xl text-white leading-snug mb-6">
+          {b.lead}
+        </p>
+      )}
       <p class="text-base text-white/85 leading-relaxed border-l-2 border-[var(--color-accent)] pl-5">
         {b.intro}
       </p>

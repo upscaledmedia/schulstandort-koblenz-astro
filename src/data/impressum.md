@@ -2,7 +2,7 @@
 
 ## Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)
 
-**Bürgerinitiative für transparente Schulplanung**
+**Koblenzer Bürgerinitiative für nachhaltige Schulplanung**
 Zusammenschluss von Bürgerinnen und Bürgern für eine fundierte Stadtratsentscheidung zur geplanten Interimsschule im Stadtteil Goldgrube in Koblenz
 
 Vertretungsberechtigte Person:
@@ -22,7 +22,7 @@ Pestalozzistr. 26
 
 ## Hinweis zur Initiative
 
-Die Bürgerinitiative für transparente Schulplanung ist eine nicht eingetragene Bürgerinitiative ohne gewerblichen Hintergrund. Sie tritt ausdrücklich für die dringend notwendige Sanierung des Max-von-Laue-Gymnasiums, für den Pestalozzi-Neubau und für die Kindertagesstätte ein — gegen den jetzigen Verfahrensweg und die unzureichende Datenbasis der Beschlussvorlage BV/0197/2026 der Stadt Koblenz.
+Die Koblenzer Bürgerinitiative für nachhaltige Schulplanung ist eine nicht eingetragene Bürgerinitiative ohne gewerblichen Hintergrund. Sie tritt ausdrücklich für die dringend notwendige Sanierung des Max-von-Laue-Gymnasiums, für den Pestalozzi-Neubau und für die Kindertagesstätte ein — gegen den jetzigen Verfahrensweg und die unzureichende Datenbasis der Beschlussvorlage BV/0197/2026 der Stadt Koblenz.
 
 Diese Website verfolgt ausschließlich politische und informatorische Zwecke im Zusammenhang mit der geplanten Errichtung einer Interimsschule auf der Schulerweiterungsfläche im Stadtteil Goldgrube in Koblenz.
 
@@ -50,4 +50,4 @@ Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unt
 
 ## Bildnachweis
 
-Pressefotos der genannten Mandatsträger: Stadt Koblenz / jeweilige Partei. Eigene Aufnahmen und Grafiken: Bürgerinitiative für transparente Schulplanung.
+Pressefotos der genannten Mandatsträger: Stadt Koblenz / jeweilige Partei. Eigene Aufnahmen und Grafiken: Koblenzer Bürgerinitiative für nachhaltige Schulplanung.

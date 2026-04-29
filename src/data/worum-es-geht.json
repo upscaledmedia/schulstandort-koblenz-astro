@@ -6,20 +6,35 @@
       {
         "icon": "location",
         "titel": "Der Standort",
-        "headline": "1.180 Kinder auf 24.620 m²",
-        "text": "Auf einem Areal, das ursprünglich für Wohnbebauung und eine Grundschule mit Kita vorgesehen war, sollen jetzt zusätzlich 800 Gymnasiasten untergebracht werden — auf einem Hof, den sich Kita-Kinder, Grundschüler und Jugendliche teilen müssen. Im Norden eine Bahnstrecke mit Lärmpegelbereich V."
+        "headline": "1.180 Kinder. 100 Lehrer. Ein Hof.",
+        "text": "Auf einem Areal, das ursprünglich für Wohnbebauung und eine Grundschule mit Kita gedacht war, sollen jetzt zusätzlich 800 Gymnasiasten und über 100 Lehrkräfte untergebracht werden. Sechsjährige neben Achtzehnjährigen — gemeinsame Pausen, geteilter Schulhof.",
+        "stimme": {
+          "quote": "Auf der verfügbaren Fläche sollen 180 Kita-Kinder, rund 800 Gymnasiastinnen und Gymnasiasten und 180 Grundschulkinder gleichzeitig untergebracht werden — qualitativ hochwertiges Lernen ist dort kaum vorstellbar.",
+          "autor": "Christine P., Eltern aus der Goldgrube",
+          "url": "https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder/76999438#petition-main"
+        }
       },
       {
         "icon": "clock",
         "titel": "Die Dauer",
-        "headline": "Bis zu 50 Jahre 'Interim'",
-        "text": "Die Beschlussvorlage selbst nennt eine 'Nutzungsdauer bis zu 50 Jahre' für den Modulbau. Nach Max-von-Laue sollen BBS Beatusstraße, Eichendorff, Clemens-Brentano und Hilda folgen. Das ist kein Provisorium. Das ist ein dauerhafter zweiter Schulstandort, getarnt als Einzelmaßnahme."
+        "headline": "Aus 'Interim' werden 50 Jahre",
+        "text": "Die Beschlussvorlage selbst nennt eine Nutzungsdauer „bis zu 50 Jahre\" für den Modulbau. Nach Max-von-Laue sollen weitere Schulen folgen: BBS Beatusstraße, Eichendorff, Clemens-Brentano, Hilda. Was als Provisorium kommuniziert wird, ist faktisch eine dauerhafte zweite Schule im kleinen Wohngebiet Goldgrube — mit allen Folgen für Verkehr, Lärm und Wohnumfeld.",
+        "stimme": {
+          "quote": "Interimslösung ist nicht ehrlich — für einzelne Schulen ist es ein vorübergehender Zeitraum, für unseren Stadtteil aber eine Dauerlösung für mindestens 20 Jahre. Kita, Grundschule, Gymnasium und später Berufsschule zu eng aufeinander, mit völlig unterschiedlichen Bedürfnissen.",
+          "autor": "Ursula R., Anwohnerin Bogenstraße",
+          "url": "https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder/77267601#petition-main"
+        }
       },
       {
-        "icon": "shield",
-        "titel": "Recht und Verantwortung",
-        "headline": "Eine Entscheidung ohne Grundlage",
-        "text": "25,75 Millionen Euro Grobkosten ohne Wirtschaftlichkeitsbetrachtung. Eine Standortbewertung ohne Gewichtung. Keine Verkehrsprüfung. Keine erneute UVP-Vorprüfung. Keine Bürgerbeteiligung zum geänderten Vorhaben. Wer am 28. Mai zustimmt, übernimmt die volle Verantwortung — auch für eine spätere gerichtliche Korrektur."
+        "icon": "route",
+        "titel": "Der Verkehr",
+        "headline": "Die Verkehrsplanung wurde nie bedacht",
+        "text": "1.180 Kinder werden täglich gebracht und abgeholt. Über 100 Lehrkräfte brauchen Parkplätze — geplant ist offenbar, dafür den neuen Park-and-Ride am Bahnhof Stadtmitte zu opfern. Doch wo parken dann Pendler, Anwohner, Besucher? Die Vorlage enthält kein Verkehrskonzept, keine Hol- und Bringzonen, keinen Schulwegplan. Die engen Straßen rund um die Goldgrube sind heute schon belastet. Die Stadt entscheidet über 50 Jahre Schulnutzung, ohne den Verkehr eine einzige Stunde gedacht zu haben.",
+        "stimme": {
+          "quote": "Unser Viertel ist nicht für ein so hohes Verkehrs- und Personenaufkommen ausgelegt. Mit Container-Gymnasium, neuer Kita und Grundschule auf engstem Raum steigt das Risiko für Verkehrsunfälle und gefährliche Schulwege deutlich.",
+          "autor": "Anonyme Eltern aus der Goldgrube",
+          "url": "https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder/77001461#petition-main"
+        }
       }
     ]
   }

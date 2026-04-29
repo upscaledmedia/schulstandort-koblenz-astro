@@ -1,6 +1,6 @@
 {
   "argumente": {
-    "ueberschrift": "Vierzehn Argumente, die der Stadtrat vor dem 28. Mai prüfen sollte",
+    "ueberschrift": "Fünfzehn Argumente, die der Stadtrat vor dem 28. Mai prüfen sollte",
     "untertitel": "Jedes Argument basiert auf öffentlich zugänglichen Dokumenten der Stadt Koblenz selbst — insbesondere der Beschlussvorlage BV/0197/2026 vom 10.04.2026, dem Bebauungsplan Nr. 336 sowie der Unterrichtungsvorlage UV/0310/2025 zur Sanierung Max-von-Laue.",
     "liste": [
       {
@@ -114,6 +114,14 @@
         "lang": "Die Beschlussvorlage begründet den Zeitdruck mit der Aussage: „Der Betrieb des unsanierten Schulgebäudes wird durch Bauaufsicht und Feuerwehr lediglich bis maximal 2028 geduldet.\" Die Unterrichtungsvorlage UV/0310/2025 vom 03.11.2025 zeigt jedoch: Die Aufsichts- und Dienstleistungsdirektion (ADD) und die Struktur- und Genehmigungsdirektion Nord (SGD Nord) haben bereits am 07.10.2025 die ursprünglich geplante Sanierungsmaßnahme abgelehnt und ein neues Gesamtkonzept gefordert. Der Zeitdruck, mit dem heute argumentiert wird, ist Folge eigener Planungsversäumnisse über mehrere Jahre. Eine sorgfältige Standortprüfung jetzt — auch mit dem Risiko einer geringfügigen Verzögerung — ist gegenüber einem 50-Jahre-Beschluss auf dünner Datenbasis das geringere Übel.",
         "rechtsgrundlage": "Allgemeiner Sorgfaltsgrundsatz kommunalen Handelns",
         "quelle": "BV/0197/2026 S. 1; UV/0310/2025 vom 03.11.2025"
+      },
+      {
+        "nummer": 15,
+        "titel": "Verkehr und Parken — Wegnahme öffentlicher Parkflächen ohne Ersatzkonzept",
+        "kurz": "Über 100 Lehrkräfte plus Eltern-Bring-/Holverkehr für 1.180 Kinder — ohne dass ein Verkehrs- oder Parkkonzept Bestandteil der Vorlage ist. Die geplante Nutzung des Park-and-Ride Bahnhof Stadtmitte als Lehrerparkplatz entzieht Pendlern, Anwohnern und Besuchern öffentliche Parkflächen ohne Ausgleich.",
+        "lang": "Die Beschlussvorlage BV/0197/2026 enthält weder eine Verkehrsanalyse noch ein Konzept für Hol- und Bringzonen, Schulbushaltestellen, Querungshilfen oder Lehrerparkplätze. Allein das Max-von-Laue-Gymnasium beschäftigt über 100 Lehrkräfte, hinzu kommt der tägliche Bring- und Holverkehr für 1.180 Kinder unterschiedlicher Altersstufen. Die engen Straßen rund um die Goldgrube sind bereits heute stark belastet. Die Verwaltung diskutiert offenbar, den neu errichteten Park-and-Ride-Parkplatz am Bahnhof Stadtmitte als Lehrerparkplatz zu nutzen — ein Eingriff in eine ÖPNV-Infrastruktur, die für Pendler aus dem Umland geschaffen wurde, ohne in der Vorlage benannten Ersatz für Anwohner und Besucher. Eine derartige Verkehrsplanung gehört in das Bauleitplanverfahren mit Behördenbeteiligung und ist Voraussetzung für eine sachgerechte Entscheidung über einen Schulstandort dieser Größenordnung.",
+        "rechtsgrundlage": "§ 1 Abs. 7 BauGB (Abwägungsgebot); § 22 Abs. 1a BImSchG; § 9 Abs. 1 Nr. 11 BauGB",
+        "quelle": "BV/0197/2026 — fehlt vollständig; B-Plan Nr. 336"
       }
     ]
   }

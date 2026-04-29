@@ -6,7 +6,22 @@ const iconMap: Record<string, string> = {
   location: `<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>`,
   clock: `<path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>`,
   shield: `<path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z"/>`,
+  route: `<path d="M6.5 2A3.5 3.5 0 0 0 3 5.5c0 1.93 1.57 3.5 3.5 3.5H10v2H6.5A5.5 5.5 0 0 1 1 5.5 5.5 5.5 0 0 1 6.5 0h.01v2H6.5zm11 13H14v-2h3.5a3.5 3.5 0 1 0 0-7H14V4h3.5a5.5 5.5 0 1 1 0 11zM10 11h4v2h-4v-2zM6.5 19.5L9 22l2.5-2.5L9 17l-2.5 2.5z"/>`,
 };
+
+interface Stimme {
+  quote: string;
+  autor: string;
+  url: string;
+}
+interface Kachel {
+  icon: string;
+  titel: string;
+  headline: string;
+  text: string;
+  stimme?: Stimme;
+}
+const kacheln = w.kacheln as Kachel[];
 ---
 
 <section class="bg-[var(--color-bg)] py-16 md:py-24">
@@ -16,7 +31,7 @@ const iconMap: Record<string, string> = {
       <p class="text-lg text-[var(--color-text-muted)]">{w.untertitel}</p>
     </div>
     <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-      {w.kacheln.map((k) => (
+      {kacheln.map((k) => (
         <article class="bg-[var(--color-bg-card)] p-7 md:p-8 rounded-md border border-[var(--color-border)] flex flex-col h-full">
           <div class="w-12 h-12 rounded-sm bg-[var(--color-accent-soft)] grid place-items-center mb-5 text-[var(--color-accent)]">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" set:html={iconMap[k.icon] ?? ''} />
@@ -30,6 +45,24 @@ const iconMap: Record<string, string> = {
           <p class="text-[var(--color-text-body)] leading-relaxed text-[15px]">
             {k.text}
           </p>
+          {k.stimme && (
+            <figure class="mt-5 pl-4 border-l-2 border-[var(--color-accent)]">
+              <blockquote class="italic text-[14px] text-[var(--color-text-body)] leading-relaxed">
+                „{k.stimme.quote}"
+              </blockquote>
+              <figcaption class="mt-2 text-[12px] text-[var(--color-text-muted)]">
+                — {k.stimme.autor} ·{' '}
+                <a
+                  href={k.stimme.url}
+                  target="_blank"
+                  rel="noopener"
+                  class="underline decoration-[var(--color-border)] underline-offset-2 hover:text-[var(--color-accent)]"
+                >
+                  Quelle: openPetition
+                </a>
+              </figcaption>
+            </figure>
+          )}
         </article>
       ))}
     </div>

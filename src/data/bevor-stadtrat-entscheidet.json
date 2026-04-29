@@ -2,6 +2,7 @@
   "bevor_stadtrat_entscheidet": {
     "ueberschrift": "Bevor der Stadtrat entscheidet",
     "untertitel": "Der aktuelle Stand zur Standortentscheidung Goldgrube — und was bereits vorbereitet ist.",
+    "lead": "In vier Wochen entscheidet der Stadtrat über 50 Jahre Schule im Wohngebiet — auf Basis einer Vorlage, die in zwölf Tagen durchgewunken werden soll.",
     "intro": "Am 21. April 2026 hat der Schulträgerausschuss zusammen mit dem Ausschuss für Stadtentwicklung und Mobilität die Vorlage BV/0197/2026 zur Errichtung einer Interimsschule beraten. Die Vorlage wurde kurzfristig — am 12. April 2026 — als Nachtrag in die Tagesordnung aufgenommen. Die abschließende Beschlussfassung im Stadtrat ist für den 28. Mai 2026 vorgesehen. Wir haben die Vorlage und ihre Anlagen ausgewertet. Das Ergebnis lässt erhebliche Zweifel an der Tragfähigkeit der Entscheidungsgrundlage aufkommen — bis hin zu der Frage, ob die geplante Beschlussfassung verfahrensrechtlich überhaupt zulässig ist.",
     "kernbefunde": {
       "ueberschrift": "Was die Vorlage selbst offenbart",
@@ -29,6 +30,10 @@
         {
           "titel": "Die Wohnbebauung wird stillschweigend beerdigt",
           "text": "Der seit 2021 vorbereitete Bebauungsplan Nr. 336 sieht für die Fläche rund 100 Wohneinheiten vor — mit über 30 Prozent Sozialwohnungsanteil. Das Wohnraumversorgungskonzept der Stadt vom 13.04.2026 (BV/0401/2025/1) weist Koblenz als Stadt mit erheblichem Wohnraumdefizit aus. Der Beschluss vom 28. Mai würde diese Wohnbebauung faktisch verhindern."
+        },
+        {
+          "titel": "Eine Entscheidung ohne Grundlage",
+          "text": "25,75 Millionen Euro Grobkosten ohne Wirtschaftlichkeitsbetrachtung. Eine Standortbewertung ohne Gewichtung. Keine Verkehrsprüfung. Keine erneute UVP-Vorprüfung. Keine Bürgerbeteiligung zum geänderten Vorhaben. Wer am 28. Mai zustimmt, übernimmt die volle Verantwortung — auch für eine spätere gerichtliche Korrektur."
         }
       ]
     },
@@ -51,9 +56,9 @@
     },
     "anliegen": {
       "ueberschrift": "Unser Anliegen",
-      "text": "Wir bitten die Mitglieder des Koblenzer Stadtrats und die Verwaltung, die folgenden vierzehn Argumente vor der Abstimmung am 28. Mai sorgfältig zu prüfen und für eine fundierte Entscheidungsgrundlage zu sorgen — gegebenenfalls durch Vertagung. Eine differenzierte Stadtratsentscheidung schützt das Vorhaben besser vor späterer gerichtlicher Korrektur als eine schnelle.",
+      "text": "Wir bitten die Mitglieder des Koblenzer Stadtrats und die Verwaltung, die folgenden fünfzehn Argumente vor der Abstimmung am 28. Mai sorgfältig zu prüfen und für eine fundierte Entscheidungsgrundlage zu sorgen — gegebenenfalls durch Vertagung. Eine differenzierte Stadtratsentscheidung schützt das Vorhaben besser vor späterer gerichtlicher Korrektur als eine schnelle.",
       "cta_primary": {
-        "label": "Die vierzehn Argumente lesen",
+        "label": "Die fünfzehn Argumente lesen",
         "href": "#argumente"
       },
       "cta_secondary": {

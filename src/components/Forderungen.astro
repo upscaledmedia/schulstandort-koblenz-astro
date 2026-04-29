@@ -10,25 +10,47 @@ const f = data.forderungen;
         Was wir konkret fordern
       </p>
       <h2 class="mb-5">{f.ueberschrift}</h2>
+      {f.lead && (
+        <p class="font-serif font-bold text-xl md:text-2xl text-[var(--color-text-primary)] leading-snug mb-4">
+          {f.lead}
+        </p>
+      )}
       <p class="text-lg text-[var(--color-text-muted)]">{f.untertitel}</p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-4 md:gap-5">
-      {f.liste.map((forderung) => (
-        <div class="flex gap-4 md:gap-5 p-6 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)]">
-          <span class="flex-none font-serif font-bold text-3xl md:text-4xl text-[var(--color-accent)] leading-none">
-            {String(forderung.nummer).padStart(2, '0')}
-          </span>
-          <div class="flex-1 min-w-0">
-            <h3 class="font-serif font-bold text-[var(--color-text-primary)] text-lg mb-2">
-              {forderung.titel}
-            </h3>
+      {f.liste.map((forderung) => {
+        const renderText = () => {
+          if (forderung.highlight && forderung.text.includes(forderung.highlight)) {
+            const parts = forderung.text.split(forderung.highlight);
+            return (
+              <p class="text-[15px] text-[var(--color-text-body)] leading-relaxed">
+                {parts[0]}
+                <strong class="font-semibold text-[var(--color-text-primary)]">{forderung.highlight}</strong>
+                {parts[1]}
+              </p>
+            );
+          }
+          return (
             <p class="text-[15px] text-[var(--color-text-body)] leading-relaxed">
               {forderung.text}
             </p>
+          );
+        };
+        return (
+          <div class="flex gap-4 md:gap-5 p-6 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)]">
+            <span class="flex-none font-serif font-bold text-3xl md:text-4xl text-[var(--color-accent)] leading-none">
+              {String(forderung.nummer).padStart(2, '0')}
+            </span>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-serif font-bold text-[var(--color-text-primary)] text-lg mb-2">
+                {forderung.titel}
+              </h3>
+              {renderText()}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>
