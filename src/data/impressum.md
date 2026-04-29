@@ -12,6 +12,7 @@ Pestalozzistr. 26
 
 ## Kontakt
 
+Telefon: 0261 29584914
 E-Mail: kontakt@schulstandort-koblenz.de
 
 **Hinweis zu E-Mail-Anfragen:** Diese Initiative wird ehrenamtlich betrieben. Wir können nicht garantieren, dass alle Anfragen beantwortet werden. **Für Hinweise, Meinungen und Diskussionen zur Sache nutzen Sie bitte die Kommentarfunktion auf openPetition** — dort werden alle Beiträge öffentlich dokumentiert und vom Stadtrat zur Kenntnis genommen: [https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder](https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder)
