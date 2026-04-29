@@ -1,0 +1,5 @@
+# www.schulstandort-koblenz.de → schulstandort-koblenz.de (301, force)
+https://www.schulstandort-koblenz.de/* https://schulstandort-koblenz.de/:splat 301!
+
+# pages.dev Subdomain → Custom Domain (301, force)
+https://schulstandort-koblenz.pages.dev/* https://schulstandort-koblenz.de/:splat 301!

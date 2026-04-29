@@ -57,6 +57,12 @@ const siteOrigin = Astro.site ?? new URL('https://schulstandort-koblenz.de');
 const canonicalUrl = new URL(canonicalPath, siteOrigin).toString();
 const logoUrl = new URL('/favicon.svg', siteOrigin).toString();
 
+// Defensive noindex: Wenn die Seite über die pages.dev-Preview-Domain ausgeliefert wird,
+// IMMER noindex setzen — unabhängig vom Page-Setting. Greift nur, falls die _redirects
+// aus irgendeinem Grund nicht aktiv sind.
+const isPreviewDomain = Astro.url.hostname.endsWith('.pages.dev');
+const robotsContent = (noindex || isPreviewDomain) ? 'noindex, nofollow' : 'index, follow';
+
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'NGO',
@@ -92,7 +98,7 @@ const websiteSchema = {
     <title>{fullTitle}</title>
     <meta name="description" content={metaDescription} />
     <link rel="canonical" href={canonicalUrl} />
-    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    <meta name="robots" content={robotsContent} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
