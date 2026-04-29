@@ -1,0 +1,135 @@
+---
+// Live-Countdown bis zur Stadtratsentscheidung
+// Zielzeitpunkt: 28. Mai 2026, 15:00 Uhr Europe/Berlin (CEST = UTC+2)
+const targetIso = '2026-05-28T15:00:00+02:00';
+const targetMs = new Date(targetIso).getTime();
+const nowMs = Date.now();
+const diff = Math.max(0, targetMs - nowMs);
+
+const totalSeconds = Math.floor(diff / 1000);
+const days = Math.floor(totalSeconds / 86400);
+const hours = Math.floor((totalSeconds % 86400) / 3600);
+const minutes = Math.floor((totalSeconds % 3600) / 60);
+const seconds = totalSeconds % 60;
+
+const pad = (n: number, w = 2) => String(n).padStart(w, '0');
+const isExpired = diff <= 0;
+---
+
+{!isExpired && (
+  <div
+    class="countdown mt-6"
+    data-target={targetIso}
+    aria-live="polite"
+    aria-atomic="true"
+  >
+    <p class="text-[11px] uppercase tracking-[0.18em] text-white/65 font-semibold mb-3 text-center lg:text-left">
+      Bis zur Stadtratsentscheidung
+    </p>
+    <span class="sr-only">
+      Verbleibende Zeit bis zur Stadtratsentscheidung am 28. Mai 2026 um 15 Uhr.
+    </span>
+    <div class="grid grid-cols-4 gap-2 sm:gap-3">
+      <div class="countdown-box">
+        <span class="countdown-value font-serif tabular-nums" data-unit="days">{pad(days, days >= 100 ? 3 : 2)}</span>
+        <span class="countdown-label">Tage</span>
+      </div>
+      <div class="countdown-box">
+        <span class="countdown-value font-serif tabular-nums" data-unit="hours">{pad(hours)}</span>
+        <span class="countdown-label">Std</span>
+      </div>
+      <div class="countdown-box">
+        <span class="countdown-value font-serif tabular-nums" data-unit="minutes">{pad(minutes)}</span>
+        <span class="countdown-label">Min</span>
+      </div>
+      <div class="countdown-box">
+        <span class="countdown-value font-serif tabular-nums" data-unit="seconds">{pad(seconds)}</span>
+        <span class="countdown-label">Sek</span>
+      </div>
+    </div>
+    <p class="text-[11px] text-white/55 mt-3 text-center lg:text-left tracking-wide">
+      28. Mai 2026 &middot; 15:00 Uhr
+    </p>
+  </div>
+)}
+
+<style>
+  .countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 0.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .countdown-value {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+  .countdown-label {
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 500;
+  }
+  @media (min-width: 640px) {
+    .countdown-box {
+      padding: 0.9rem 0.5rem;
+    }
+    .countdown-label {
+      font-size: 0.75rem;
+    }
+  }
+</style>
+
+<script>
+  function initCountdown() {
+    document.querySelectorAll<HTMLElement>('.countdown').forEach((root) => {
+      const target = root.dataset.target;
+      if (!target) return;
+      const targetMs = new Date(target).getTime();
+      if (isNaN(targetMs)) return;
+
+      const elDays = root.querySelector<HTMLElement>('[data-unit="days"]');
+      const elHours = root.querySelector<HTMLElement>('[data-unit="hours"]');
+      const elMinutes = root.querySelector<HTMLElement>('[data-unit="minutes"]');
+      const elSeconds = root.querySelector<HTMLElement>('[data-unit="seconds"]');
+
+      const pad = (n: number, w = 2) => String(n).padStart(w, '0');
+
+      const tick = () => {
+        const diff = targetMs - Date.now();
+        if (diff <= 0) {
+          root.style.display = 'none';
+          return false;
+        }
+        const totalSeconds = Math.floor(diff / 1000);
+        const d = Math.floor(totalSeconds / 86400);
+        const h = Math.floor((totalSeconds % 86400) / 3600);
+        const m = Math.floor((totalSeconds % 3600) / 60);
+        const s = totalSeconds % 60;
+
+        if (elDays) elDays.textContent = pad(d, d >= 100 ? 3 : 2);
+        if (elHours) elHours.textContent = pad(h);
+        if (elMinutes) elMinutes.textContent = pad(m);
+        if (elSeconds) elSeconds.textContent = pad(s);
+        return true;
+      };
+
+      if (tick() === false) return;
+      const id = window.setInterval(() => {
+        if (tick() === false) window.clearInterval(id);
+      }, 1000);
+    });
+  }
+
+  initCountdown();
+  document.addEventListener('astro:page-load', initCountdown);
+</script>

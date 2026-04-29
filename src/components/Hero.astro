@@ -1,5 +1,6 @@
 ---
 import hero from '../data/hero.json';
+import Countdown from './Countdown.astro';
 
 const h = hero.hero;
 ---
@@ -35,24 +36,27 @@ const h = hero.hero;
           {h.subheadline}
         </p>
 
-        <div
-          class="lg:hidden mb-10 rounded-xl bg-[#ffffff] text-[var(--color-text-body)] p-5 sm:p-6"
-          style="box-shadow: 0 20px 45px -20px rgba(0,0,0,0.55);"
-        >
-          <p class="text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-2">
-            Direkt hier unterzeichnen
-          </p>
-          <h2 class="text-xl font-bold mb-4 leading-snug">Petition jetzt unterstützen</h2>
-          <div class="op-widget-container" style="width: 100%; max-width: 500px; margin: 0 auto;">
-            <script
-              is:inline
-              type="text/javascript"
-              src="https://www.openpetition.de/widget/petition/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
-            ></script>
+        <div class="lg:hidden mb-10">
+          <div
+            class="rounded-xl bg-[#ffffff] text-[var(--color-text-body)] p-5 sm:p-6"
+            style="box-shadow: 0 20px 45px -20px rgba(0,0,0,0.55);"
+          >
+            <p class="text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-2">
+              Direkt hier unterzeichnen
+            </p>
+            <h2 class="text-xl font-bold mb-4 leading-snug">Petition jetzt unterstützen</h2>
+            <div class="op-widget-container" style="width: 100%; max-width: 500px; margin: 0 auto;">
+              <script
+                is:inline
+                type="text/javascript"
+                src="https://www.openpetition.de/widget/petition/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
+              ></script>
+            </div>
+            <p class="text-center text-[11px] text-[var(--color-text-muted)] mt-3 leading-snug">
+              Widget bereitgestellt von openPetition.de — Klick auf „Jetzt unterzeichnen" öffnet die Petition.
+            </p>
           </div>
-          <p class="text-center text-[11px] text-[var(--color-text-muted)] mt-3 leading-snug">
-            Widget bereitgestellt von openPetition.de — Klick auf „Jetzt unterzeichnen" öffnet die Petition.
-          </p>
+          <Countdown />
         </div>
       </div>
 
@@ -76,6 +80,7 @@ const h = hero.hero;
             Widget bereitgestellt von openPetition.de — Klick auf „Jetzt unterzeichnen" öffnet die Petition.
           </p>
         </div>
+        <Countdown />
       </aside>
     </div>
   </div>
