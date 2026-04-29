@@ -1,6 +1,20 @@
 ---
 import hero from '../data/hero.json';
+import { fetchPetitionStats } from '../lib/petition';
+
 const h = hero.hero;
+const stats = await fetchPetitionStats();
+const goalProgress = Math.min(100, Math.round((stats.signatures / stats.goal) * 100));
+const quorumProgress = Math.min(100, Math.round((stats.signatures / stats.quorum) * 100));
+const formatNumber = (n: number) => n.toLocaleString('de-DE');
+const formatTime = (d: Date) =>
+  d.toLocaleString('de-DE', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
 ---
 
 <section class="relative overflow-hidden bg-[var(--color-bg-deep)] text-white">
@@ -47,6 +61,50 @@ const h = hero.hero;
           {h.cta_secondary.label}
         </a>
       </div>
+
+      <a
+        href={h.cta_primary.href}
+        target="_blank"
+        rel="noopener"
+        class="block mt-8 md:mt-10 max-w-xl no-underline group"
+        aria-label={`Petition: ${formatNumber(stats.signatures)} Unterschriften, Quorum ${formatNumber(stats.quorum)}, Ziel ${formatNumber(stats.goal)}`}
+      >
+        <div class="flex items-baseline justify-between gap-3 mb-2">
+          <div class="flex items-baseline gap-2 min-w-0">
+            <span class="font-serif text-3xl md:text-4xl font-bold text-white tabular-nums">
+              {formatNumber(stats.signatures)}
+            </span>
+            <span class="text-sm md:text-base text-white/80">
+              von <span class="text-white font-semibold">{formatNumber(stats.goal)}</span> Unterschriften
+            </span>
+          </div>
+          <span class="text-xs uppercase tracking-wider text-white/60 font-semibold whitespace-nowrap">
+            Live von openpetition.de
+          </span>
+        </div>
+        <div class="relative h-2.5 bg-white/15 rounded-full overflow-hidden mb-2">
+          <div
+            class="absolute inset-y-0 left-0 bg-[var(--color-accent)] rounded-full transition-all duration-700"
+            style={`width: ${goalProgress}%`}
+            aria-hidden="true"
+          ></div>
+          <div
+            class="absolute inset-y-0 w-px bg-white/60"
+            style={`left: ${Math.round((stats.quorum / stats.goal) * 100)}%`}
+            aria-hidden="true"
+            title="Quorum"
+          ></div>
+        </div>
+        <div class="flex items-center justify-between text-xs text-white/70">
+          <span>
+            Quorum {formatNumber(stats.quorum)} ·
+            <span class={stats.signatures >= stats.quorum ? 'text-white font-semibold' : ''}>
+              {quorumProgress}% erreicht
+            </span>
+          </span>
+          <span class="hidden sm:inline">Stand: {formatTime(stats.fetchedAt)}</span>
+        </div>
+      </a>
     </div>
   </div>
 

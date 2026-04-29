@@ -1,102 +1,161 @@
 ---
-import { getCollection } from 'astro:content';
-
-const dokumente = await getCollection('dokumente');
-const sorted = dokumente.sort((a, b) => a.data.displayOrder - b.data.displayOrder);
-
-const typeOrder = [
-  'Originaldokument Stadt',
-  'Auswertung',
-  'Pressemitteilung',
-  'Musterbrief',
-  'Sonstiges',
+const groups = [
+  {
+    title: 'Beschlussvorlage BV/0197/2026 — Interimsschule Goldgrube',
+    description: 'Die zentrale Vorlage, über die der Stadtrat am 28.05.2026 entscheidet.',
+    items: [
+      {
+        label: 'Beschlussvorlage BV/0197/2026',
+        meta: 'Stadt Koblenz · 10.04.2026 · 13 Seiten',
+        href: '/dokumente/BV-0197-2026-Beschlussvorlage.pdf',
+      },
+      {
+        label: 'Anlage 1 — Vergleichende Standortbewertung',
+        meta: 'Stadt Koblenz · 6 Standorte · 10 Kriterien · ohne Gewichtung',
+        href: '/dokumente/BV-0197-2026-Anlage-1-Standortbewertung.pdf',
+      },
+      {
+        label: 'Anlage 2 — Präsentation Interimsschule',
+        meta: 'Stadt Koblenz · Foliensatz Vorberatung 21.04.2026',
+        href: '/dokumente/BV-0197-2026-Anlage-2-Praesentation.pdf',
+      },
+    ],
+  },
+  {
+    title: 'Bebauungsplan Nr. 336 „Entwicklung Quartier Goldgrube"',
+    description: 'Der gültige Bebauungsplan, dessen Festsetzungen für die geplante Modulanlage faktisch überplant werden müssten.',
+    items: [
+      {
+        label: 'Beschlussvorlage zum B-Plan Nr. 336',
+        meta: 'Stadt Koblenz · BV/0109/2021',
+        href: '/dokumente/BPlan-336-Beschlussvorlage.pdf',
+      },
+      {
+        label: 'Begründung B-Plan Nr. 336',
+        meta: 'Stadt Koblenz · Februar 2021 · enthält UVP-Vorprüfung',
+        href: '/dokumente/BPlan-336-Begruendung.pdf',
+      },
+      {
+        label: 'Textliche Festsetzungen B-Plan Nr. 336',
+        meta: 'Stadt Koblenz · enthält Lärmschutzfestsetzung Punkt 10.1',
+        href: '/dokumente/BPlan-336-Textfestsetzungen.pdf',
+      },
+      {
+        label: 'Satzung B-Plan Nr. 336',
+        meta: 'Stadt Koblenz · rechtsverbindliche Festsetzung',
+        href: '/dokumente/BPlan-336-Satzung.pdf',
+      },
+      {
+        label: 'Lageplan B-Plan Nr. 336',
+        meta: 'Stadt Koblenz · Übersicht Plangebiet',
+        href: '/dokumente/BPlan-336-Lageplan.pdf',
+      },
+      {
+        label: 'Planzeichnung B-Plan Nr. 336',
+        meta: 'Stadt Koblenz · maßstäbliche Festsetzung der Flächen',
+        href: '/dokumente/BPlan-336-Planzeichnung.pdf',
+      },
+    ],
+  },
+  {
+    title: 'Vorgeschichte — Sanierung Max-von-Laue',
+    description: 'Hintergrund zur Entstehung der jetzigen Beschlussvorlage.',
+    items: [
+      {
+        label: 'Unterrichtungsvorlage UV/0310/2025',
+        meta: 'Stadt Koblenz · 03.11.2025 · ADD/SGD-Ablehnung der ursprünglichen Sanierungsplanung',
+        href: '/dokumente/UV-0310-2025-Unterrichtungsvorlage.pdf',
+      },
+    ],
+  },
+  {
+    title: 'Vorberatung 21.04.2026 — Schulträgerausschuss + ASM',
+    description: 'Sitzungsunterlagen aus dem Bürgerinformationssystem der Stadt Koblenz.',
+    items: [
+      {
+        label: 'Bekanntgabe — nicht-öffentlicher Teil',
+        meta: 'Stadt Koblenz · Sitzung 21.04.2026',
+        href: '/dokumente/Ausschuss-2026-04-21-Bekanntgabe.pdf',
+      },
+      {
+        label: 'Nachtrag 01 — ASM',
+        meta: 'Stadt Koblenz · Sitzung 21.04.2026',
+        href: '/dokumente/Ausschuss-2026-04-21-Nachtrag-01.pdf',
+      },
+      {
+        label: 'Nachtrag 02',
+        meta: 'Stadt Koblenz · Sitzung 21.04.2026',
+        href: '/dokumente/Ausschuss-2026-04-21-Nachtrag-02.pdf',
+      },
+      {
+        label: 'Nachtrag zu TOP',
+        meta: 'Stadt Koblenz · Sitzung 21.04.2026',
+        href: '/dokumente/Ausschuss-2026-04-21-Nachtrag-TOP.pdf',
+      },
+    ],
+  },
 ];
-
-const grouped = typeOrder
-  .map((type) => ({
-    type,
-    items: sorted.filter((d) => d.data.documentType === type),
-  }))
-  .filter((g) => g.items.length > 0);
-
-const formatDate = (d?: Date) =>
-  d
-    ? d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })
-    : null;
 ---
 
 <section id="materialien" class="bg-[var(--color-bg)] py-16 md:py-24">
   <div class="container-page">
     <div class="max-w-3xl mb-10 md:mb-12">
       <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
-        Zum Download
+        Originaldokumente zum Download
       </p>
       <h2 class="mb-4">Materialien</h2>
       <p class="text-lg text-[var(--color-text-muted)]">
-        Originaldokumente der Stadt, unsere Auswertungen, Musterbriefe für die Korrespondenz mit dem Stadtrat.
+        Alle Verwaltungsdokumente der Stadt Koblenz, auf denen unsere Auswertung beruht. Quelle: Bürgerinformationssystem der Stadt Koblenz.
       </p>
     </div>
 
-    {sorted.length === 0 ? (
-      <div class="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-md p-8 max-w-2xl">
-        <p class="text-[var(--color-text-body)] mb-3">
-          Die Original-Dokumente der Stadt Koblenz (Beschlussvorlage BV/0197/2026, Bebauungsplan Nr. 336, Unterrichtungsvorlage UV/0310/2025) und unsere Auswertungen werden hier in Kürze zum Download bereitgestellt.
-        </p>
-        <p class="text-sm text-[var(--color-text-muted)]">
-          Bei dringendem Bedarf wenden Sie sich bitte an
-          <a href="mailto:kontakt@schulstandort-koblenz.de" class="font-semibold">kontakt@schulstandort-koblenz.de</a>
-        </p>
-      </div>
-    ) : (
-      <div class="space-y-10 md:space-y-12 max-w-4xl">
-        {grouped.map((group) => (
-          <div>
-            <h3 class="text-lg font-serif font-bold text-[var(--color-text-primary)] mb-4 pb-2 border-b border-[var(--color-border)]">
-              {group.type}
-            </h3>
-            <ul class="grid gap-3">
-              {group.items.map((d) => (
-                <li>
-                  <a
-                    href={d.data.file}
-                    download
-                    class="flex items-start gap-4 p-5 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-md no-underline hover:border-[var(--color-accent)] transition-colors group"
-                  >
-                    <span class="flex-none w-10 h-10 rounded-sm bg-[var(--color-accent-soft)] text-[var(--color-accent)] grid place-items-center">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                        <polyline points="14 2 14 8 20 8"/>
-                      </svg>
-                    </span>
-                    <div class="flex-1 min-w-0">
-                      <p class="font-serif font-semibold text-[var(--color-text-primary)] text-base mb-1 group-hover:text-[var(--color-accent)] transition-colors">
-                        {d.data.title}
-                      </p>
-                      {d.data.description && (
-                        <p class="text-sm text-[var(--color-text-body)] leading-snug mb-2">
-                          {d.data.description}
-                        </p>
-                      )}
-                      <p class="text-xs text-[var(--color-text-muted)]">
-                        {d.data.originalSource && <span>{d.data.originalSource}</span>}
-                        {d.data.originalSource && d.data.originalDate && <span> · </span>}
-                        {d.data.originalDate && <span>{formatDate(d.data.originalDate)}</span>}
-                      </p>
-                    </div>
-                    <span class="flex-none text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)]">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7 10 12 15 17 10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                      </svg>
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    )}
+    <div class="space-y-10 md:space-y-12 max-w-4xl">
+      {groups.map((group) => (
+        <div>
+          <h3 class="text-lg font-serif font-bold text-[var(--color-text-primary)] mb-1">
+            {group.title}
+          </h3>
+          <p class="text-sm text-[var(--color-text-muted)] mb-4 max-w-2xl">
+            {group.description}
+          </p>
+          <ul class="grid gap-3">
+            {group.items.map((d) => (
+              <li>
+                <a
+                  href={d.href}
+                  target="_blank"
+                  rel="noopener"
+                  class="flex items-start gap-4 p-5 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-md no-underline hover:border-[var(--color-accent)] transition-colors group"
+                >
+                  <span class="flex-none w-10 h-10 rounded-sm bg-[var(--color-accent-soft)] text-[var(--color-accent)] grid place-items-center">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                  </span>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-serif font-semibold text-[var(--color-text-primary)] text-base mb-1 group-hover:text-[var(--color-accent)] transition-colors">
+                      {d.label}
+                    </p>
+                    <p class="text-xs text-[var(--color-text-muted)]">
+                      {d.meta}
+                    </p>
+                  </div>
+                  <span class="flex-none text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M7 17L17 7M9 7h8v8"/>
+                    </svg>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-10 text-xs text-[var(--color-text-muted)] italic max-w-3xl">
+      Hinweis: Alle PDFs sind Originaldokumente der Stadt Koblenz. Wir haben sie öffentlich aus dem Bürgerinformationssystem der Stadt heruntergeladen und stellen sie hier ohne Bearbeitung bereit.
+    </p>
   </div>
 </section>

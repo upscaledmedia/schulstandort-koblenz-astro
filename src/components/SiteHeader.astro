@@ -14,13 +14,16 @@ const navItems = [
 
 <header class="bg-white border-b border-[var(--color-border)] sticky top-0 z-40 backdrop-blur-md bg-white/95">
   <div class="container-page flex items-center justify-between gap-4 py-3 md:py-4">
-    <a href="/" class="flex items-center gap-3 no-underline group" aria-label="Zur Startseite">
-      <span class="w-9 h-9 md:w-10 md:h-10 rounded-sm bg-[var(--color-text-primary)] text-white grid place-items-center font-serif font-bold text-xl">
-        BG
+    <a href="/" class="flex items-center gap-3 no-underline group min-w-0" aria-label="Zur Startseite">
+      <span class="flex-none w-9 h-9 md:w-10 md:h-10 rounded-sm bg-[var(--color-text-primary)] text-white grid place-items-center">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
       </span>
-      <span class="hidden sm:flex flex-col leading-tight">
-        <span class="font-serif font-bold text-[var(--color-text-primary)] text-base md:text-lg">{meta.site.name}</span>
-        <span class="text-xs text-[var(--color-text-muted)]">Bürgerinitiative Koblenz</span>
+      <span class="hidden sm:flex flex-col leading-tight min-w-0">
+        <span class="font-serif font-bold text-[var(--color-text-primary)] text-sm md:text-[15px] truncate">{meta.site.name}</span>
+        <span class="text-xs text-[var(--color-text-muted)]">Koblenz · Schulstandort Goldgrube</span>
       </span>
     </a>
     <nav class="hidden lg:flex items-center gap-6" aria-label="Hauptnavigation">

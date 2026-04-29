@@ -1,17 +1,53 @@
 ---
 import data from '../data/argumente.json';
+import { docsForArgument } from '../lib/dokumente';
 const a = data.argumente;
 ---
 
 <section id="argumente" class="bg-[var(--color-bg)] py-16 md:py-24">
   <div class="container-page">
-    <div class="max-w-3xl mb-10 md:mb-12">
+    <div class="max-w-3xl mb-8 md:mb-10">
       <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
-        Die juristische Auswertung
+        Auswertung der Beschlussvorlage
       </p>
       <h2 class="mb-5">{a.ueberschrift}</h2>
       <p class="text-base text-[var(--color-text-muted)] leading-relaxed">{a.untertitel}</p>
     </div>
+
+    <aside
+      class="max-w-4xl mb-10 md:mb-12 bg-[var(--color-warning-bg)] border border-[var(--color-warning-border)] rounded-md p-6 md:p-7"
+      aria-labelledby="disclaimer-heading"
+    >
+      <div class="flex items-start gap-4">
+        <span class="flex-none w-8 h-8 rounded-full bg-[var(--color-warning-border)] grid place-items-center text-[var(--color-text-primary)] mt-0.5">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          </svg>
+        </span>
+        <div class="min-w-0">
+          <h3 id="disclaimer-heading" class="font-serif font-bold text-[var(--color-text-primary)] text-lg md:text-xl mb-3">
+            Hinweis zur Auswertung — von Bürgerinnen und Bürgern, nicht von Anwälten
+          </h3>
+          <div class="space-y-3 text-[15px] md:text-base text-[var(--color-text-body)] leading-relaxed">
+            <p>
+              Diese Auswertung wurde von <strong>Bürgerinnen und Bürgern als Laien</strong> — ohne juristische Ausbildung — auf Basis der öffentlich zugänglichen Verwaltungsdokumente zusammengetragen. Wir erheben ausdrücklich keinen Anspruch auf rechtliche Letztverbindlichkeit. Eine vollständige juristische Prüfung wäre <strong>Aufgabe der Stadtverwaltung</strong> gewesen, bevor die Vorlage in den Stadtrat eingebracht wurde — diese Prüfung ist nach unserem Eindruck nicht erkennbar erfolgt.
+            </p>
+            <p>
+              Auch die <strong>kurze Vorlauffrist</strong> — die Vorlage wurde am 12.04.2026 als Nachtrag in die Tagesordnung aufgenommen, abschließend entschieden wird am 28.05.2026 — macht es den Stadtratsmitgliedern faktisch unmöglich, jeden einzelnen Punkt selbst sorgfältig zu prüfen. Wer trotzdem zustimmt, übernimmt die Verantwortung dafür, dass diese Prüfung nicht stattgefunden hat.
+            </p>
+            <p>
+              Über die nachfolgenden vierzehn Punkte hinaus fehlt in der Beschlussvorlage zudem <strong>jede Aussage zur Verkehrs- und Parkplatzsituation</strong> am geplanten Standort. Das Areal ist von engen Wohnstraßen umschlossen. Bei 1.180 Kindern gleichzeitig — Kita, Grundschule und Gymnasium mit Hol- und Bringverkehr — ist das nach unserer Einschätzung nicht zumutbar und muss vor jeder Beschlussfassung geklärt sein.
+            </p>
+            <p class="text-sm text-[var(--color-text-muted)] italic">
+              Wir freuen uns über fachlich qualifizierte Hinweise, Korrekturen und Ergänzungen — gerne an
+              <a href="mailto:kontakt@schulstandort-koblenz.de" class="font-semibold no-underline hover:underline">kontakt@schulstandort-koblenz.de</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </aside>
 
     <div class="space-y-3 md:space-y-4 max-w-4xl">
       {a.liste.map((arg) => (
@@ -64,6 +100,31 @@ const a = data.argumente;
                 <dd class="text-[var(--color-text-body)]">{arg.quelle}</dd>
               </div>
             </dl>
+            {docsForArgument(arg.nummer).length > 0 && (
+              <div class="mt-4">
+                <p class="text-xs uppercase tracking-wider text-[var(--color-text-muted)] font-semibold mb-2">
+                  Dokumente zum Nachlesen
+                </p>
+                <ul class="flex flex-wrap gap-2">
+                  {docsForArgument(arg.nummer).map((doc) => (
+                    <li>
+                      <a
+                        href={doc.href}
+                        target="_blank"
+                        rel="noopener"
+                        class="inline-flex items-center gap-2 text-sm bg-white border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] text-[var(--color-text-body)] px-3 py-1.5 rounded-sm no-underline transition-colors"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                          <polyline points="14 2 14 8 20 8"/>
+                        </svg>
+                        {doc.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </details>
       ))}

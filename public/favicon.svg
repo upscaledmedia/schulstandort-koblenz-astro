@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="6" fill="#1a2332"/>
-  <text x="32" y="44" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">BG</text>
+  <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="27" cy="27" r="14"/>
+    <line x1="50" y1="50" x2="38" y2="38"/>
+  </g>
 </svg>
