@@ -6,33 +6,34 @@ import meta from '../data/meta.json';
   <div class="container-page">
     <div class="max-w-3xl mb-10">
       <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
-        Schreiben Sie uns
+        Persönliche Anfragen
       </p>
       <h2 class="mb-5">Kontakt</h2>
       <p class="text-lg text-[var(--color-text-body)] leading-relaxed">
-        Sie haben Hinweise, möchten die Initiative unterstützen, sind selbst betroffen oder haben eine Presseanfrage? Schreiben Sie uns. Wir antworten in der Regel innerhalb von 48 Stunden.
+        Persönliche Anfragen bitte über die openPetition-Kommentarfunktion — siehe Mitmachen-Sektion. Dort werden alle Beiträge öffentlich dokumentiert und vom Stadtrat zur Kenntnis genommen.
       </p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-5 md:gap-6">
       <a
-        href={`mailto:${meta.kontakt.email}`}
+        href={meta.kontakt.petition_kommentare}
+        target="_blank"
+        rel="noopener"
         class="group block p-8 md:p-10 rounded-md bg-[var(--color-bg)] border border-[var(--color-border)] no-underline hover:border-[var(--color-accent)] transition-colors"
       >
         <div class="flex items-center gap-3 mb-4 text-[var(--color-accent)]">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
           </svg>
           <span class="text-xs uppercase tracking-wider font-semibold text-[var(--color-text-muted)]">
-            E-Mail
+            Kommentar
           </span>
         </div>
-        <p class="font-serif font-semibold text-[var(--color-text-primary)] text-xl md:text-2xl mb-2 break-all group-hover:text-[var(--color-accent)] transition-colors">
-          {meta.kontakt.email}
+        <p class="font-serif font-semibold text-[var(--color-text-primary)] text-xl md:text-2xl mb-2 group-hover:text-[var(--color-accent)] transition-colors">
+          Kommentar auf openPetition
         </p>
         <p class="text-sm md:text-base text-[var(--color-text-muted)]">
-          Direkter Kontakt zur Initiative — Hinweise, Unterstützung, Pressefragen
+          Hinweise und Meinungen öffentlich dokumentiert — der Stadtrat liest mit
         </p>
       </a>
 
