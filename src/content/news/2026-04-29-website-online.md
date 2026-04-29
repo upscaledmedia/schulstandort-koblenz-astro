@@ -1,7 +1,7 @@
 ---
 title: Bündnis Goldgrube startet Kampagnen-Website
 publishedAt: 2026-04-29
-excerpt: Die Bürgerinitiative Bündnis Goldgrube veröffentlicht eine umfassende Faktensammlung zur geplanten Interimsschule auf dem Quartier Goldgrube — vier Wochen vor der Stadtratsentscheidung am 28. Mai 2026.
+excerpt: Die Bürgerinitiative Bündnis Goldgrube veröffentlicht eine umfassende Faktensammlung zur geplanten Interimsschule im Stadtteil Goldgrube — vier Wochen vor der Stadtratsentscheidung am 28. Mai 2026.
 category: Pressemitteilung
 featured: true
 author: Bündnis Goldgrube

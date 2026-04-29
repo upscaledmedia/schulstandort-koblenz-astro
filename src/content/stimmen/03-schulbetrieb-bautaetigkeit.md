@@ -5,4 +5,4 @@ sourceType: Stadt-Dokument
 displayOrder: 30
 ---
 
-Die Stadt argumentiert eindrucksvoll, warum Schulbetrieb und Bautätigkeit sich nicht vertragen. Im Quartier Goldgrube sollen genau das aber tausend Kinder in unmittelbarer Nähe einer Großbaustelle und einer Bahnstrecke aushalten.
+Die Stadt argumentiert eindrucksvoll, warum Schulbetrieb und Bautätigkeit sich nicht vertragen. Im Stadtteil Goldgrube sollen genau das aber tausend Kinder in unmittelbarer Nähe einer Großbaustelle und einer Bahnstrecke aushalten.

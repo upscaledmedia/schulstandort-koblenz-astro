@@ -13,6 +13,14 @@ const renderedStimmen = await Promise.all(
     return { ...s, Content };
   })
 );
+
+const stadtZitate = renderedStimmen.filter(
+  (s) => s.data.sourceType === 'Stadt-Dokument' || s.data.sourceType === 'Politiker-Aussage'
+);
+const buergerstimmen = renderedStimmen.filter((s) => s.data.sourceType === 'Bürgerstimme');
+const sonstige = renderedStimmen.filter(
+  (s) => !['Stadt-Dokument', 'Politiker-Aussage', 'Bürgerstimme'].includes(s.data.sourceType)
+);
 ---
 
 <section id="stimmen" class="bg-[var(--color-bg-card)] py-16 md:py-24 border-y border-[var(--color-border)]">
@@ -26,7 +34,7 @@ const renderedStimmen = await Promise.all(
     </div>
 
     <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-6xl">
-      {renderedStimmen.map((s) => (
+      {stadtZitate.map((s) => (
         <figure class="bg-[var(--color-bg)] p-7 md:p-8 rounded-md border border-[var(--color-border)] flex flex-col">
           <svg
             class="w-8 h-8 text-[var(--color-accent)] mb-4 flex-none"
@@ -54,5 +62,104 @@ const renderedStimmen = await Promise.all(
         </figure>
       ))}
     </div>
+
+    {sonstige.length > 0 && (
+      <div class="grid md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mt-6 md:mt-8">
+        {sonstige.map((s) => (
+          <figure class="bg-[var(--color-bg)] p-7 md:p-8 rounded-md border border-[var(--color-border)] flex flex-col">
+            <blockquote class="font-serif text-lg md:text-xl text-[var(--color-text-primary)] leading-snug mb-5 flex-1">
+              „{s.data.quote}"
+            </blockquote>
+            <figcaption class="text-sm text-[var(--color-text-muted)] mb-3">
+              {s.data.sourceUrl ? (
+                <a href={s.data.sourceUrl} target="_blank" rel="noopener" class="hover:text-[var(--color-accent)]">
+                  {s.data.source}
+                </a>
+              ) : (
+                s.data.source
+              )}
+            </figcaption>
+            <div class="text-[15px] text-[var(--color-text-body)] leading-relaxed border-t border-[var(--color-border)] pt-4">
+              <s.Content />
+            </div>
+          </figure>
+        ))}
+      </div>
+    )}
+
+    {buergerstimmen.length > 0 && (
+      <div class="mt-16 md:mt-20 pt-12 md:pt-16 border-t border-[var(--color-border)]">
+        <div class="max-w-3xl mb-10 md:mb-12">
+          <p class="text-sm uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-3">
+            Bürgerstimmen aus der Goldgrube
+          </p>
+          <h2 class="mb-4">{meta.buergerstimmen_ueberschrift}</h2>
+          <p class="text-lg text-[var(--color-text-muted)]">{meta.buergerstimmen_untertitel}</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+          {buergerstimmen.map((s) => (
+            <figure class="bg-[var(--color-bg)] p-6 md:p-7 rounded-md border border-[var(--color-border)] flex flex-col">
+              <svg
+                class="w-7 h-7 text-[var(--color-accent)] mb-4 flex-none"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M9 7H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2H4v2h1a4 4 0 0 0 4-4V7zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4V7z" />
+              </svg>
+              <blockquote class="font-serif text-base md:text-lg text-[var(--color-text-primary)] leading-snug mb-5 flex-1">
+                „{s.data.quote}"
+              </blockquote>
+              <figcaption class="text-[13px] text-[var(--color-text-muted)] mb-3 leading-snug">
+                {s.data.sourceUrl ? (
+                  <a href={s.data.sourceUrl} target="_blank" rel="noopener" class="hover:text-[var(--color-accent)] underline-offset-2 hover:underline">
+                    {s.data.source}
+                  </a>
+                ) : (
+                  s.data.source
+                )}
+              </figcaption>
+              <div class="text-[14px] text-[var(--color-text-body)] leading-relaxed border-t border-[var(--color-border)] pt-3">
+                <s.Content />
+              </div>
+            </figure>
+          ))}
+        </div>
+
+        <div class="mt-12 md:mt-16 max-w-4xl bg-[var(--color-accent)] text-white p-8 md:p-10 rounded-md">
+          <h3 class="text-white font-serif font-semibold text-2xl md:text-3xl leading-tight mb-3">
+            {meta.cta_ueberschrift}
+          </h3>
+          <p class="text-white/90 text-[15px] md:text-base leading-relaxed mb-6 md:mb-7 max-w-2xl">
+            {meta.cta_text}
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a
+              href={meta.cta_primary_href}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center justify-center gap-2 bg-white text-[var(--color-accent)] hover:bg-white/95 px-6 py-3 rounded-md font-semibold text-[15px] no-underline transition-colors"
+            >
+              {meta.cta_primary_label}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+            <a
+              href={meta.cta_secondary_href}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center justify-center gap-2 bg-transparent border border-white/40 text-white hover:bg-white/10 px-6 py-3 rounded-md font-semibold text-[15px] no-underline transition-colors"
+            >
+              {meta.cta_secondary_label}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    )}
   </div>
 </section>

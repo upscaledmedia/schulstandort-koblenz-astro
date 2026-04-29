@@ -2,14 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import Hero from '../components/Hero.astro';
+import SignWidget from '../components/SignWidget.astro';
 import WorumEsGeht from '../components/WorumEsGeht.astro';
 import BevorStadtratEntscheidet from '../components/BevorStadtratEntscheidet.astro';
 import Argumente from '../components/Argumente.astro';
 import Forderungen from '../components/Forderungen.astro';
-import News from '../components/News.astro';
+// News-Sektion vorerst ausgeblendet — wird später wieder aktiviert
+// import News from '../components/News.astro';
 import Stimmen from '../components/Stimmen.astro';
 import Verantwortliche from '../components/Verantwortliche.astro';
-import Termine from '../components/Termine.astro';
 import Mitmachen from '../components/Mitmachen.astro';
 import Materialien from '../components/Materialien.astro';
 import Kontakt from '../components/Kontakt.astro';
@@ -21,14 +22,13 @@ import StickyMobileCTA from '../components/StickyMobileCTA.astro';
   <SiteHeader />
   <main>
     <Hero />
+    <SignWidget />
     <WorumEsGeht />
     <BevorStadtratEntscheidet />
     <Argumente />
     <Forderungen />
-    <News />
     <Stimmen />
     <Verantwortliche />
-    <Termine />
     <Mitmachen />
     <Materialien />
     <Kontakt />

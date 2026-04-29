@@ -1,32 +1,36 @@
 {
   "mitmachen": {
-    "ueberschrift": "Mitmachen",
-    "untertitel": "Was Sie tun können, bevor der Stadtrat am 28. Mai entscheidet.",
+    "ueberschrift": "Mitmachen & aktiv werden",
+    "untertitel": "Vier konkrete Wege, wie Sie bis zur Stadtratsentscheidung am 28. Mai 2026 etwas bewirken können.",
     "optionen": [
       {
         "titel": "Petition unterzeichnen",
-        "text": "Die Petition auf openpetition.de richtet sich an den Koblenzer Stadtrat. Jede Unterschrift zählt — auch wenn Sie nicht in Koblenz wohnen.",
+        "text": "Jede Unterschrift erhöht den Druck auf den Stadtrat vor der Entscheidung am 28. Mai 2026. Auch wer nicht in Koblenz wohnt, kann unterzeichnen.",
         "cta_label": "Zur Petition",
         "cta_href": "https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
       },
       {
-        "titel": "Stadtrat anschreiben",
-        "text": "Wir stellen Musterbriefe und die Originaldokumente der Stadt zum Download bereit — sachlich, faktenbasiert, mit klaren Forderungen. Sie können die Texte übernehmen oder anpassen.",
-        "cta_label": "Materialien ansehen",
-        "cta_href": "#materialien"
+        "titel": "Ausführlichen Kommentar hinterlassen",
+        "text": "Unterschriften zählen — aber inhaltliche Kommentare wiegen für den Stadtrat zusätzlich. Schildern Sie konkret, was Sie als Anwohner, Eltern oder Lehrer betrifft.",
+        "cta_label": "Kommentar schreiben",
+        "cta_href": "https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
       },
       {
-        "titel": "Argumente teilen",
-        "text": "Helfen Sie, die vierzehn Argumente vor dem 28. Mai zu verbreiten — in Familie, Nachbarschaft und im persönlichen Umfeld. Die Inhalte sind frei zur Weitergabe.",
-        "cta_label": "Argumente lesen",
-        "cta_href": "#argumente"
+        "titel": "Bei den Stadtrats-Terminen präsent sein",
+        "text": "Die Sitzungen sind öffentlich. Je mehr Menschen sich zeigen, desto deutlicher wird, wie viele Bürger das Vorhaben beschäftigt.",
+        "cta_label": "Termine ansehen",
+        "cta_href": "#termine"
       },
       {
-        "titel": "Initiative kontaktieren",
-        "text": "Sie wollen die Initiative aktiv unterstützen, sind selbst betroffen, haben Hinweise oder Fachwissen? Schreiben Sie uns — wir freuen uns über jede Form der Unterstützung.",
-        "cta_label": "Kontakt aufnehmen",
-        "cta_href": "#kontakt"
+        "titel": "Entscheider im Bekanntenkreis ansprechen",
+        "text": "Wenn Sie Mitglieder des Stadtrats, der Stadtverwaltung oder der Fraktionen persönlich kennen, sprechen Sie sie an. Eine kurze Nachricht im Bekanntenkreis wirkt oft mehr als jede Petition.",
+        "cta_label": "Verantwortliche ansehen",
+        "cta_href": "#verantwortliche"
       }
-    ]
+    ],
+    "termine_block": {
+      "ueberschrift": "Sei dabei — die Sitzungen sind öffentlich",
+      "text": "Tragen Sie sich die folgenden Termine in den Kalender ein und kommen Sie wenn möglich vorbei. Jede Person zählt: Schon optische Präsenz im Sitzungssaal entfaltet eine politische Wirkung — sie zeigt Stadtrat und Verwaltung, dass die Goldgrube das Thema ernst nimmt."
+    }
   }
 }
