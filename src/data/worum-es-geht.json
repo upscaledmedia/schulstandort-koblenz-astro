@@ -5,6 +5,8 @@
     "kacheln": [
       {
         "icon": "location",
+        "bild": "/images/plan-schule.jpg",
+        "bild_alt": "Lageplan der geplanten Schulanlage in der Goldgrube",
         "titel": "Der Standort",
         "headline": "1.180 Kinder. 100 Lehrer. Ein Hof.",
         "text": "Auf einem Areal, das ursprünglich für Wohnbebauung und eine Grundschule mit Kita gedacht war, sollen jetzt zusätzlich 800 Gymnasiasten und über 100 Lehrkräfte untergebracht werden. Sechsjährige neben Achtzehnjährigen — gemeinsame Pausen, geteilter Schulhof.",
@@ -16,6 +18,8 @@
       },
       {
         "icon": "clock",
+        "bild": "/images/baustelle.webp",
+        "bild_alt": "Bestand: Pestalozzi-Grundschule auf der Baustelle in der Goldgrube",
         "titel": "Die Dauer",
         "headline": "Aus 'Interim' werden 50 Jahre",
         "text": "Die Beschlussvorlage selbst nennt eine Nutzungsdauer „bis zu 50 Jahre\" für den Modulbau. Nach Max-von-Laue sollen weitere Schulen folgen: BBS Beatusstraße, Eichendorff, Clemens-Brentano, Hilda. Was als Provisorium kommuniziert wird, ist faktisch eine dauerhafte zweite Schule im kleinen Wohngebiet Goldgrube — mit allen Folgen für Verkehr, Lärm und Wohnumfeld.",
@@ -27,6 +31,8 @@
       },
       {
         "icon": "route",
+        "bild": "/images/verkehr-koblenz-goldgrube.webp",
+        "bild_alt": "Verkehrssituation in der Goldgrube in Koblenz",
         "titel": "Der Verkehr",
         "headline": "Die Verkehrsplanung wurde nie bedacht",
         "text": "1.180 Kinder werden täglich gebracht und abgeholt. Über 100 Lehrkräfte brauchen Parkplätze — geplant ist offenbar, dafür den neuen Park-and-Ride am Bahnhof Stadtmitte zu opfern. Schon heute stauen sich Friedrich-Ebert-Ring und die Zufahrt vom Rauental morgens und nachmittags an den Autohäusern. Mit der neuen Bahnsteg-Brücke werden Eltern und Pendler zusätzlich auf die Parkflächen am Rauentaler ALDI/REWE/DM ausweichen — und damit auch dort den ohnehin knappen Parkraum für Anwohner verknappen. Die Vorlage enthält dazu kein einziges Konzept: keine Hol- und Bringzonen, keinen Schulwegplan, keine Verkehrsführung von Moselweiß oder Rauental.",
@@ -38,6 +44,8 @@
       },
       {
         "icon": "users",
+        "bild": "/images/anwohner.webp",
+        "bild_alt": "Anwohner und Bewohner der Goldgrube",
         "titel": "Die Anwohner",
         "headline": "Anwohner wurden nie gefragt",
         "text": "Der Stadtteil Goldgrube ist gewachsen, dicht besiedelt und vielfältig: junge Familien, Generationen-Wohnen der Wohnungsgenossenschaft, ein Altenheim in unmittelbarer Nähe, viele Seniorinnen und Senioren. Was die geplante Schulanlage für Parkplatzsituation, Lärmpegel und Lebensqualität bedeutet, wurde zu keinem Zeitpunkt mit den direkt Betroffenen diskutiert. Auch die anliegenden Stadtteile Rauental und Moselweiß — über deren Straßen ein Großteil des Verkehrs laufen wird — wurden nicht einbezogen. Eine Bürgerbeteiligung im rechtlich vorgeschriebenen Sinn hat zum geänderten Vorhaben nicht stattgefunden.",
