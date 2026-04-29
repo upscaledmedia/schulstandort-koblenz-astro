@@ -8,19 +8,21 @@ interface Props {
   ogImage?: string;
   noindex?: boolean;
   pathname?: string;
+  standaloneTitle?: boolean;
 }
 
 const {
   title,
   description = meta.site.description,
-  ogImage = '/images/og-default.png',
+  ogImage = '/images/pestalozzi-grundschule-koblenz.webp',
   noindex = true,
   pathname = Astro.url.pathname,
+  standaloneTitle = false,
 } = Astro.props;
 
 const fullTitle = title
-  ? `${title} | ${meta.site.name}`
-  : meta.site.name;
+  ? (standaloneTitle ? title : `${title} | ${meta.site.name}`)
+  : 'Interimsschule Goldgrube Koblenz — Stadtratsentscheidung 28. Mai';
 
 const canonicalUrl = new URL(pathname, Astro.site ?? 'https://schulstandort-koblenz.de').toString();
 ---
