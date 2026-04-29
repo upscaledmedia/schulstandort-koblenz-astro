@@ -34,77 +34,122 @@ const formatTime = (d: Date) =>
     aria-hidden="true"
   ></div>
 
-  <div class="relative container-page py-16 md:py-24 lg:py-32" id="hauptinhalt">
-    <div class="max-w-4xl">
-      <p class="inline-flex items-center gap-2 text-sm md:text-base text-white/80 uppercase tracking-wider font-medium mb-4">
-        <span class="w-8 h-px bg-[var(--color-accent)]" aria-hidden="true"></span>
-        {h.kicker}
-      </p>
-      <h1 class="text-white !text-balance mb-6">
-        {h.headline}
-      </h1>
-      <p class="text-lg md:text-xl text-white/85 leading-relaxed mb-8 max-w-3xl">
-        {h.subheadline}
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a href={h.cta_primary.href} class="btn btn-primary" target="_blank" rel="noopener">
-          {h.cta_primary.label}
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </a>
-        <a
-          href={h.cta_secondary.href}
-          class="btn"
-          style="background: rgba(255,255,255,0.08); color: white; border-color: rgba(255,255,255,0.3);"
-        >
-          {h.cta_secondary.label}
-        </a>
-      </div>
+  <div class="relative container-page py-16 md:py-24 lg:py-28" id="hauptinhalt">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+      <div class="lg:col-span-7">
+        <p class="inline-flex items-center gap-2 text-sm md:text-base text-white/80 uppercase tracking-wider font-medium mb-4">
+          <span class="w-8 h-px bg-[var(--color-accent)]" aria-hidden="true"></span>
+          {h.kicker}
+        </p>
+        <h1 class="text-white !text-balance mb-6">
+          {h.headline}
+        </h1>
+        <p class="text-lg md:text-xl text-white/85 leading-relaxed mb-8">
+          {h.subheadline}
+        </p>
 
-      <a
-        href={h.cta_primary.href}
-        target="_blank"
-        rel="noopener"
-        class="block mt-8 md:mt-10 max-w-xl no-underline group"
-        aria-label={`Petition: ${formatNumber(stats.signatures)} Unterschriften, Quorum ${formatNumber(stats.quorum)}, Ziel ${formatNumber(stats.goal)}`}
-      >
-        <div class="flex items-baseline justify-between gap-3 mb-2">
-          <div class="flex items-baseline gap-2 min-w-0">
-            <span class="font-serif text-3xl md:text-4xl font-bold text-white tabular-nums">
-              {formatNumber(stats.signatures)}
-            </span>
-            <span class="text-sm md:text-base text-white/80">
-              von <span class="text-white font-semibold">{formatNumber(stats.goal)}</span> Unterschriften
+        <div
+          class="lg:hidden mb-10 rounded-xl bg-[#ffffff] text-[var(--color-text-body)] p-5 sm:p-6"
+          style="box-shadow: 0 20px 45px -20px rgba(0,0,0,0.55);"
+        >
+          <p class="text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-2">
+            Direkt hier unterzeichnen
+          </p>
+          <h2 class="text-xl font-bold mb-4 leading-snug">Petition jetzt unterstützen</h2>
+          <div class="op-widget-container" style="width: 100%; max-width: 500px; margin: 0 auto;">
+            <script
+              is:inline
+              type="text/javascript"
+              src="https://www.openpetition.de/widget/petition/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
+            ></script>
+          </div>
+          <p class="text-center text-[11px] text-[var(--color-text-muted)] mt-3 leading-snug">
+            Widget bereitgestellt von openPetition.de — Klick auf „Jetzt unterzeichnen" öffnet die Petition.
+          </p>
+        </div>
+
+        <a
+          href={h.cta_primary.href}
+          target="_blank"
+          rel="noopener"
+          class="block max-w-xl no-underline group"
+          aria-label={`Petition: ${formatNumber(stats.signatures)} Unterschriften, Quorum ${formatNumber(stats.quorum)}, Ziel ${formatNumber(stats.goal)}`}
+        >
+          <div class="flex items-baseline justify-between gap-3 mb-2">
+            <div class="flex items-baseline gap-2 min-w-0">
+              <span class="font-serif text-3xl md:text-4xl font-bold text-white tabular-nums">
+                {formatNumber(stats.signatures)}
+              </span>
+              <span class="text-sm md:text-base text-white/80">
+                von <span class="text-white font-semibold">{formatNumber(stats.goal)}</span> Unterschriften
+              </span>
+            </div>
+            <span class="text-xs uppercase tracking-wider text-white/60 font-semibold whitespace-nowrap">
+              Live von openpetition.de
             </span>
           </div>
-          <span class="text-xs uppercase tracking-wider text-white/60 font-semibold whitespace-nowrap">
-            Live von openpetition.de
-          </span>
-        </div>
-        <div class="relative h-2.5 bg-white/15 rounded-full overflow-hidden mb-2">
-          <div
-            class="absolute inset-y-0 left-0 bg-[var(--color-accent)] rounded-full transition-all duration-700"
-            style={`width: ${goalProgress}%`}
-            aria-hidden="true"
-          ></div>
-          <div
-            class="absolute inset-y-0 w-px bg-white/60"
-            style={`left: ${Math.round((stats.quorum / stats.goal) * 100)}%`}
-            aria-hidden="true"
-            title="Quorum"
-          ></div>
-        </div>
-        <div class="flex items-center justify-between text-xs text-white/70">
-          <span>
-            Quorum {formatNumber(stats.quorum)} ·
-            <span class={stats.signatures >= stats.quorum ? 'text-white font-semibold' : ''}>
-              {quorumProgress}% erreicht
+          <div class="relative h-2.5 bg-white/15 rounded-full overflow-hidden mb-2">
+            <div
+              class="absolute inset-y-0 left-0 bg-[var(--color-accent)] rounded-full transition-all duration-700"
+              style={`width: ${goalProgress}%`}
+              aria-hidden="true"
+            ></div>
+            <div
+              class="absolute inset-y-0 w-px bg-white/60"
+              style={`left: ${Math.round((stats.quorum / stats.goal) * 100)}%`}
+              aria-hidden="true"
+              title="Quorum"
+            ></div>
+          </div>
+          <div class="flex items-center justify-between text-xs text-white/70">
+            <span>
+              Quorum {formatNumber(stats.quorum)} ·
+              <span class={stats.signatures >= stats.quorum ? 'text-white font-semibold' : ''}>
+                {quorumProgress}% erreicht
+              </span>
             </span>
-          </span>
-          <span class="hidden sm:inline">Stand: {formatTime(stats.fetchedAt)}</span>
+            <span class="hidden sm:inline">Stand: {formatTime(stats.fetchedAt)}</span>
+          </div>
+        </a>
+
+        <div class="flex flex-wrap gap-3 mt-8">
+          <a href={h.cta_primary.href} class="btn btn-primary" target="_blank" rel="noopener">
+            {h.cta_primary.label}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+          <a
+            href={h.cta_secondary.href}
+            class="btn"
+            style="background: rgba(255,255,255,0.08); color: white; border-color: rgba(255,255,255,0.3);"
+          >
+            {h.cta_secondary.label}
+          </a>
         </div>
-      </a>
+      </div>
+
+      <aside class="hidden lg:block lg:col-span-5">
+        <div
+          class="rounded-xl bg-[#ffffff] text-[var(--color-text-body)] p-6 xl:p-7"
+          style="box-shadow: 0 25px 60px -25px rgba(0,0,0,0.6);"
+        >
+          <p class="text-xs uppercase tracking-wider text-[var(--color-accent)] font-semibold mb-2">
+            Direkt hier unterzeichnen
+          </p>
+          <h2 class="text-xl xl:text-2xl font-bold mb-4 leading-snug">Petition jetzt unterstützen</h2>
+          <div class="op-widget-container" style="width: 100%; max-width: 500px; margin: 0 auto;">
+            <script
+              is:inline
+              type="text/javascript"
+              src="https://www.openpetition.de/widget/petition/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
+            ></script>
+          </div>
+          <p class="text-center text-[11px] text-[var(--color-text-muted)] mt-3 leading-snug">
+            Widget bereitgestellt von openPetition.de — Klick auf „Jetzt unterzeichnen" öffnet die Petition.
+          </p>
+        </div>
+      </aside>
     </div>
   </div>
 
