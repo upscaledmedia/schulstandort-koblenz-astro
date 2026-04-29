@@ -1,7 +1,7 @@
 {
   "mitmachen": {
     "ueberschrift": "Mitmachen & aktiv werden",
-    "untertitel": "Vier konkrete Wege, wie Sie bis zur Stadtratsentscheidung am 28. Mai 2026 etwas bewirken können.",
+    "untertitel": "Fünf konkrete Wege, wie Sie bis zur Stadtratsentscheidung am 28. Mai 2026 etwas bewirken können.",
     "optionen": [
       {
         "titel": "Petition unterzeichnen",
@@ -25,6 +25,12 @@
         "titel": "Entscheider im Bekanntenkreis ansprechen",
         "text": "Wenn Sie Mitglieder des Stadtrats, der Stadtverwaltung oder der Fraktionen persönlich kennen, sprechen Sie sie an. Eine kurze Nachricht im Bekanntenkreis wirkt oft mehr als jede Petition.",
         "cta_label": "Verantwortliche ansehen",
+        "cta_href": "#verantwortliche"
+      },
+      {
+        "titel": "Selbst aktiv werden — Leserbriefe und Anschreiben",
+        "text": "Schreiben Sie einen Leserbrief an die Rhein-Zeitung oder andere Lokalmedien. Wenden Sie sich direkt an die Stadtverwaltung, den Oberbürgermeister oder Ihre Fraktion mit einer kurzen, persönlichen Schilderung Ihrer Bedenken. Jede zusätzliche Stimme im öffentlichen Raum erhöht den politischen Druck.",
+        "cta_label": "Verantwortliche kontaktieren",
         "cta_href": "#verantwortliche"
       }
     ],

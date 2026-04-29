@@ -9,25 +9,46 @@
         "name": "David Langner",
         "partei": "SPD",
         "position_oeffentlich": "Keine öffentliche Festlegung zum Vorhaben bekannt.",
-        "quelle": "Eigene Recherche; Berichterstattung Rhein-Zeitung"
+        "quelle": "Eigene Recherche; Berichterstattung Rhein-Zeitung",
+        "profil_url": "https://www.koblenz.de/rathaus/politik/stadtvorstand/oberbuergermeister/"
       },
       {
         "rolle": "Baudezernent",
         "name": "Prof. Dr. Andreas Lukas",
         "position_oeffentlich": "Verantwortlich für die Steuerung der Sanierungsplanung Max-von-Laue (UV/0310/2025) und Verfasser der Beschlussvorlage BV/0197/2026.",
-        "quelle": "UV/0310/2025 vom 03.11.2025; BV/0197/2026 vom 10.04.2026"
+        "quelle": "UV/0310/2025 vom 03.11.2025; BV/0197/2026 vom 10.04.2026",
+        "profil_url": "https://www.koblenz.de/rathaus/politik/stadtvorstand/baudezernent/"
       },
       {
         "rolle": "Bildungsdezernent",
         "name": "Ingo Schneider",
         "partei": "SPD",
         "position_oeffentlich": "Befürwortet den Standort Goldgrube laut Berichterstattung der Rhein-Zeitung.",
-        "quelle": "Rhein-Zeitung, Berichterstattung Frühjahr 2026"
+        "quelle": "Rhein-Zeitung, Berichterstattung Frühjahr 2026",
+        "profil_url": "https://www.koblenz.de/rathaus/politik/stadtvorstand/bildungs-und-kulturdezernent/"
+      }
+    ],
+    "befuerworter": [
+      {
+        "rolle": "Bildungspolitischer Sprecher",
+        "name": "Dominik Schmidt",
+        "partei": "Bündnis 90/Die Grünen",
+        "position_oeffentlich": "Befürwortet den Standort Goldgrube öffentlich.",
+        "quelle": "Rhein-Zeitung, Berichterstattung Frühjahr 2026",
+        "profil_url": "https://www.gruene-fraktion-koblenz.de/dominik-schmidt/"
+      },
+      {
+        "rolle": "Fraktionsvorsitzende",
+        "name": "Kim Theisen",
+        "partei": "Bündnis 90/Die Grünen",
+        "position_oeffentlich": "Befürwortet den Standort Goldgrube öffentlich.",
+        "quelle": "Rhein-Zeitung, Berichterstattung Frühjahr 2026",
+        "profil_url": "https://www.gruene-fraktion-koblenz.de/kim-theisen/"
       }
     ],
     "fraktionen_im_stadtrat": [
       {"name": "CDU", "sitze": 15, "position": "Bisher keine öffentliche Festlegung."},
-      {"name": "Bündnis 90/Die Grünen", "sitze": 11, "position": "Bildungspolitischer Sprecher Dominik Schmidt und Fraktionsvorsitzende Kim Theisen befürworten laut RZ den Standort Goldgrube."},
+      {"name": "Bündnis 90/Die Grünen", "sitze": 11, "position": "Einzelne Fraktionsmitglieder befürworten laut Rhein-Zeitung den Standort Goldgrube (siehe Cards oben)."},
       {"name": "SPD", "sitze": 10, "position": "Trägt die Verwaltungsvorlage."},
       {"name": "AfD", "sitze": 6, "position": "Bisher keine öffentliche Festlegung."},
       {"name": "Freie Wähler", "sitze": 5, "position": "Bisher keine öffentliche Festlegung."},

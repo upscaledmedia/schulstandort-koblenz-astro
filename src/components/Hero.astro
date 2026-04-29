@@ -1,36 +1,23 @@
 ---
 import hero from '../data/hero.json';
-import { fetchPetitionStats } from '../lib/petition';
 
 const h = hero.hero;
-const stats = await fetchPetitionStats();
-const goalProgress = Math.min(100, Math.round((stats.signatures / stats.goal) * 100));
-const quorumProgress = Math.min(100, Math.round((stats.signatures / stats.quorum) * 100));
-const formatNumber = (n: number) => n.toLocaleString('de-DE');
-const formatTime = (d: Date) =>
-  d.toLocaleString('de-DE', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
 ---
 
 <section class="relative overflow-hidden bg-[var(--color-bg-deep)] text-white">
-  <div class="absolute inset-0 opacity-25">
-    <img
-      src="/images/quartier-goldgrube.jpg"
-      alt=""
-      aria-hidden="true"
-      class="w-full h-full object-cover"
-      loading="eager"
-      decoding="async"
-    />
-  </div>
   <div
     class="absolute inset-0"
-    style="background: linear-gradient(180deg, rgba(17,25,42,0.85) 0%, rgba(17,25,42,0.92) 70%, rgba(17,25,42,0.98) 100%);"
+    style="background: linear-gradient(180deg, #11192a 0%, #0d1422 60%, #0a1020 100%);"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute inset-x-0 top-0 h-px"
+    style="background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute inset-x-0 bottom-0 h-px"
+    style="background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);"
     aria-hidden="true"
   ></div>
 
@@ -44,7 +31,7 @@ const formatTime = (d: Date) =>
         <h1 class="text-white !text-balance mb-6">
           {h.headline}
         </h1>
-        <p class="text-lg md:text-xl text-white/85 leading-relaxed mb-8">
+        <p class="text-lg md:text-xl text-white/85 leading-relaxed mb-10 md:mb-12">
           {h.subheadline}
         </p>
 
@@ -68,61 +55,11 @@ const formatTime = (d: Date) =>
           </p>
         </div>
 
-        <a
-          href={h.cta_primary.href}
-          target="_blank"
-          rel="noopener"
-          class="block max-w-xl no-underline group"
-          aria-label={`Petition: ${formatNumber(stats.signatures)} Unterschriften, Quorum ${formatNumber(stats.quorum)}, Ziel ${formatNumber(stats.goal)}`}
-        >
-          <div class="flex items-baseline justify-between gap-3 mb-2">
-            <div class="flex items-baseline gap-2 min-w-0">
-              <span class="font-serif text-3xl md:text-4xl font-bold text-white tabular-nums">
-                {formatNumber(stats.signatures)}
-              </span>
-              <span class="text-sm md:text-base text-white/80">
-                von <span class="text-white font-semibold">{formatNumber(stats.goal)}</span> Unterschriften
-              </span>
-            </div>
-            <span class="text-xs uppercase tracking-wider text-white/60 font-semibold whitespace-nowrap">
-              Live von openpetition.de
-            </span>
-          </div>
-          <div class="relative h-2.5 bg-white/15 rounded-full overflow-hidden mb-2">
-            <div
-              class="absolute inset-y-0 left-0 bg-[var(--color-accent)] rounded-full transition-all duration-700"
-              style={`width: ${goalProgress}%`}
-              aria-hidden="true"
-            ></div>
-            <div
-              class="absolute inset-y-0 w-px bg-white/60"
-              style={`left: ${Math.round((stats.quorum / stats.goal) * 100)}%`}
-              aria-hidden="true"
-              title="Quorum"
-            ></div>
-          </div>
-          <div class="flex items-center justify-between text-xs text-white/70">
-            <span>
-              Quorum {formatNumber(stats.quorum)} ·
-              <span class={stats.signatures >= stats.quorum ? 'text-white font-semibold' : ''}>
-                {quorumProgress}% erreicht
-              </span>
-            </span>
-            <span class="hidden sm:inline">Stand: {formatTime(stats.fetchedAt)}</span>
-          </div>
-        </a>
-
-        <div class="flex flex-wrap gap-3 mt-8">
-          <a href={h.cta_primary.href} class="btn btn-primary" target="_blank" rel="noopener">
-            {h.cta_primary.label}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </a>
+        <div class="flex flex-wrap gap-3">
           <a
             href={h.cta_secondary.href}
             class="btn"
-            style="background: rgba(255,255,255,0.08); color: white; border-color: rgba(255,255,255,0.3);"
+            style="background: rgba(255,255,255,0.08); color: #ffffff; border-color: rgba(255,255,255,0.3);"
           >
             {h.cta_secondary.label}
           </a>

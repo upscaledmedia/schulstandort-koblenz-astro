@@ -25,7 +25,18 @@ const v = data.verantwortliche;
               {person.rolle}
             </p>
             <p class="font-serif font-bold text-[var(--color-text-primary)] text-lg mb-1">
-              {person.name}
+              {person.profil_url ? (
+                <a
+                  href={person.profil_url}
+                  target="_blank"
+                  rel="noopener"
+                  class="no-underline hover:text-[var(--color-accent)] transition-colors"
+                >
+                  {person.name}
+                </a>
+              ) : (
+                person.name
+              )}
             </p>
             {person.partei && (
               <p class="text-sm text-[var(--color-text-muted)] mb-3">{person.partei}</p>
@@ -40,6 +51,52 @@ const v = data.verantwortliche;
         ))}
       </div>
     </div>
+
+    {v.befuerworter && v.befuerworter.length > 0 && (
+      <div class="mb-12">
+        <h3 class="text-xl font-serif font-bold mb-2 text-[var(--color-text-primary)]">
+          Bekannte Befürworter im Stadtrat
+        </h3>
+        <p class="text-sm text-[var(--color-text-muted)] mb-5">
+          Folgende Stadtratsmitglieder haben sich öffentlich für den Standort Goldgrube ausgesprochen.
+        </p>
+        <div class="grid md:grid-cols-2 gap-5 max-w-4xl">
+          {v.befuerworter.map((person) => (
+            <div
+              class="bg-[var(--color-bg-card)] p-6 rounded-md border border-[var(--color-border)] border-l-4"
+              style="border-left-color: #c89b3c;"
+            >
+              <p class="text-xs uppercase tracking-wider font-semibold mb-1" style="color: #c89b3c;">
+                {person.rolle}
+              </p>
+              <p class="font-serif font-bold text-[var(--color-text-primary)] text-lg mb-1">
+                {person.profil_url ? (
+                  <a
+                    href={person.profil_url}
+                    target="_blank"
+                    rel="noopener"
+                    class="no-underline hover:text-[var(--color-accent)] transition-colors"
+                  >
+                    {person.name}
+                  </a>
+                ) : (
+                  person.name
+                )}
+              </p>
+              {person.partei && (
+                <p class="text-sm text-[var(--color-text-muted)] mb-3">{person.partei}</p>
+              )}
+              <p class="text-[14px] text-[var(--color-text-body)] leading-relaxed mb-3">
+                {person.position_oeffentlich}
+              </p>
+              <p class="text-xs text-[var(--color-text-muted)] italic">
+                Quelle: {person.quelle}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
 
     <div>
       <div class="flex items-end justify-between flex-wrap gap-3 mb-5">
