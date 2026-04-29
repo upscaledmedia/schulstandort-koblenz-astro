@@ -73,15 +73,31 @@ const sonstige = renderedStimmen.filter(
           ))}
         </div>
 
-        <div class="mt-6 md:mt-8 max-w-6xl">
+        <div class="mt-8 md:mt-10 max-w-6xl flex flex-col sm:flex-row sm:justify-end gap-3 sm:gap-4">
           <a
             href="https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
             target="_blank"
             rel="noopener"
-            class="inline-flex items-center gap-2 text-[15px] font-semibold no-underline hover:underline underline-offset-2"
-            style="color: #c1272d;"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold text-[15px] no-underline transition-colors"
+            style="background-color: #ffffff; color: #c1272d; text-decoration: none; border: 1px solid #c1272d;"
+            onmouseover="this.style.backgroundColor='#f6e6e7'"
+            onmouseout="this.style.backgroundColor='#ffffff'"
           >
-            Alle Meinungen ansehen auf openPetition
+            Alle Meinungen ansehen
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+          <a
+            href="https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold text-[15px] no-underline transition-colors"
+            style="background-color: #c1272d; color: #ffffff; text-decoration: none; border: 1px solid #c1272d;"
+            onmouseover="this.style.backgroundColor='#9a1f24'"
+            onmouseout="this.style.backgroundColor='#c1272d'"
+          >
+            Jetzt selbst kommentieren
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6"/>
             </svg>
@@ -94,7 +110,7 @@ const sonstige = renderedStimmen.filter(
       <div class={`${buergerstimmen.length > 0 ? 'mt-16 md:mt-20 pt-12 md:pt-16 border-t border-[var(--color-border)]' : ''}`}>
         <div class="max-w-3xl mb-8 md:mb-10">
           <p class="text-xs uppercase tracking-wider text-[var(--color-text-muted)] font-semibold">
-            Verwaltungsdokumente
+            Aussagen aus den Verwaltungsdokumenten
           </p>
         </div>
 
@@ -166,8 +182,7 @@ const sonstige = renderedStimmen.filter(
           href={meta.cta_primary_href}
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold text-[15px] no-underline transition-colors"
-          style="background-color: #ffffff; color: #c1272d; text-decoration: none;"
+          class="cta-on-red cta-primary"
         >
           {meta.cta_primary_label}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
@@ -178,8 +193,7 @@ const sonstige = renderedStimmen.filter(
           href={meta.cta_secondary_href}
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold text-[15px] no-underline transition-colors"
-          style="background-color: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.4); text-decoration: none;"
+          class="cta-on-red cta-secondary"
         >
           {meta.cta_secondary_label}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">

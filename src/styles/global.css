@@ -158,6 +158,45 @@
     padding: 0.5rem 0;
   }
 
+  /* CTA-Buttons auf rotem Hintergrund — gehärtet gegen globale a {} Vererbung */
+  .cta-on-red {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+    text-decoration: none !important;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+
+  .cta-on-red.cta-primary {
+    background-color: #ffffff !important;
+    color: #c1272d !important;
+    border: 1px solid #ffffff;
+  }
+
+  .cta-on-red.cta-primary:hover {
+    background-color: #f1efe9 !important;
+    color: #9a1f24 !important;
+  }
+
+  .cta-on-red.cta-secondary {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+  }
+
+  .cta-on-red.cta-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.85);
+  }
+
   .prose-content > * + * {
     margin-top: 1rem;
   }
