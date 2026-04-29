@@ -2,15 +2,22 @@
 import data from '../data/verantwortliche.json';
 const v = data.verantwortliche;
 
-// Stadtratsmitglieder nach Fraktion gruppieren — Reihenfolge wie in fraktionen_im_stadtrat
-const fraktionsReihenfolge = v.fraktionen_im_stadtrat.map((f) => f.name);
+// Stadtratsmitglieder nach Fraktion gruppieren — Reihenfolge nach Größe der Fraktion (absteigend)
+const mitglieder = v.stadtratsmitglieder || [];
+const fraktionsCounts = new Map<string, number>();
+for (const m of mitglieder) {
+  fraktionsCounts.set(m.fraktion, (fraktionsCounts.get(m.fraktion) || 0) + 1);
+}
+const fraktionsReihenfolge = Array.from(fraktionsCounts.entries())
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'de'))
+  .map(([name]) => name);
 const mitgliederNachFraktion = fraktionsReihenfolge.map((fraktionName) => ({
   name: fraktionName,
-  mitglieder: (v.stadtratsmitglieder || [])
+  mitglieder: mitglieder
     .filter((m) => m.fraktion === fraktionName)
     .sort((a, b) => a.name.localeCompare(b.name, 'de')),
 }));
-const stadtratGesamt = (v.stadtratsmitglieder || []).length;
+const stadtratGesamt = mitglieder.length;
 ---
 
 <section id="verantwortliche" class="bg-[var(--color-bg)] py-16 md:py-24">
@@ -108,39 +115,8 @@ const stadtratGesamt = (v.stadtratsmitglieder || []).length;
       </div>
     )}
 
-    <div>
-      <div class="flex items-end justify-between flex-wrap gap-3 mb-5">
-        <h3 class="text-xl font-serif font-bold text-[var(--color-text-primary)]">
-          Fraktionen im Stadtrat
-        </h3>
-        <p class="text-sm text-[var(--color-text-muted)]">
-          {v.fraktionen_im_stadtrat.reduce((sum, f) => sum + f.sitze, 0)} Sitze · Mehrheit: {v.mehrheit_erforderlich}
-        </p>
-      </div>
-      <div class="bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-md overflow-hidden">
-        <table class="w-full text-sm">
-          <thead class="bg-[var(--color-bg)]">
-            <tr class="border-b border-[var(--color-border)]">
-              <th class="text-left p-4 font-semibold text-[var(--color-text-primary)] uppercase text-xs tracking-wider">Fraktion</th>
-              <th class="text-right p-4 font-semibold text-[var(--color-text-primary)] uppercase text-xs tracking-wider w-24">Sitze</th>
-              <th class="text-left p-4 font-semibold text-[var(--color-text-primary)] uppercase text-xs tracking-wider hidden md:table-cell">Position</th>
-            </tr>
-          </thead>
-          <tbody>
-            {v.fraktionen_im_stadtrat.map((f) => (
-              <tr class="border-b border-[var(--color-border)] last:border-0">
-                <td class="p-4 font-medium text-[var(--color-text-primary)]">{f.name}</td>
-                <td class="p-4 text-right font-mono">{f.sitze}</td>
-                <td class="p-4 text-[var(--color-text-body)] hidden md:table-cell">{f.position}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-
     {v.stadtratsmitglieder && v.stadtratsmitglieder.length > 0 && (
-      <div class="mt-12 md:mt-16">
+      <div>
         <div class="max-w-3xl mb-8">
           <h3 class="text-xl md:text-2xl font-serif font-bold mb-3 text-[var(--color-text-primary)]">
             {stadtratGesamt === 56 ? 'Alle 56 Stadtratsmitglieder' : `Bekannte Stadtratsmitglieder (${stadtratGesamt})`}

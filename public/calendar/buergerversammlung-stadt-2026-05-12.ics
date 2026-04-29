@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Buendnis Goldgrube//Schulstandort Koblenz//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:buergerversammlung-stadt-2026-05-12@schulstandort-koblenz.de
+DTSTAMP:20260429T120000Z
+DTSTART;VALUE=DATE:20260512
+DTEND;VALUE=DATE:20260513
+SUMMARY:Bürgerversammlung Stadt Koblenz – Goldgrube
+LOCATION:voraussichtlich Pestalozzi-Grundschule\, Koblenz (Ort wird offiziell von der Stadt bekanntgegeben)
+DESCRIPTION:Die Stadt Koblenz informiert Anwohner und Eltern der Goldgrube zu den Planungen rund um die Interimsschule (Vorlage BV/0197/2026). Vertreter der Stadt sind angekündigt. Der Termin wurde durch die Schulleitung der Pestalozzi-Grundschule am 29.04.2026 öffentlich gemacht – exakte Uhrzeit und Veranstaltungsort werden noch offiziell durch die Stadt bekanntgegeben. Bitte vor dem Termin die offiziellen Mitteilungen der Stadt Koblenz prüfen.\n\nMehr Informationen: https://schulstandort-koblenz.de\nPetition: https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder
+URL:https://schulstandort-koblenz.de
+STATUS:TENTATIVE
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

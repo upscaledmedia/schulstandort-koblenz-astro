@@ -52,29 +52,14 @@ const b = data.bevor_stadtrat_entscheidet;
       </ol>
     </div>
 
-    <div class="mt-12 md:mt-16 grid md:grid-cols-2 gap-8 md:gap-12">
-      <div>
-        <h3 class="text-white text-xl mb-4 font-serif font-bold">
-          {b.vorbereitete_schritte.ueberschrift}
-        </h3>
-        <ul class="space-y-3">
-          {b.vorbereitete_schritte.punkte.map((p) => (
-            <li class="flex gap-3 text-white/80 text-[15px] leading-relaxed">
-              <span class="flex-none mt-2 w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]" aria-hidden="true"></span>
-              <span>{p}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-white text-xl mb-4 font-serif font-bold">
-          {b.was_das_bedeutet.ueberschrift}
-        </h3>
-        <div class="space-y-4">
-          {b.was_das_bedeutet.absaetze.map((p) => (
-            <p class="text-white/80 text-[15px] leading-relaxed">{p}</p>
-          ))}
-        </div>
+    <div class="mt-12 md:mt-16 max-w-3xl">
+      <h3 class="text-white text-xl mb-4 font-serif font-bold">
+        {b.was_das_bedeutet.ueberschrift}
+      </h3>
+      <div class="space-y-4">
+        {b.was_das_bedeutet.absaetze.map((p) => (
+          <p class="text-white/80 text-[15px] leading-relaxed">{p}</p>
+        ))}
       </div>
     </div>
 
