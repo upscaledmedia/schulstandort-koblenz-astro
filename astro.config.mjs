@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
+
 export default defineConfig({
   site: 'https://schulstandort-koblenz.de',
   trailingSlash: 'never',
@@ -13,7 +14,11 @@ export default defineConfig({
     prefetchAll: false,
     defaultStrategy: 'hover',
   },
-  integrations: [],
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/impressum') && !page.includes('/datenschutz'),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
