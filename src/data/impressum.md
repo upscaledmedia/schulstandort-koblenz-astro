@@ -49,8 +49,10 @@ Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir
 
 ## Urheberrecht
 
-Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Verwendete Pressefotos von Personen der Zeitgeschichte werden ausschließlich nach § 23 Abs. 1 Nr. 1 KUG mit Quellenangabe genutzt.
+Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
 
 ## Bildnachweis
 
-Pressefotos der genannten Mandatsträger: Stadt Koblenz / jeweilige Partei. Eigene Aufnahmen und Grafiken: Koblenzer Bürgerinitiative für nachhaltige Schulplanung.
+Foto Peter-Altmeier-Ufer Koblenz: Alexej Zepik / Rhein-Zeitung-Archiv. Quelle: [Rhein-Zeitung — Das Koblenzer Peter-Altmeier-Ufer spaltet die Meinungen](https://www.rhein-zeitung.de/lokales/koblenz-region/das-koblenzer-peter-altmeier-ufer-spaltet-die-meinungen_arid-4076083.html).
+
+Eigene Aufnahmen und Grafiken: Koblenzer Bürgerinitiative für nachhaltige Schulplanung.
