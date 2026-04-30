@@ -14,7 +14,7 @@ interface Props {
 const {
   title,
   description = meta.site.description,
-  ogImage = '/images/pestalozzi-grundschule-koblenz.webp',
+  ogImage = '/og-image.png',
   noindex = false,
   pathname = Astro.url.pathname,
   standaloneTitle = false,
@@ -55,7 +55,7 @@ function ensureTrailingSlash(p: string): string {
 const canonicalPath = ensureTrailingSlash(pathname);
 const siteOrigin = Astro.site ?? new URL('https://schulstandort-koblenz.de');
 const canonicalUrl = new URL(canonicalPath, siteOrigin).toString();
-const logoUrl = new URL('/favicon.svg', siteOrigin).toString();
+const logoUrl = new URL('/favicon-192.png', siteOrigin).toString();
 
 // Defensive noindex: Wenn die Seite über die pages.dev-Preview-Domain ausgeliefert wird,
 // IMMER noindex setzen — unabhängig vom Page-Setting. Greift nur, falls die _redirects
@@ -100,8 +100,9 @@ const websiteSchema = {
     <link rel="canonical" href={canonicalUrl} />
     <meta name="robots" content={robotsContent} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
