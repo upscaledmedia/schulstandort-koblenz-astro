@@ -1,7 +1,7 @@
 {
   "mitmachen": {
     "ueberschrift": "Mitmachen & aktiv werden",
-    "untertitel": "Fünf konkrete Wege, wie Sie bis zur Stadtratsentscheidung am 28. Mai 2026 etwas bewirken können.",
+    "untertitel": "Sechs konkrete Wege, wie Sie bis zur Stadtratsentscheidung am 28. Mai 2026 etwas bewirken können.",
     "optionen": [
       {
         "titel": "Petition unterzeichnen",
@@ -14,6 +14,12 @@
         "text": "Unterschriften zählen — aber inhaltliche Kommentare wiegen für den Stadtrat zusätzlich. Schildern Sie konkret, was Sie als Anwohner, Eltern oder Lehrer betrifft.",
         "cta_label": "Kommentar schreiben",
         "cta_href": "https://www.openpetition.de/petition/kommentare/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder"
+      },
+      {
+        "titel": "Auf Facebook folgen und mitreden",
+        "text": "Soziale Medien sind ein wichtiger Resonanzraum für lokale politische Themen. Folgen Sie der Initiative auf Facebook, teilen Sie Beiträge mit Freunden und Bekannten in Koblenz und hinterlassen Sie Ihre Meinung in den Kommentaren. Jede sichtbare Stimme erhöht die Reichweite und macht klar, wie viele Bürgerinnen und Bürger sich für das Thema interessieren.",
+        "cta_label": "Auf Facebook folgen",
+        "cta_href": "https://www.facebook.com/BessereSchulplanungKoblenz"
       },
       {
         "titel": "Bei den Stadtrats-Terminen präsent sein",
