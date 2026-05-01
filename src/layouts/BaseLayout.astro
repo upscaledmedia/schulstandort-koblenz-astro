@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import meta from '../data/meta.json';
+import StickySidebars from '../components/StickySidebars.astro';
 
 interface Props {
   title?: string;
@@ -132,5 +133,6 @@ const websiteSchema = {
       Zum Inhalt springen
     </a>
     <slot />
+    <StickySidebars />
   </body>
 </html>
