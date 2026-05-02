@@ -54,6 +54,16 @@
         "profil_url": "https://www.instagram.com/christopherbuendgen/"
       }
     ],
+    "reaktionen_stadtrat": [
+      {
+        "name": "Philip Rünz",
+        "rolle": "CDU-Stadtrat, Landtagsabgeordneter",
+        "datum": "2026-05-02",
+        "aussage": "Greift die Anwohnersorgen zur Verkehrslage und Platzknappheit in der Goldgrube auf und richtet eine Anfrage an das Baudezernat.",
+        "quelle_titel": "Blick aktuell: „Zu wenig Platz, zu viel Verkehr: Rünz nimmt Anwohnersorgen in der Goldgrube ernst\"",
+        "quelle_url": "https://www.blick-aktuell.de/Koblenz/Zu-wenig-Platz-zu-viel-Verkehr-Ruenz-nimmt-Anwohnersorgen-in-der-Goldgrube-ernst--662691.html"
+      }
+    ],
     "stadtratsmitglieder_quelle": "Bürgerinformationssystem der Stadt Koblenz (buergerinfo.koblenz.de), Stand April 2026. Profil-Links führen direkt in das öffentliche Ratsinformationssystem.",
     "stadtratsmitglieder": [
       {"name": "Balmes, Peter", "fraktion": "CDU", "profil_url": "https://buergerinfo.koblenz.de/pe0051.php?__kpenr=12"},
