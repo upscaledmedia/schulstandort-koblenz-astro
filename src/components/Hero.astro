@@ -46,41 +46,7 @@ const h = hero.hero;
           {h.subheadline}
         </p>
 
-        <a
-          href="#termine"
-          class="block mb-6 md:mb-8 rounded-lg overflow-hidden no-underline transition-transform hover:translate-x-1"
-          style="background: linear-gradient(135deg, rgba(193,39,45,0.22) 0%, rgba(193,39,45,0.10) 100%); border-left: 4px solid #c1272d; backdrop-filter: blur(2px);"
-          aria-label="Achtung — wichtiger Termin: Bürgerinformation der Stadt am 12. Mai 2026 um 18 Uhr in der Turnhalle der Pestalozzi-Grundschule. Mehr Informationen in der Termine-Sektion."
-        >
-          <div class="flex items-start gap-4 p-4 md:p-5">
-            <div class="flex-none w-10 h-10 rounded-full flex items-center justify-center mt-0.5" style="background-color: #c1272d;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/>
-                <line x1="12" y1="9" x2="12" y2="13"/>
-                <line x1="12" y1="17" x2="12.01" y2="17"/>
-              </svg>
-            </div>
-            <div class="flex-1 min-w-0">
-              <p class="text-[11px] uppercase tracking-wider font-semibold mb-1" style="color: #ff8a8e; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
-                Achtung — Wichtiger Termin
-              </p>
-              <p class="text-white font-semibold text-base md:text-lg leading-snug mb-1" style="text-shadow: 0 1px 6px rgba(0,0,0,0.5);">
-                Bürgerinformation der Stadt am 12. Mai
-              </p>
-              <p class="text-white/90 text-sm leading-snug" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
-                18:00 Uhr · Turnhalle Pestalozzi-Grundschule · mit Baudezernent Lukas, Bildungsdezernent Schneider und SPD-Fraktionsvorsitzender Lipinski-Naumann
-              </p>
-              <p class="text-white/85 text-xs mt-2 inline-flex items-center gap-1 font-semibold">
-                Termindetails ansehen
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                  <path d="M5 12h14M13 6l6 6-6 6"/>
-                </svg>
-              </p>
-            </div>
-          </div>
-        </a>
-
-        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-10 md:mb-12">
+        <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-8 md:mb-10">
           <a
             href={hero.hero.cta_primary?.href ?? 'https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder'}
             target="_blank"
@@ -122,6 +88,89 @@ const h = hero.hero;
             Auf Instagram folgen
           </a>
         </div>
+
+        <aside
+          aria-label="Wichtiger Termin: Bürgerinformation der Stadt am 12. Mai 2026"
+          class="relative mb-10 md:mb-12 rounded-xl overflow-hidden"
+          style="background: linear-gradient(135deg, rgba(193,39,45,0.32) 0%, rgba(193,39,45,0.14) 60%, rgba(193,39,45,0.08) 100%); border: 1px solid rgba(193,39,45,0.45); border-left: 6px solid #c1272d; box-shadow: 0 14px 40px -18px rgba(0,0,0,0.6);"
+        >
+          <div class="p-5 md:p-7">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="relative flex h-3 w-3" aria-hidden="true">
+                <span class="absolute inline-flex h-full w-full rounded-full opacity-70 animate-ping" style="background-color: #ff5860;"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3" style="background-color: #ff5860;"></span>
+              </span>
+              <p class="text-[11px] md:text-xs uppercase tracking-[0.18em] font-bold" style="color: #ffb1b4; text-shadow: 0 1px 4px rgba(0,0,0,0.6);">
+                Achtung — Wichtiger Termin · Jede Stimme zählt
+              </p>
+            </div>
+
+            <h2 class="text-white font-serif font-bold text-2xl md:text-3xl leading-tight mb-3" style="text-shadow: 0 2px 10px rgba(0,0,0,0.6);">
+              Präsenz zeigt Haltung — sei am 12. Mai dabei.
+            </h2>
+
+            <p class="text-white/95 text-[15px] md:text-base leading-relaxed mb-4" style="text-shadow: 0 1px 6px rgba(0,0,0,0.55);">
+              Die Stadt lädt zur Bürgerinformation. Sechzehn Tage später entscheidet der Stadtrat. <strong class="font-semibold text-white">Eine volle Turnhalle ist ein Signal, das nicht ignoriert werden kann.</strong> Eine leere lautet: „Die Goldgrube hat sich damit abgefunden." Bitte komm — und bring Nachbarn, Eltern, Großeltern und Freunde mit.
+            </p>
+
+            <div class="grid sm:grid-cols-3 gap-3 mb-5 md:mb-6">
+              <div class="bg-white/10 backdrop-blur-sm rounded-md p-3 border border-white/15">
+                <p class="text-[10px] uppercase tracking-wider font-semibold text-white/70 mb-1">Wann</p>
+                <p class="text-white font-serif text-lg font-bold leading-tight">Di · 12. Mai</p>
+                <p class="text-white/90 text-sm">18:00 Uhr</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm rounded-md p-3 border border-white/15">
+                <p class="text-[10px] uppercase tracking-wider font-semibold text-white/70 mb-1">Wo</p>
+                <p class="text-white font-serif text-base font-bold leading-tight">Turnhalle</p>
+                <p class="text-white/90 text-sm">Pestalozzi-Grundschule</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm rounded-md p-3 border border-white/15">
+                <p class="text-[10px] uppercase tracking-wider font-semibold text-white/70 mb-1">Wer ist da</p>
+                <p class="text-white text-sm leading-snug font-medium">Lukas · Schneider · Lipinski-Naumann + Fachämter</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a
+                href="/calendar/buergerversammlung-stadt-2026-05-12.ics"
+                download
+                class="inline-flex items-center justify-center gap-2 bg-[#c1272d] hover:bg-[#9a1f24] font-semibold text-[14px] md:text-[15px] py-3 px-5 rounded-md no-underline transition-colors shadow-md"
+                style="color: #ffffff;"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                In Kalender eintragen
+              </a>
+              <a
+                href="#termine"
+                class="inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 font-semibold text-[14px] md:text-[15px] py-3 px-5 rounded-md no-underline transition-colors backdrop-blur-sm"
+                style="color: #ffffff;"
+              >
+                Alle Termininfos
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </a>
+              <a
+                href={`https://wa.me/?text=${encodeURIComponent('Wichtiger Termin in Koblenz: Bürgerinformation zur Interimsschule Goldgrube am 12. Mai um 18 Uhr in der Turnhalle der Pestalozzi-Grundschule. Bitte kommt zahlreich — eine volle Halle zählt. Mehr Infos: https://schulstandort-koblenz.de/#termine')}`}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] font-semibold text-[14px] md:text-[15px] py-3 px-5 rounded-md no-underline transition-colors shadow-md"
+                style="color: #ffffff;"
+                aria-label="Termin per WhatsApp an Nachbarn weiterleiten"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                </svg>
+                Nachbarn einladen
+              </a>
+            </div>
+          </div>
+        </aside>
 
         <div class="lg:hidden mb-10">
           <div
