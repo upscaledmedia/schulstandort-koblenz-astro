@@ -115,6 +115,20 @@ const stadtratGesamt = mitglieder.length;
               <p class="text-xs text-[var(--color-text-muted)] italic">
                 Quelle: {person.quelle}
               </p>
+              {person.berichterstattung_url && (
+                <a
+                  href={person.berichterstattung_url}
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-1 text-xs italic mt-1 hover:underline transition-colors"
+                  style="color: #4a6b8a;"
+                >
+                  Berichterstattung: {person.berichterstattung_titel}
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="M7 17L17 7M9 7h8v8"/>
+                  </svg>
+                </a>
+              )}
             </div>
           ))}
         </div>
