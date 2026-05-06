@@ -46,6 +46,40 @@ const h = hero.hero;
           {h.subheadline}
         </p>
 
+        <a
+          href="#termine"
+          class="block mb-6 md:mb-8 rounded-lg overflow-hidden no-underline transition-transform hover:translate-x-1"
+          style="background: linear-gradient(135deg, rgba(193,39,45,0.22) 0%, rgba(193,39,45,0.10) 100%); border-left: 4px solid #c1272d; backdrop-filter: blur(2px);"
+          aria-label="Achtung — wichtiger Termin: Bürgerinformation der Stadt am 12. Mai 2026 um 18 Uhr in der Turnhalle der Pestalozzi-Grundschule. Mehr Informationen in der Termine-Sektion."
+        >
+          <div class="flex items-start gap-4 p-4 md:p-5">
+            <div class="flex-none w-10 h-10 rounded-full flex items-center justify-center mt-0.5" style="background-color: #c1272d;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] uppercase tracking-wider font-semibold mb-1" style="color: #ff8a8e; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+                Achtung — Wichtiger Termin
+              </p>
+              <p class="text-white font-semibold text-base md:text-lg leading-snug mb-1" style="text-shadow: 0 1px 6px rgba(0,0,0,0.5);">
+                Bürgerinformation der Stadt am 12. Mai
+              </p>
+              <p class="text-white/90 text-sm leading-snug" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+                18:00 Uhr · Turnhalle Pestalozzi-Grundschule · mit Baudezernent Lukas, Bildungsdezernent Schneider und SPD-Fraktionsvorsitzender Lipinski-Naumann
+              </p>
+              <p class="text-white/85 text-xs mt-2 inline-flex items-center gap-1 font-semibold">
+                Termindetails ansehen
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </p>
+            </div>
+          </div>
+        </a>
+
         <div class="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-10 md:mb-12">
           <a
             href={hero.hero.cta_primary?.href ?? 'https://www.openpetition.de/petition/online/keine-interimsschule-in-der-goldgrube-auf-kosten-unserer-kinder'}
