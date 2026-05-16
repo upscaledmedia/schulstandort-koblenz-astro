@@ -36,6 +36,16 @@ const termine = defineCollection({
     linkLabel: z.string().optional(),
     linkUrl: z.string().url().optional(),
     icsFile: z.string().optional(),
+    attachments: z
+      .array(
+        z.object({
+          label: z.string(),
+          url: z.string(),
+        })
+      )
+      .optional(),
+    videoEmbedUrl: z.string().url().optional(),
+    videoTitle: z.string().optional(),
   }),
 });
 

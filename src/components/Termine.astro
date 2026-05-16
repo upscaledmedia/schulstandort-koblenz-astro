@@ -87,9 +87,47 @@ const meta = termineMeta.termine;
                 )}
               </div>
               {t.body && t.body.trim().length > 0 && (
-                <p class="text-[15px] text-white/85 leading-relaxed max-w-2xl">
-                  {t.body.trim()}
-                </p>
+                <div class="text-[15px] text-white/85 leading-relaxed max-w-2xl space-y-3">
+                  {t.body.trim().split(/\n\n+/).map((para) => (
+                    <p set:html={para.replace(/\n/g, '<br />')} />
+                  ))}
+                </div>
+              )}
+              {t.data.videoEmbedUrl && (
+                <div class="mt-5 max-w-2xl">
+                  <div class="relative w-full overflow-hidden rounded-md border border-white/15" style="padding-top: 56.25%;">
+                    <iframe
+                      src={t.data.videoEmbedUrl}
+                      title={t.data.videoTitle ?? 'Video'}
+                      class="absolute inset-0 w-full h-full"
+                      loading="lazy"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    />
+                  </div>
+                  {t.data.videoTitle && (
+                    <p class="text-[12px] text-white/60 mt-2">{t.data.videoTitle}</p>
+                  )}
+                </div>
+              )}
+              {t.data.attachments && t.data.attachments.length > 0 && (
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {t.data.attachments.map((a) => (
+                    <a
+                      href={a.url}
+                      target="_blank"
+                      rel="noopener"
+                      class="inline-flex items-center gap-1.5 text-[13px] font-semibold no-underline px-3 py-1.5 rounded-sm border border-white/20 bg-white/5 hover:bg-white/15 transition-colors"
+                      style="color: #ffffff;"
+                    >
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                      </svg>
+                      {a.label}
+                    </a>
+                  ))}
+                </div>
               )}
               {t.data.linkUrl && (
                 <a
